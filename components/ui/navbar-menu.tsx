@@ -60,6 +60,50 @@ export const MenuItem = ({
   );
 };
 
+export const LogoImage = ({
+    title,
+    href,
+    src,
+  }: {
+    title: string;
+    href: string;
+    src: string;
+  }) => {
+    return (
+      <Link href={href} className=" ">
+        <Image
+          src={src}
+          width={80}
+          height={80}
+          alt={title}
+          className="dark:hidden block rounded-md "
+        />
+      </Link>
+    );
+  };
+
+  export const LogoImageDark = ({
+    title,
+    href,
+    src,
+  }: {
+    title: string;
+    href: string;
+    src: string;
+  }) => {
+    return (
+      <Link href={href} className=" ">
+        <Image
+          src={src}
+          width={80}
+          height={80}
+          alt={title}
+          className="hidden dark:block rounded-md "
+        />
+      </Link>
+    );
+  };
+
 export const Menu = ({
   setActive,
   children,
@@ -68,10 +112,13 @@ export const Menu = ({
   children: React.ReactNode;
 }) => {
   return (
+
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative h-[90px] rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-slate-200 shadow-input flex justify-center space-x-16 px-8 py-6 "
     >
+
+
       {children}
     </nav>
   );
@@ -89,11 +136,11 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-2 ">
       <Image
         src={src}
-        width={140}
-        height={70}
+        width={100}
+        height={50}
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
