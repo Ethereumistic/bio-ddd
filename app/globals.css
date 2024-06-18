@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #ffffff; /* Light background */
+  color: #020617; /* Light text color */
+}
+.dark body {
+  background-color: #020617; /* Dark background */
+  color: #ffffff; /* Dark text color */
+}
+
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {

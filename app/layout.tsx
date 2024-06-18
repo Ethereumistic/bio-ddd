@@ -3,8 +3,44 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavbarDemo } from "@/components/NavbarDemo";
 import { Providers } from "./providers";
+import localfont from "next/font/local";
+import { cx } from "@/utils/all";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const russo = localfont(
+  {
+    src: [
+      {
+          path: "../public/fonts/RussoOne-Regular.ttf",
+          weight: "700",
+      },
+    ],
+    variable: "--font-russo"
+  });
+
+  const osw = localfont(
+    {
+      src: [
+        {
+            path: "../public/fonts/Oswald-VariableFont_wght.ttf",
+            weight: "700",
+        },
+      ],
+      variable: "--font-osw"
+    });
+
+
+  // const russo = localfont(
+  //   {
+  //     src: [
+  //       {
+  //           path: "../public/fonts/RussoOne-Regular.ttf",
+  //           weight: "700",
+  //       },
+  //     ],
+  //     variable: "--font-russo"
+  //   });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,11 +53,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cx(russo.variable, osw.variable)}
+    > 
+    <div className="bg-white dark:bg-dblue">
+    
       <Providers>
       <NavbarDemo />
       <body className={inter.className}>{children}</body>
       </Providers>
+      </div>
     </html>
   );
 }

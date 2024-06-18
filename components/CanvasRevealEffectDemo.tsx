@@ -9,7 +9,7 @@ import { HiBugAnt } from "react-icons/hi2";
 export function CanvasRevealEffectDemo() {
   return (
     <>
-      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-dblue w-full gap-4 mx-auto px-8 space-x-32">
         <Card title="Дезинфекция" icon={<FaViruses className="text-emerald-500" size={120}/>}>
           <CanvasRevealEffect
             animationSpeed={5.1}

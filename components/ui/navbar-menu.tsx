@@ -129,23 +129,34 @@ export const ProductItem = ({
   description,
   href,
   src,
+  darkSrc,
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
+  darkSrc: string;
 }) => {
+
+
   return (
-    <Link href={href} className="flex space-x-2 ">
-      <Image
-        src={src}
-        width={100}
-        height={50}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+    <Link href={href} className="flex space-x-2  rounded-xl  hover:scale-105 transition duration-300 hover:text-lred">
+              <Image
+          src={src}
+          width={100}
+          height={50}
+          alt={title}
+          className="block dark:hidden"
+        />
+        <Image
+          src={darkSrc}
+          width={100}
+          height={50}
+          alt={title}
+          className="hidden dark:block"
+        />
+      <div className="">
+        <h4 className="text-xl font-bold mb-1 text-black dark:text-white ">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">

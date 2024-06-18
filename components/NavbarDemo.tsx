@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import ThemeSwitch from "./themeSwitch";
 import Image from "next/image";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
+import Link from "next/link";
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -24,17 +25,17 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
     <div className="flex space-x-4 -translate-y-5">
       <LogoImage
-              title="Хлебарки"
-              href="https://algochurn.com"
+              title="Bio DDD"
+              href="/"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/bioddd-spider-l.png"
             />
         <LogoImageDark
-              title="Хлебарки"
-              href="https://algochurn.com"
+              title="Bio DDD"
+              href="/"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/bioddd-spider-d.png"
             />
       </div>
-        <div className="flex mt-2 space-x-16">
+        <div className="flex mt-2 space-x-16 text-xl font-bold">
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
@@ -43,79 +44,102 @@ function Navbar({ className }: { className?: string }) {
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
+        <Link href="/pests"
+              >
         <MenuItem setActive={setActive} active={active} item="Вредители">
           <div className="  text-sm grid grid-cols-4 gap-10 p-4 ">
             <ProductItem
               title="Хлебарки"
               href="https://algochurn.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/cockroach.png"
-              description="Prepare for tech interviews like never before."
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/cockroach.png"
+              description="Сбогом на мръсните хлебарки, които разпространяват болести!"
             />
             <ProductItem
               title="Гризачи"
               href="https://tailwindmasterkit.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/rat.png"
-              description="Production ready Tailwind css components for your next project"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/rat.png"
+              description="Чао на досадните гризачи, които унищожават вашата храна и имущество!"
             />
             <ProductItem
               title="Дървеници"
               href="https://gomoonbeam.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bedbug.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bedbug.png"
+              description="Прогонете досадните дървеници, които ви пречат да спите спокойно!"
             />
             <ProductItem
               title="Бълхи"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/flea2.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/flea.png"
+
+              description="Без бълхи и сърбежи за Вас и Вашите домашни любимци!"
             />
             <ProductItem
               title="Мухи"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/fly.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/fly.png"
+
+              description="Сложете край на досадните мухи, които пренасят зарази!"
             />
             <ProductItem
               title="Оси"
               href="https://tailwindmasterkit.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/wasp.png"
-              description="Production ready Tailwind css components for your next project"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/wasp.png"
+
+              description="Защитете се от оси, които могат да бъдат опасни!"
             />
             <ProductItem
               title="Комари"
               href="https://gomoonbeam.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/mosquito.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/mosquito.png"
+
+              description="Насладете се на летните вечери без досадните комари!"
             />
             <ProductItem
               title="Кърлежи"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/tick.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/tick.png"
+
+              description="Предпазете се от опасните кърлежи, преносители на сериозни заболявания!"
             />
             <ProductItem
               title="Мравки"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/ant.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/ant.png"
+
+              description="Сложете край на пътеките от мравки, които нахлуват в дома ви!"
             />
             <ProductItem
               title="Змии"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/snake.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/snake.png"
+
+              description="Освободете дома си от змиите, които могат да бъдат опасни!"
             />
             <ProductItem
               title="Паяци"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/spider.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/spider.png"
+
+              description="Кажете сбогом на паяжините, които ви карат да се чувствате некомфортно!"
             />
             <ProductItem
               title="Птици"
               href="https://userogue.com"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bird.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bird.png"
+
+              description="Прогонете птиците, които замърсяват вашия двор!"
             />
             {/* <ProductItem
               title="Мухи"
@@ -125,6 +149,7 @@ function Navbar({ className }: { className?: string }) {
             /> */}
           </div>
         </MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>

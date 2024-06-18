@@ -23,11 +23,18 @@ const config: Config = {
         dgreen: " #172e08 ",
         lred: " #FF1616 ",
         lblack: " #1A1A1A ",
+        ldark: " #121212 ",
         dred: " #4C0414 ",
         lyellow: " #FFDE59 ",
         dyellow: " #60562E ",
         lblue: " #003174 ",
-        dblue: " #07476B ",
+        dblue: " #020617 ",
+      },
+
+      fontFamily: {
+        // to change, update font in _document.js
+        russo: ["var(--font-russo)"],
+        osw: ["var(--font-osw)"],
       },
     },
   },  plugins: [
