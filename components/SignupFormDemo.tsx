@@ -311,7 +311,7 @@ export function SignupFormDemo() {
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         <h2 className="font-bold text-sm text-neutral-800 dark:text-neutral-200 ">
-        С натискането на бутона "Изпрати Заявка" Вие автоматично се съгласявате Вашите данни да бъдат обработени за целите на сайта.
+        С натискането на бутона &quot;Изпрати Заявка&quot; Вие автоматично се съгласявате Вашите данни да бъдат обработени за целите на сайта.
       </h2>
       </form>
     </div>

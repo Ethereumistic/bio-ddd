@@ -6,6 +6,11 @@ import Image from "next/image";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 interface BackgroundGradientDemoProps {
+
+  imageSrc: string;
+  title: string;
+  description: string;
+  button: string;
   
   imageSrc1: string;
   title1: string;
@@ -27,7 +32,7 @@ interface BackgroundGradientDemoProps {
   description4: string;
   button4: string;
 
-  onButtonClick: (title: string, description: string, imageSrc: string, button: string) => void;
+  onButtonClick: (title: string, description: string, imageSrc: string, button: string, imageSrc1: string, title1: string, description1: string, button1: string, imageSrc2: string, title2: string, description2: string, button2: string, imageSrc3: string, title3: string, description3: string, button3: string) => void;
 }
 
 export function BackgroundGradientDemo({
@@ -57,11 +62,37 @@ export function BackgroundGradientDemo({
     imageSrc: imageSrc1,
     title: title1,
     description: description1,
+    button: button1,
+
+
+    imageSrc1: imageSrc2,
+    title1: title2,
+    description1: description2,
+    button1: button2,
+
+
+    imageSrc2: imageSrc3,
+    title2: title3,
+    description2: description3,
+    button2: button3,
+
+
+    imageSrc3: imageSrc4,
+    title3: title4,
+    description3: description4,
+    button3: button4,
+
+
+    // imageSrc4: imageSrc4,
+    // title4: title4,
+    // description4: description4,
+    // button4: button4,
+
   });
 
-  const handleButtonClick = (imageSrc: string, title: string, description: string) => {
-    setContent({ imageSrc, title, description });
-    onButtonClick(title, description, imageSrc, button3); // Update parent state
+  const handleButtonClick = (imageSrc: string, title: string, description: string, button: string) => {
+    setContent({ imageSrc, title, description, button, imageSrc1, title1, description1, button1, imageSrc2, title2, description2, button2, imageSrc3, title3, description3, button3, });
+    onButtonClick(title, description, imageSrc, button, imageSrc1, title1, description1, button1, imageSrc2, title2, description2, button2, imageSrc3, title3, description3, button3); // Update parent state
   };
 
   return (
@@ -71,7 +102,7 @@ export function BackgroundGradientDemo({
           containerClassName="rounded-full"
           as="button"
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-          onClick={() => handleButtonClick(imageSrc1, title1, description1)}
+          onClick={() => handleButtonClick(imageSrc1, title1, description1, button1)}
         >
           {button1}
         </HoverBorderGradient>
@@ -80,7 +111,7 @@ export function BackgroundGradientDemo({
           containerClassName="rounded-full "
           as="button"
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-          onClick={() => handleButtonClick(imageSrc2, title2, description2)}
+          onClick={() => handleButtonClick(imageSrc2, title2, description2, button2)}
         >
           {button2}
         </HoverBorderGradient>
@@ -89,7 +120,7 @@ export function BackgroundGradientDemo({
           containerClassName="rounded-full"
           as="button"
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-          onClick={() => handleButtonClick(imageSrc3, title3, description3)}
+          onClick={() => handleButtonClick(imageSrc3, title3, description3, button3)}
         >
           {button3}
         </HoverBorderGradient>
@@ -98,7 +129,7 @@ export function BackgroundGradientDemo({
           containerClassName="rounded-full"
           as="button"
           className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-          onClick={() => handleButtonClick(imageSrc4, title4, description4)}
+          onClick={() => handleButtonClick(imageSrc4, title4, description4,   button4)}
         >
           {button4}
         </HoverBorderGradient>
