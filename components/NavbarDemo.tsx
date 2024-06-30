@@ -36,12 +36,55 @@ function Navbar({ className }: { className?: string }) {
             />
       </div>
         <div className="flex mt-2 space-x-16 text-xl font-bold">
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
+        <MenuItem setActive={setActive} active={active} item="Услуги">
+          <div className="grid grid-cols-3 space-y-8 space-x-4 text-sm">
+            <div className="translate-x-4 translate-y-8 hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/web-dev">Контрол на Хлебарки</HoveredLink>
+            </div>
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/interface-design">Контрол на Дървеници</HoveredLink>
+            </div>
+            
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/seo">Контрол на Гризачи</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Мравки</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Оси и Стършели</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Мравки</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Комари и Кърлежи</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Бълхи</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Влечуги и Къртици</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Контрол на Нежелани Миризми</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
+            <HoveredLink href="/branding">Защита от Нежелани Птици</HoveredLink>
+            </div>
+
+            <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.2px_1.2px_rgba(57,255,20,1)]">
+            <HoveredLink href="/branding">Професионална Дезинфекция</HoveredLink>
+            </div>
+
           </div>
         </MenuItem>
         <Link href="/pests"
@@ -50,14 +93,14 @@ function Navbar({ className }: { className?: string }) {
           <div className="  text-sm grid grid-cols-4 gap-10 p-4 ">
             <ProductItem
               title="Хлебарки"
-              href="https://algochurn.com"
+              href="/pests/cockroach"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/cockroach.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/cockroach.png"
               description="Сбогом на мръсните хлебарки, които разпространяват болести!"
             />
             <ProductItem
               title="Гризачи"
-              href="https://tailwindmasterkit.com"
+              href="/pests/rat"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/rat.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/rat.png"
               description="Чао на досадните гризачи, които унищожават вашата храна и имущество!"
@@ -159,8 +202,9 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         </div>
-
+        <Link href="/contact">
         <HoverBorderGradientDemo />
+        </Link>
         <ThemeSwitch />
 
       </Menu>

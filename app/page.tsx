@@ -11,10 +11,12 @@ export default function Home() {
       <div className="-translate-y-32 ">
       <HeroHighlightDemo />
       </div>
-      <div className="-mt-[564px] ">
+      <div className="-mt-[480px] w-full">
+      <ImagesSliderDemo />
+      </div>
+      <div className=" ">
       <CanvasRevealEffectDemo />
       </div>
-      <ImagesSliderDemo />
 
     </main>
   );
