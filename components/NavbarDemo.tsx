@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, LogoImage, LogoImageDark, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { HoveredLink, LogoImage,  Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "@/utils/cn";
 import ThemeSwitch from "./themeSwitch";
 import Image from "next/image";
@@ -23,18 +23,17 @@ function Navbar({ className }: { className?: string }) {
     >
 
       <Menu setActive={setActive}>
-    <div className="flex space-x-4 -translate-y-5">
+    <div className="flex flex-col space-x-4 -translate-y-[22px] hover:scale-105 transition duration-700">
       <LogoImage
               title="Bio DDD"
               href="/"
-              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/bioddd-spider-l.png"
+              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-light.png"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-dark.png"
             />
-        <LogoImageDark
-              title="Bio DDD"
-              href="/"
-              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/bioddd-spider-d.png"
-            />
+<span className="-translate-x-[14px] -translate-y-1 text-ddblue dark:text-white font-russo">Bio <span className="text-lgreen">DDD</span></span>        
+
       </div>
+
         <div className="flex mt-2 space-x-16 text-xl font-bold">
         <MenuItem setActive={setActive} active={active} item="Услуги">
           <div className="grid grid-cols-3 space-y-8 space-x-4 text-sm">
@@ -82,7 +81,7 @@ function Navbar({ className }: { className?: string }) {
             </div>
 
             <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.2px_1.2px_rgba(57,255,20,1)]">
-            <HoveredLink href="/branding">Професионална Дезинфекция</HoveredLink>
+            <HoveredLink href="/disinfection">Професионална Дезинфекция</HoveredLink>
             </div>
 
           </div>

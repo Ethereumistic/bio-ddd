@@ -62,7 +62,7 @@ export default function RootLayout({
     
       <Providers>
       <NavbarDemo />
-      <body className={inter.className}>{children}</body>
+      <body className={russo.className}>{children}</body>
       </Providers>
       </div>
     </html>

@@ -2,6 +2,7 @@ import { CanvasRevealEffectDemo } from "@/components/CanvasRevealEffectDemo";
 import { HeroHighlightDemo } from "@/components/HeroHighlightDemo";
 import { ImagesSliderDemo } from "@/components/ImagesSliderDemo";
 import { LampDemo } from "@/components/LampDemo";
+import { TextGenerateEffectDemo } from "@/components/TextGenerateEffect";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,6 +15,11 @@ export default function Home() {
       <div className="-mt-[480px] w-full">
       <ImagesSliderDemo />
       </div>
+
+        <div className=" font-russo mx-auto text-center mt-8">
+        <TextGenerateEffectDemo />
+        </div>
+
       <div className=" ">
       <CanvasRevealEffectDemo />
       </div>

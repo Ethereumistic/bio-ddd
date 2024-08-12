@@ -12,9 +12,9 @@ export default function Rat() {
         <div className='flex'>
 
             <div className='flex mx-auto mt-32 space-x-8'>
-                <div className='mt-8'>
+                {/* <div className='mt-8'>
                 <BentoGridDemo />
-                </div>
+                </div> */}
             <BackgroundGradientDemo
 
                 imageSrc1="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Mus-musculus.png"

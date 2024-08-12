@@ -61,48 +61,36 @@ export const MenuItem = ({
 };
 
 export const LogoImage = ({
-    title,
-    href,
-    src,
-  }: {
-    title: string;
-    href: string;
-    src: string;
-  }) => {
-    return (
-      <Link href={href} className=" ">
-        <Image
-          src={src}
-          width={80}
-          height={80}
-          alt={title}
-          className="dark:hidden block rounded-md "
-        />
-      </Link>
-    );
-  };
+  title,
+  href,
+  src,
+  darkSrc,
+}: {
+  title: string;
+  href: string;
+  src: string;
+  darkSrc: string;
+}) => {
+  return (
+    <Link href={href} className=" ">
+      <Image
+        src={src}
+        width={68}
+        height={68}
+        alt={title}
+        className="dark:hidden block rounded-md hover:rotate-[360deg] transition duration-700"
+      />
+      <Image
+        src={darkSrc}
+        width={68}
+        height={68}
+        alt={title}
+        className="dark:block hidden rounded-md hover:rotate-[360deg] transition duration-700"
+      />
+    </Link>
+  );
+};
 
-  export const LogoImageDark = ({
-    title,
-    href,
-    src,
-  }: {
-    title: string;
-    href: string;
-    src: string;
-  }) => {
-    return (
-      <Link href={href} className=" ">
-        <Image
-          src={src}
-          width={80}
-          height={80}
-          alt={title}
-          className="hidden dark:block rounded-md "
-        />
-      </Link>
-    );
-  };
 
 export const Menu = ({
   setActive,
@@ -115,7 +103,7 @@ export const Menu = ({
 
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative h-[90px] rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-slate-200 shadow-input flex justify-center space-x-16 px-8 py-6 "
+      className="relative h-[90px] rounded-full boder border-transparent dark:bg-gray-800 dark:border-white/[0.2] bg-slate-200 shadow-input flex justify-center space-x-16 px-8 py-6 "
     >
 
 
@@ -140,7 +128,7 @@ export const ProductItem = ({
 
 
   return (
-    <Link href={href} className="flex space-x-2  rounded-xl  hover:scale-105 transition duration-300 hover:text-lred">
+    <Link href={href} className="flex space-x-2   hover:scale-105 transition duration-300 hover:text-lred">
               <Image
           src={src}
           width={100}

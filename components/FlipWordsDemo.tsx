@@ -13,13 +13,19 @@ export function FlipWordsDemo() {
         <FlipWords words={words} />
         </div> <br />
         </div>
-        Без повече вредители с <span className="dark:text-white text-ldark ml-8">Bio DDD</span>
+        Без повече вредители с <span className="dark:text-white text-ddblue ml-8">Bio <span className="text-lgreen">DDD</span></span>
         <div className=" translate-x-[848px] -translate-y-[220px]">
-            <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/spiderb.svg" 
+            <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-light.png" 
                     alt="logo"
                     width={150} 
                     height={150}
-                    className="" />
+                    className="block dark:hidden" />
+
+            <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-dark.png" 
+                    alt="logo"
+                    width={150} 
+                    height={150}
+                    className="dark:block hidden" />
         </div>
       </div>
     </div>

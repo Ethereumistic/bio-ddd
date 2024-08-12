@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/utils/cn";
-import React, { useState } from "react";
+import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 
 import {
@@ -12,17 +12,14 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
-import { BackgroundGradientDemo } from "./BackgroundGradientDemo";
-import Image from "next/image";
+
 import { RxWidth, RxHeight  } from "react-icons/rx";
 import { GiWeight } from "react-icons/gi";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { FaPaw  } from 'react-icons/fa';
-import { GiSpermWhale } from 'react-icons/gi';
 import { GiBrokenBone } from 'react-icons/gi';
 import { MdWarning } from 'react-icons/md';
 import { BsCalendar2Heart } from "react-icons/bs";
-import { GiRat } from 'react-icons/gi';
 import { FaRegMoon } from "react-icons/fa";
 import { PiBowlFoodBold } from "react-icons/pi";
 

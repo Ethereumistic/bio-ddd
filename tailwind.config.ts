@@ -25,7 +25,7 @@ const config: Config = {
       colors: {
         lgreen: " #5ebb46 ", 
         dgreen: " #172e08 ",
-        lred: " #FF1616 ",
+        lred: " #5ebb46 ",
         lblack: " #1A1A1A ",
         ldark: " #121212 ",
         dred: " #4C0414 ",
@@ -33,6 +33,7 @@ const config: Config = {
         dyellow: " #60562E ",
         lblue: " #003174 ",
         dblue: " #020617 ",
+        ddblue:" #003174",
       },
 
       fontFamily: {
