@@ -164,13 +164,26 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
     transition={{ duration: 0.3 }}
   >
     <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 
-        rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col  text-xl'>
+    {typeof content === 'string' ? (
+      <p>{content}</p>
+    ) : (
 
-      {React.isValidElement(content) && React.Children.map(content.props.children, (child, index) => 
-      React.cloneElement(child, { key: index })
+
+      React.isValidElement(content) && React.Children.map(content.props.children, (child, index) => 
+        React.cloneElement(child, { key: index })
+      )
     )}
-    </div>
+
+
+      {/* <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 
+     rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col  text-xl'> */}
+
+      {/* {React.isValidElement(content) && React.Children.map(content.props.children, (child, index) => 
+      React.cloneElement(child, { key: index })
+    )} */}
+    {/* </div> */}
+
+
   </motion.div>
 );
 
