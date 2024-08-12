@@ -187,7 +187,7 @@ const MouseCard: React.FC<{
     transition={{ duration: 0.3 }}
   >
     <div className="flex gap-2 mb-4">
-      {(['ДОМАШНА МИШКА', 'ЧЕРЕН ПЛЪХ', 'СИВ ПЛЪХ', 'ПОЛЕВКА'] as MouseType[]).map((mouseType) => (
+    {(Object.keys(mouseData) as MouseType[]).map((mouseType) => (
       <HoverBorderGradient
       containerClassName="rounded-full "
       as="button"
