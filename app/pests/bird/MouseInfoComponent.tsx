@@ -192,27 +192,26 @@ const MouseCard: React.FC<{
     transition={{ duration: 0.3 }}
   >
     <div className="flex gap-2 mb-4">
-    {(Object.keys(mouseData) as MouseType[]).map((mouseType) => (
-      <HoverBorderGradient
-      containerClassName="rounded-full "
-      as="button"
-      className="dark:bg-black bg-white  dark:text-white flex items-center space-x-2"
-    >
-        <button
-          key={mouseType}
-          className={`px-3 py-1 rounded ${
-            selectedMouse === mouseType ? 'dark:text-white text-lgreen' : 'text-ddblue dark:text-neutral-400'
-          }`}
-          onClick={() => onSelectMouse(mouseType)}
+      {(Object.keys(mouseData) as MouseType[]).map((mouseType) => (
+        <HoverBorderGradient
+          key={mouseType} // <-- Corrected the placement of the key prop
+          containerClassName="rounded-full "
+          as="button"
+          className="dark:bg-black bg-white  dark:text-white flex items-center space-x-2"
         >
-          {mouseType}
-        </button>
+          <button
+            className={`px-3 py-1 rounded ${
+              selectedMouse === mouseType ? 'dark:text-white text-lgreen' : 'text-ddblue dark:text-neutral-400'
+            }`}
+            onClick={() => onSelectMouse(mouseType)}
+          >
+            {mouseType}
+          </button>
         </HoverBorderGradient>
-
       ))}
-      </div>
+    </div>
 
-      <Image 
+    <Image 
       src={mouseData[selectedMouse].imageUrl} 
       alt={selectedMouse} 
       width={400}
@@ -221,7 +220,6 @@ const MouseCard: React.FC<{
     />
     <h2 className="text-xl font-bold mb-2">{selectedMouse}</h2>
     <p>{mouseData[selectedMouse].latinName}</p>
-    {/* Add more details about the selected mouse here */}
   </motion.div>
 );
 
