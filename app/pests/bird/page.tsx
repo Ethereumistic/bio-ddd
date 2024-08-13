@@ -1,11 +1,11 @@
-import MouseInfoComponent from './MouseInfoComponent'
+import BirdInfoComponent from './BirdInfoComponent'
 
 
 export default function Bird() {
 
     return (
-        <div className='overflow-x-hidden overflow-y-hidden mt-32'>
-            <MouseInfoComponent />
+        <div className=' mt-32'>
+            <BirdInfoComponent />
         </div>
     )
 }

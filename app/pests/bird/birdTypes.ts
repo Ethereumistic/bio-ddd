@@ -1,5 +1,5 @@
 // types.ts
-export interface MouseInfo {
+export interface BirdInfo {
   latinName: string;
   imageUrl: string;
     appearance: {
@@ -15,6 +15,7 @@ export interface MouseInfo {
       gestation: string;
     };
     signs: string[];
+    desc: string;
   };
   
-  export type MouseType = 'ДОМАШНА МИШКА' | 'ЧЕРЕН ПЛЪХ' | 'СИВ ПЛЪХ' | 'ПОЛЕВКА';
+  export type BirdType = 'ГЪЛЪБ' | 'ГАРВАН' | 'ЧАЙКА' | 'ГЛАРУС';

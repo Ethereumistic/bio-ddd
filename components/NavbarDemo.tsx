@@ -161,7 +161,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Змии"
-              href="https://userogue.com"
+              href="/pests/snake"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/snake.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/snake.png"
 
@@ -177,7 +177,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Птици"
-              href="https://userogue.com"
+              href="/pests/bird"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bird.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bird.png"
 

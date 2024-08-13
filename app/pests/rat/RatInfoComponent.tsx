@@ -1,16 +1,20 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MouseInfo, MouseType } from './mouseTypes'
+import { RatInfo, RatType } from './ratTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
 import { GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { GoDotFill } from "react-icons/go";
 import { FaExclamationTriangle } from "react-icons/fa";
+import { AnimatePresence } from 'framer-motion';
 
 import Image from 'next/image';
-const mouseData: Record<MouseType, MouseInfo> = {
+import { BackgroundGradient } from '@/components/ui/background-gradient';
+
+
+const ratData: Record<RatType, RatInfo> = {
   'ДОМАШНА МИШКА': {
     latinName: 'Mus musculus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Mus-musculus.png',
@@ -27,6 +31,7 @@ const mouseData: Record<MouseType, MouseInfo> = {
       gestation: '19-21 days'
     },
     signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
+    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
   },
   'ЧЕРЕН ПЛЪХ': {
       latinName: 'Rattus rattus',
@@ -44,6 +49,8 @@ const mouseData: Record<MouseType, MouseInfo> = {
         gestation: '21-23 days'
       },
       signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
+      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
+
     },
   'СИВ ПЛЪХ': {
       latinName: 'Rattus norvegicus',
@@ -61,6 +68,8 @@ const mouseData: Record<MouseType, MouseInfo> = {
         gestation: '21-23 days'
       },
       signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
+      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
+
     },
   'ПОЛЕВКА': {
       latinName: 'Microtus arvalis',
@@ -78,46 +87,55 @@ const mouseData: Record<MouseType, MouseInfo> = {
         gestation: '19-21 days'
       },
       signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
+      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
+
     },
 };
-const MouseInfoComponent: React.FC = () => {
-  const [selectedMouse, setSelectedMouse] = useState<MouseType>('ДОМАШНА МИШКА');
+const RatInfoComponent: React.FC = () => {
+  const [selectedRat, setSelectedRat] = useState<RatType>('ДОМАШНА МИШКА');
 
-  const handleMouseSelect = (mouseType: MouseType) => {
-    setSelectedMouse(mouseType);
+
+  const handleRatSelect = (ratType: RatType) => {
+    setSelectedRat(ratType);
   };
 
-  const currentMouse = mouseData[selectedMouse];
+  const currentRat = ratData[selectedRat];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 p-4">
+  //   <AnimatePresence>
+  //   <motion.div
+  //   initial={{ opacity: 0 }}
+  //   animate={{ opacity: 1 }}
+  //   transition={{ duration: 0.5 }}
+  // >
+    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentMouse.latinName} />
+        <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentRat.latinName} />
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
         <li className="flex ">
           <RxWidth className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentMouse.appearance.length}
+          {currentRat.appearance.length}
         </li>
         <li className="flex ">
           <RxHeight className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentMouse.appearance.height}
+          {currentRat.appearance.height}
         </li>
         <li className="flex ">
           <GiWeight className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentMouse.appearance.weight}
+          {currentRat.appearance.weight}
         </li>
         <li className="flex ">
           <IoColorPaletteOutline className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentMouse.appearance.color}
+          {currentRat.appearance.color}
         </li>
       </ul>
           </>
         } />
         <InfoBox title="ВРЕДИ" content={
           <ul>
-            {currentMouse.dangers.map((danger, index) => (
+            {currentRat.dangers.map((danger, index) => (
               <li key={index}
               className='flex'><FaExclamationTriangle className='mt-1 scale-[0.7] mr-3'/>{danger}</li>
             ))}
@@ -125,7 +143,7 @@ const MouseInfoComponent: React.FC = () => {
         } />
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentMouse.behavior.map((behavior, index) => (
+            {currentRat.behavior.map((behavior, index) => (
               <li key={index}
               className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
             ))}
@@ -133,36 +151,42 @@ const MouseInfoComponent: React.FC = () => {
         } />
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
-            <p>{currentMouse.reproduction.offspring}</p>
-            <p>{currentMouse.reproduction.gestation}</p>
+            <p>{currentRat.reproduction.offspring}</p>
+            <p>{currentRat.reproduction.gestation}</p>
           </>
         } />
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
-            {currentMouse.signs.map((sign, index) => (
+            {currentRat.signs.map((sign, index) => (
               <li key={index}>{sign}</li>
             ))}
           </ul>
         } />
       </div>
       <div className="flex-1">
-        <MouseCard
-          selectedMouse={selectedMouse}
-          onSelectMouse={handleMouseSelect}
+        <RatCard
+          selectedRat={selectedRat}
+          onSelectRat={handleRatSelect}
         />
       </div>
     </div>
+
+    // {/* </motion.div> */}
+    // {/* </AnimatePresence> */}
+
+
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
   
-  <motion.div
-    className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3 }}
-  >
+  // <motion.div
+  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
+  //   initial={{ opacity: 1, y: 20 }}
+  //   animate={{ opacity: 1, y: 0 }}
+  //   transition={{ duration: 0.3 }}
+  // >
+    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300'>
     <h3 className="text-2xl mb-2">{title}</h3>
     <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
       {typeof content === 'string' ? (
@@ -175,52 +199,54 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
       )}
     </div>
 
+    </div>
+   // </motion.div>
 
-  </motion.div>
 );
 
 
 
-const MouseCard: React.FC<{
-  selectedMouse: MouseType;
-  onSelectMouse: (mouseType: MouseType) => void;
-}> = ({ selectedMouse, onSelectMouse }) => (
-  <motion.div
-    className=" p-4 rounded-lg shadow-md"
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.3 }}
-  >
+const RatCard: React.FC<{
+  selectedRat: RatType;
+  onSelectRat: (ratType: RatType) => void;
+}> = ({ selectedRat, onSelectRat}) => (
+  // <motion.div  
+  //   className=" p-4 rounded-lg shadow-md"
+  //   initial={{ opacity: 1, scale: 0.9 }}
+  //   animate={{ opacity: 1, scale: 1 }}
+  //   transition={{ duration: 0.3 }}
+  // >
+  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+
+    <div className='p-4 rounded-lg  '>
     <div className="flex gap-2 mb-4">
-      {(Object.keys(mouseData) as MouseType[]).map((mouseType) => (
-        <HoverBorderGradient
-          key={mouseType} // <-- Corrected the placement of the key prop
-          containerClassName="rounded-full "
-          as="button"
-          className="dark:bg-black bg-white  dark:text-white flex items-center space-x-2"
-        >
+      {(Object.keys(ratData) as RatType[]).map((ratType) => (
+
           <button
-            className={`px-3 py-1 rounded ${
-              selectedMouse === mouseType ? 'dark:text-white text-lgreen' : 'text-ddblue dark:text-neutral-400'
+            key={ratType} // <-- Corrected the placement of the key prop
+            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-4   ${
+              selectedRat === ratType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
             }`}
-            onClick={() => onSelectMouse(mouseType)}
+            onClick={() => onSelectRat(ratType)}
           >
-            {mouseType}
+            {ratType}
           </button>
-        </HoverBorderGradient>
       ))}
     </div>
 
     <Image 
-      src={mouseData[selectedMouse].imageUrl} 
-      alt={selectedMouse} 
-      width={400}
-      height={400}
-      className=" rounded-lg mb-4"
+      src={ratData[selectedRat].imageUrl} 
+      alt={selectedRat} 
+      width={450}
+      height={450}
+      className=" rounded-lg mb-4 mx-auto"
     />
-    <h2 className="text-xl font-bold mb-2">{selectedMouse}</h2>
-    <p>{mouseData[selectedMouse].latinName}</p>
-  </motion.div>
+    <h2 className="text-xl font-bold mb-2">{selectedRat}</h2>
+    <p className=' text-start'>{ratData[selectedRat].desc}</p>
+    </div>
+
+    </BackgroundGradient>
+    // </motion.div> 
 );
 
-export default MouseInfoComponent;
+export default RatInfoComponent;
