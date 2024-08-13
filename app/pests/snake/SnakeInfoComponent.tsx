@@ -225,44 +225,49 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 const SnakeCard: React.FC<{
   selectedSnake: SnakeType;
   onSelectSnake: (snakeType: SnakeType) => void;
-}> = ({ selectedSnake, onSelectSnake}) => (
-  // <motion.div  
-  //   className=" p-4 rounded-lg shadow-md"
-  //   initial={{ opacity: 1, scale: 0.9 }}
-  //   animate={{ opacity: 1, scale: 1 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+}> = ({ selectedSnake, onSelectSnake }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-    <div className='p-4 rounded-lg  '>
-    <div className="flex gap-2 mb-4">
-      {(Object.keys(snakeData) as SnakeType[]).map((snakeType) => (
+  return (
+    <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
+      <div className="p-4 rounded-lg">
+        <div className="flex gap-2 mb-4">
+          {(Object.keys(snakeData) as SnakeType[]).map((snakeType) => (
+            <button
+              key={snakeType}
+              className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-4 ${
+                selectedSnake === snakeType
+                  ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen'
+                  : 'text-ddblue dark:text-neutral-100'
+              }`}
+              onClick={() => onSelectSnake(snakeType)}
+            >
+              {snakeType}
+            </button>
+          ))}
+        </div>
 
-          <button
-            key={snakeType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-4   ${
-              selectedSnake === snakeType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
-            }`}
-            onClick={() => onSelectSnake(snakeType)}
-          >
-            {snakeType}
-          </button>
-      ))}
-    </div>
-
-    <Image 
-      src={snakeData[selectedSnake].imageUrl} 
-      alt={selectedSnake} 
-      width={450}
-      height={450}
-      className=" rounded-lg mb-4 mx-auto"
-    />
-    <h2 className="text-xl font-bold mb-2">{selectedSnake}</h2>
-    <p className=' text-start'>{snakeData[selectedSnake].desc}</p>
-    </div>
-
+        <div className="relative">
+          {!isImageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-200 rounded-lg">
+              <p>Loading...</p> {/* Replace with a spinner if desired */}
+            </div>
+          )}
+          <Image
+            src={snakeData[selectedSnake].imageUrl}
+            alt={selectedSnake}
+            width={450}
+            height={450}
+            className={`rounded-lg mb-4 mx-auto ${isImageLoaded ? '' : 'opacity-0'}`} // Hide image while loading
+            onLoadingComplete={() => setIsImageLoaded(true)}
+          />
+        </div>
+        
+        <h2 className="text-xl font-bold mb-2">{selectedSnake}</h2>
+        <p className='text-start'>{snakeData[selectedSnake].desc}</p>
+      </div>
     </BackgroundGradient>
-    // </motion.div> 
-);
+  );
+};
 
 export default SnakeInfoComponent;
