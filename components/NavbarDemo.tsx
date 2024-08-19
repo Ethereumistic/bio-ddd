@@ -106,14 +106,14 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Дървеници"
-              href="https://gomoonbeam.com"
+              href="/pests/bedbug"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bedbug.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bedbug.png"
               description="Прогонете досадните дървеници, които ви пречат да спите спокойно!"
             />
             <ProductItem
               title="Бълхи"
-              href="https://userogue.com"
+              href="/pests/flea"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/flea2.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/flea.png"
 
@@ -121,7 +121,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Мухи"
-              href="https://userogue.com"
+              href="/pests/fly"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/fly.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/fly.png"
 
@@ -129,7 +129,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Оси"
-              href="https://tailwindmasterkit.com"
+              href="/pests/wasp"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/wasp.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/wasp.png"
 
@@ -137,7 +137,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Комари"
-              href="https://gomoonbeam.com"
+              href="/pests/mosquito"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/mosquito.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/mosquito.png"
 
@@ -145,7 +145,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Кърлежи"
-              href="https://userogue.com"
+              href="/pests/tick"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/tick.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/tick.png"
 
@@ -153,7 +153,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Мравки"
-              href="https://userogue.com"
+              href="/pests/ant"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/ant.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/ant.png"
 
@@ -169,7 +169,7 @@ function Navbar({ className }: { className?: string }) {
             />
             <ProductItem
               title="Паяци"
-              href="https://userogue.com"
+              href="/pests/spider"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/spider.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/spider.png"
 

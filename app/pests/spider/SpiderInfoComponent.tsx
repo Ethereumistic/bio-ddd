@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { SnakeInfo, SnakeType } from './snakeTypes'
+import { SpiderInfo, SpiderType } from './spiderTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
 import { GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
@@ -11,10 +11,10 @@ import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 
-const snakeData: Record<SnakeType, SnakeInfo> = {
-  'ВОДЕН СМОК': {
-    latinName: 'Mus musculus',
-    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/natrix.png',
+const spiderData: Record<SpiderType, SpiderInfo> = {
+  'КЪЩЕН ПАЯК': {
+    latinName: 'Tegenaria domestica',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/dompaqk.png',
     appearance: {
       length: '10-15 cm',
       height: '3-5 cm',
@@ -30,9 +30,9 @@ const snakeData: Record<SnakeType, SnakeInfo> = {
     signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
     desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
   },
-  'МЕДЯНКА': {
-      latinName: 'Rattus rattus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/coronella.png',
+  'КРЪСТОНОСЕН': {
+      latinName: 'Araneus diadematus',
+      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/crosspaqk.png',
       appearance: {
         length: '16-24 cm',
         height: '4-5 cm',
@@ -49,9 +49,9 @@ const snakeData: Record<SnakeType, SnakeInfo> = {
       desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
 
     },
-  'ПЕПЕЛЯНКА': {
-      latinName: 'Rattus norvegicus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/pepelqnka.png',
+  'ЧЕРНА ВДОВИЦА': {
+      latinName: 'Latrodectus tredecimguttatus',
+      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/blackwidow.png',
       appearance: {
         length: '20-25 cm',
         height: '5-7 cm',
@@ -68,9 +68,9 @@ const snakeData: Record<SnakeType, SnakeInfo> = {
       desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
 
     },
-  'ЖЪЛТОКАФЯВ СМОК': {
-      latinName: 'Microtus arvalis',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultsmok.png',
+  'ЖЪЛТ ПАЯК': {
+      latinName: 'Cheiracanthium punctorium',
+      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultpaqk.png',
       appearance: {
         length: '8-12 cm',
         height: '2-3 cm',
@@ -83,13 +83,13 @@ const snakeData: Record<SnakeType, SnakeInfo> = {
         offspring: '3-7',
         gestation: '19-21 days'
       },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
+      signs: ['Runways in grass', 'Gnaw marks on plspiders and crops'],
       desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
 
     },
-    'УСОЙНИЦА': {
-        latinName: 'Microtus arvalis',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/usoinica.png',
+    'КАМЕНЕН': {
+        latinName: 'Eresus sandaliatus',
+        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/kamenenpaqk.png',
         appearance: {
           length: '8-12 cm',
           height: '2-3 cm',
@@ -102,20 +102,20 @@ const snakeData: Record<SnakeType, SnakeInfo> = {
           offspring: '3-7',
           gestation: '19-21 days'
         },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
+        signs: ['Runways in grass', 'Gnaw marks on plspiders and crops'],
         desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
   
       },
 };
-const SnakeInfoComponent: React.FC = () => {
-  const [selectedSnake, setSelectedSnake] = useState<SnakeType>('ВОДЕН СМОК');
+const SpiderInfoComponent: React.FC = () => {
+  const [selectedSpider, setSelectedSpider] = useState<SpiderType>('КЪЩЕН ПАЯК');
 
 
-  const handleSnakeSelect = (snakeType: SnakeType) => {
-    setSelectedSnake(snakeType);
+  const handleSpiderSelect = (spiderType: SpiderType) => {
+    setSelectedSpider(spiderType);
   };
 
-  const currentSnake = snakeData[selectedSnake];
+  const currentSpider = spiderData[selectedSpider];
 
   return (
   //   <AnimatePresence>
@@ -126,32 +126,32 @@ const SnakeInfoComponent: React.FC = () => {
   // >
     <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentSnake.latinName} />
+        <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentSpider.latinName} />
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
         <li className="flex ">
           <RxWidth className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentSnake.appearance.length}
+          {currentSpider.appearance.length}
         </li>
         <li className="flex ">
           <RxHeight className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentSnake.appearance.height}
+          {currentSpider.appearance.height}
         </li>
         <li className="flex ">
           <GiWeight className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentSnake.appearance.weight}
+          {currentSpider.appearance.weight}
         </li>
         <li className="flex ">
           <IoColorPaletteOutline className="h-6 w-6 text-neutral-500 mr-4" />
-          {currentSnake.appearance.color}
+          {currentSpider.appearance.color}
         </li>
       </ul>
           </>
         } />
         <InfoBox title="ВРЕДИ" content={
           <ul>
-            {currentSnake.dangers.map((danger, index) => (
+            {currentSpider.dangers.map((danger, index) => (
               <li key={index}
               className='flex'><FaExclamationTriangle className='mt-1 scale-[0.7] mr-3'/>{danger}</li>
             ))}
@@ -159,7 +159,7 @@ const SnakeInfoComponent: React.FC = () => {
         } />
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentSnake.behavior.map((behavior, index) => (
+            {currentSpider.behavior.map((behavior, index) => (
               <li key={index}
               className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
             ))}
@@ -167,22 +167,22 @@ const SnakeInfoComponent: React.FC = () => {
         } />
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
-            <p>{currentSnake.reproduction.offspring}</p>
-            <p>{currentSnake.reproduction.gestation}</p>
+            <p>{currentSpider.reproduction.offspring}</p>
+            <p>{currentSpider.reproduction.gestation}</p>
           </>
         } />
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
-            {currentSnake.signs.map((sign, index) => (
+            {currentSpider.signs.map((sign, index) => (
               <li key={index}>{sign}</li>
             ))}
           </ul>
         } />
       </div>
       <div className="flex-1">
-        <SnakeCard
-          selectedSnake={selectedSnake}
-          onSelectSnake={handleSnakeSelect}
+        <SpiderCard
+          selectedSpider={selectedSpider}
+          onSelectSpider={handleSpiderSelect}
         />
       </div>
     </div>
@@ -222,11 +222,10 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 
 
 
-const SnakeCard: React.FC<{
-  selectedSnake: SnakeType;
-  onSelectSnake: (snakeType: SnakeType) => void;
-}> = ({ selectedSnake, onSelectSnake}) => (
-  
+const SpiderCard: React.FC<{
+  selectedSpider: SpiderType;
+  onSelectSpider: (spiderType: SpiderType) => void;
+}> = ({ selectedSpider, onSelectSpider}) => (
   // <motion.div  
   //   className=" p-4 rounded-lg shadow-md"
   //   initial={{ opacity: 1, scale: 0.9 }}
@@ -237,33 +236,33 @@ const SnakeCard: React.FC<{
 
     <div className='p-4 rounded-lg  '>
     <div className="flex gap-2 mb-4">
-      {(Object.keys(snakeData) as SnakeType[]).map((snakeType) => (
+      {(Object.keys(spiderData) as SpiderType[]).map((spiderType) => (
 
           <button
-            key={snakeType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-4   ${
-              selectedSnake === snakeType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
+            key={spiderType} // <-- Corrected the placement of the key prop
+            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto   ${
+              selectedSpider === spiderType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
             }`}
-            onClick={() => onSelectSnake(snakeType)}
+            onClick={() => onSelectSpider(spiderType)}
           >
-            {snakeType}
+            {spiderType}
           </button>
       ))}
     </div>
 
     <Image 
-      src={snakeData[selectedSnake].imageUrl} 
-      alt={selectedSnake} 
+      src={spiderData[selectedSpider].imageUrl} 
+      alt={selectedSpider} 
       width={450}
       height={450}
       className=" rounded-lg mb-4 mx-auto"
     />
-    <h2 className="text-xl font-bold mb-2">{selectedSnake}</h2>
-    <p className=' text-start'>{snakeData[selectedSnake].desc}</p>
+    <h2 className="text-xl font-bold mb-2">{selectedSpider}</h2>
+    <p className=' text-start'>{spiderData[selectedSpider].desc}</p>
     </div>
 
     </BackgroundGradient>
     // </motion.div> 
 );
 
-export default SnakeInfoComponent;
+export default SpiderInfoComponent;

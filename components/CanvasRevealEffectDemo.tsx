@@ -5,17 +5,22 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { FaViruses } from "react-icons/fa";
 import { HiBugAnt } from "react-icons/hi2";
+import Link from "next/link";
 
 export function CanvasRevealEffectDemo() {
   return (
     <>
       <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-dblue w-full gap-4 mx-auto px-8 space-x-32">
+      <Link href="/disinfection">
         <Card title="Дезинфекция" icon={<FaViruses className="text-emerald-500" size={120}/>}>
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
           />
         </Card>
+      </Link>
+
+      <Link href="/disinfection">
         <Card title="Дезинсекция" icon={<HiBugAnt className="text-red-700" size={120}/>}>
           <CanvasRevealEffect
             animationSpeed={3}
@@ -29,6 +34,9 @@ export function CanvasRevealEffectDemo() {
           {/* Radial gradient for the cute fade */}
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
         </Card>
+      </Link>
+      
+        <Link href="/disinfection">
         <Card title="Дератизация" icon={<RatIcon />}>
           <CanvasRevealEffect
             animationSpeed={3}
@@ -36,6 +44,7 @@ export function CanvasRevealEffectDemo() {
             colors={[[125, 211, 252]]}
           />
         </Card>
+        </Link>
       </div>
     </>
   );

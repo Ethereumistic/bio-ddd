@@ -38,7 +38,7 @@ export const projects = [
       "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
     link: "https://meta.com",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/flea2.png",
-    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/flea2.png",
+    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/flea.png",
   },
   {
     title: "Мухи",
