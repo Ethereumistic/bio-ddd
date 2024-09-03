@@ -145,6 +145,7 @@ const CockroachInfoComponent: React.FC = () => {
           onSelectCockroach={handleCockroachSelect}
         />
       </div>
+
     </div>
 
     // {/* </motion.div> */}
