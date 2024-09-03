@@ -6,7 +6,7 @@ import { GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Suspense } from 'react';
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
@@ -286,6 +286,7 @@ const AntCard: React.FC<{
             animate={{ opacity: 1, scale: 1.1 }}
             transition={{ duration: 0.4 }}
           >
+            <AnimatePresence>
               {isLoading && (
                 <motion.div
                   initial={{ opacity: 1 }}
@@ -296,6 +297,9 @@ const AntCard: React.FC<{
                   <Loading />
                 </motion.div>
               )}
+             </AnimatePresence>
+
+             <AnimatePresence>
             <Image 
               key={imageKey}
               src={antData[selectedAnt].imageUrl} 
@@ -305,6 +309,8 @@ const AntCard: React.FC<{
               className="rounded-lg"
               onLoadingComplete={() => setIsLoading(false)}
             />
+            </AnimatePresence>
+
           </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedAnt}</h2>
