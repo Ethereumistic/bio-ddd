@@ -201,10 +201,13 @@ const AntInfoComponent: React.FC = () => {
         } />
       </div>
       <div className="flex-1">
+      <Suspense fallback={<Loading />}>
+
         <AntCard
           selectedAnt={selectedAnt}
           onSelectAnt={handleAntSelect}
         />
+        </Suspense>
       </div>
     </div>
 
@@ -270,7 +273,6 @@ const AntCard: React.FC<{
           </button>
       ))}
     </div>
-    <Suspense fallback={<Loading />}>
 
     <Image 
       src={antData[selectedAnt].imageUrl} 
@@ -279,7 +281,6 @@ const AntCard: React.FC<{
       height={450}
       className=" rounded-lg mb-4 mx-auto"
     />
-    </Suspense>
     <h2 className="text-xl font-bold mb-2">{selectedAnt}</h2>
     <p className=' text-start'>{antData[selectedAnt].desc}</p>
     </div>
