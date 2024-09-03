@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AntInfo, AntType } from './antTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
 import { GiWeight } from 'react-icons/gi';
@@ -249,44 +249,70 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 const AntCard: React.FC<{
   selectedAnt: AntType;
   onSelectAnt: (antType: AntType) => void;
-}> = ({ selectedAnt, onSelectAnt}) => (
-  <motion.div  
-    className=" p-4 rounded-lg shadow-md"
-    initial={{ opacity: 1, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.3 }}
-  >
-  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+}> = ({ selectedAnt, onSelectAnt }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageKey, setImageKey] = useState(0);
 
-    <div className='p-4 rounded-lg  '>
-    <div className="flex gap-2 mb-4">
-      {(Object.keys(antData) as AntType[]).map((antType) => (
+  useEffect(() => {
+    setIsLoading(true);
+    setImageKey(prevKey => prevKey + 1);
+  }, [selectedAnt]);
 
-          <button
-            key={antType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto   ${
-              selectedAnt === antType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
-            }`}
-            onClick={() => onSelectAnt(antType)}
+  return (
+    <motion.div  
+      className="p-4 rounded-lg shadow-md"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
+        <div className='p-4 rounded-lg'>
+          <div className="flex gap-2 mb-4">
+            {(Object.keys(antData) as AntType[]).map((antType) => (
+              <button
+                key={antType}
+                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                  selectedAnt === antType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
+                }`}
+                onClick={() => onSelectAnt(antType)}
+              >
+                {antType}
+              </button>
+            ))}
+          </div>
+          <motion.div  
+            className="relative h-[450px]"
+            initial={{ opacity: 1, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1.1 }}
+            transition={{ duration: 0.4 }}
           >
-            {antType}
-          </button>
-      ))}
-    </div>
+              {isLoading && (
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <Loading />
+                </motion.div>
+              )}
+            <Image 
+              key={imageKey}
+              src={antData[selectedAnt].imageUrl} 
+              alt={selectedAnt} 
+              layout="fill"
+              objectFit="contain"
+              className="rounded-lg"
+              onLoadingComplete={() => setIsLoading(false)}
+            />
+          </motion.div> 
 
-    <Image 
-      src={antData[selectedAnt].imageUrl} 
-      alt={selectedAnt} 
-      width={450}
-      height={450}
-      className=" rounded-lg mb-4 mx-auto"
-    />
-    <h2 className="text-xl font-bold mb-2">{selectedAnt}</h2>
-    <p className=' text-start'>{antData[selectedAnt].desc}</p>
-    </div>
-
-    </BackgroundGradient>
-   </motion.div> 
-);
+          <h2 className="text-xl font-bold mb-2 mt-4">{selectedAnt}</h2>
+          <p className='text-start'>{antData[selectedAnt].desc}</p>
+        </div>
+      </BackgroundGradient>
+    </motion.div> 
+  );
+};
 
 export default AntInfoComponent;
