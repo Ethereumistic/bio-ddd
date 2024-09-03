@@ -1,15 +1,15 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BedbugInfo, BedbugType } from './bedbugTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
 import { GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
 import { FaExclamationTriangle } from "react-icons/fa";
-
+import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
-
+import Loading from '@/app/loading';
 
 const bedbugData: Record<BedbugType, BedbugInfo> = {
   'КРЕВАТНА': {
@@ -83,7 +83,7 @@ const bedbugData: Record<BedbugType, BedbugInfo> = {
         offspring: '3-7',
         gestation: '19-21 days'
       },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
+      signs: ['Runways in grass', 'Gnaw marks on plbedbugs and crops'],
       desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
 
     },
@@ -206,44 +206,76 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 const BedbugCard: React.FC<{
   selectedBedbug: BedbugType;
   onSelectBedbug: (bedbugType: BedbugType) => void;
-}> = ({ selectedBedbug, onSelectBedbug}) => (
-  // <motion.div  
-  //   className=" p-4 rounded-lg shadow-md"
-  //   initial={{ opacity: 1, scale: 0.9 }}
-  //   animate={{ opacity: 1, scale: 1 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+}> = ({ selectedBedbug, onSelectBedbug }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageKey, setImageKey] = useState(0);
 
-    <div className='p-4 rounded-lg  '>
-    <div className="flex gap-2 mb-4">
-      {(Object.keys(bedbugData) as BedbugType[]).map((bedbugType) => (
+  useEffect(() => {
+    setIsLoading(true);
+    setImageKey(prevKey => prevKey + 1);
+  }, [selectedBedbug]);
 
-          <button
-            key={bedbugType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto   ${
-              selectedBedbug === bedbugType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
-            }`}
-            onClick={() => onSelectBedbug(bedbugType)}
+  return (
+    <motion.div  
+      className="p-4 rounded-lg shadow-md"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
+        <div className='p-4 rounded-lg'>
+          <div className="flex gap-2 mb-4">
+            {(Object.keys(bedbugData) as BedbugType[]).map((bedbugType) => (
+              <button
+                key={bedbugType}
+                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                  selectedBedbug === bedbugType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
+                }`}
+                onClick={() => onSelectBedbug(bedbugType)}
+              >
+                {bedbugType}
+              </button>
+            ))}
+          </div>
+          <motion.div  
+            className="relative h-[450px]"
+            initial={{ opacity: 1, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1.1 }}
+            transition={{ duration: 0.4 }}
           >
-            {bedbugType}
-          </button>
-      ))}
-    </div>
+            <AnimatePresence>
+              {isLoading && (
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <Loading />
+                </motion.div>
+              )}
+             </AnimatePresence>
 
-    <Image 
-      src={bedbugData[selectedBedbug].imageUrl} 
-      alt={selectedBedbug} 
-      width={450}
-      height={450}
-      className=" rounded-lg mb-4 mx-auto"
-    />
-    <h2 className="text-xl font-bold mb-2">{selectedBedbug}</h2>
-    <p className=' text-start'>{bedbugData[selectedBedbug].desc}</p>
-    </div>
+             <AnimatePresence>
+            <Image 
+              key={imageKey}
+              src={bedbugData[selectedBedbug].imageUrl} 
+              alt={selectedBedbug} 
+              layout="fill"
+              objectFit="contain"
+              className="rounded-lg"
+              onLoadingComplete={() => setIsLoading(false)}
+            />
+            </AnimatePresence>
 
-    </BackgroundGradient>
-    // </motion.div> 
-);
+          </motion.div> 
+
+          <h2 className="text-xl font-bold mb-2 mt-4">{selectedBedbug}</h2>
+          <p className='text-start'>{bedbugData[selectedBedbug].desc}</p>
+        </div>
+      </BackgroundGradient>
+    </motion.div> 
+  );
+};
 
 export default BedbugInfoComponent;

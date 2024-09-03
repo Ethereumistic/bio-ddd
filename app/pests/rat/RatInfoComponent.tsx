@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { RatInfo, RatType } from './ratTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
 import { GiWeight } from 'react-icons/gi';
@@ -8,8 +7,8 @@ import { IoColorPaletteOutline } from 'react-icons/io5';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { GoDotFill } from "react-icons/go";
 import { FaExclamationTriangle } from "react-icons/fa";
-import { AnimatePresence } from 'framer-motion';
-
+import { motion, AnimatePresence } from "framer-motion";
+import Loading from '@/app/loading';
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -209,44 +208,76 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 const RatCard: React.FC<{
   selectedRat: RatType;
   onSelectRat: (ratType: RatType) => void;
-}> = ({ selectedRat, onSelectRat}) => (
-  // <motion.div  
-  //   className=" p-4 rounded-lg shadow-md"
-  //   initial={{ opacity: 1, scale: 0.9 }}
-  //   animate={{ opacity: 1, scale: 1 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+}> = ({ selectedRat, onSelectRat }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageKey, setImageKey] = useState(0);
 
-    <div className='p-4 rounded-lg  '>
-    <div className="flex gap-2 mb-4">
-      {(Object.keys(ratData) as RatType[]).map((ratType) => (
+  useEffect(() => {
+    setIsLoading(true);
+    setImageKey(prevKey => prevKey + 1);
+  }, [selectedRat]);
 
-          <button
-            key={ratType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-4   ${
-              selectedRat === ratType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
-            }`}
-            onClick={() => onSelectRat(ratType)}
+  return (
+    <motion.div  
+      className="p-4 rounded-lg shadow-md"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
+        <div className='p-4 rounded-lg'>
+          <div className="flex gap-2 mb-4">
+            {(Object.keys(ratData) as RatType[]).map((ratType) => (
+              <button
+                key={ratType}
+                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                  selectedRat === ratType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
+                }`}
+                onClick={() => onSelectRat(ratType)}
+              >
+                {ratType}
+              </button>
+            ))}
+          </div>
+          <motion.div  
+            className="relative h-[450px]"
+            initial={{ opacity: 1, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1.1 }}
+            transition={{ duration: 0.4 }}
           >
-            {ratType}
-          </button>
-      ))}
-    </div>
+            <AnimatePresence>
+              {isLoading && (
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <Loading />
+                </motion.div>
+              )}
+             </AnimatePresence>
 
-    <Image 
-      src={ratData[selectedRat].imageUrl} 
-      alt={selectedRat} 
-      width={450}
-      height={450}
-      className=" rounded-lg mb-4 mx-auto"
-    />
-    <h2 className="text-xl font-bold mb-2">{selectedRat}</h2>
-    <p className=' text-start'>{ratData[selectedRat].desc}</p>
-    </div>
+             <AnimatePresence>
+            <Image 
+              key={imageKey}
+              src={ratData[selectedRat].imageUrl} 
+              alt={selectedRat} 
+              layout="fill"
+              objectFit="contain"
+              className="rounded-lg"
+              onLoadingComplete={() => setIsLoading(false)}
+            />
+            </AnimatePresence>
 
-    </BackgroundGradient>
-    // </motion.div> 
-);
+          </motion.div> 
+
+          <h2 className="text-xl font-bold mb-2 mt-4">{selectedRat}</h2>
+          <p className='text-start'>{ratData[selectedRat].desc}</p>
+        </div>
+      </BackgroundGradient>
+    </motion.div> 
+  );
+};
 
 export default RatInfoComponent;
