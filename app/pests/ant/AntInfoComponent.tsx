@@ -6,6 +6,7 @@ import { GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
 import { FaExclamationTriangle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
@@ -244,44 +245,57 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
 const AntCard: React.FC<{
   selectedAnt: AntType;
   onSelectAnt: (antType: AntType) => void;
-}> = ({ selectedAnt, onSelectAnt}) => (
-  // <motion.div  
-  //   className=" p-4 rounded-lg shadow-md"
-  //   initial={{ opacity: 1, scale: 0.9 }}
-  //   animate={{ opacity: 1, scale: 1 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-  <BackgroundGradient className="rounded-[22px]  p-4 sm:px-10 bg-white dark:bg-zinc-900">
+}> = ({ selectedAnt, onSelectAnt }) => {
+  const [isLoading, setIsLoading] = useState(true);
 
-    <div className='p-4 rounded-lg  '>
-    <div className="flex gap-2 mb-4">
-      {(Object.keys(antData) as AntType[]).map((antType) => (
+  return (
+    <motion.div
+      className="p-4 rounded-lg shadow-md"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
+        <div className="p-4 rounded-lg">
+          <div className="flex gap-2 mb-4">
+            {(Object.keys(antData) as AntType[]).map((antType) => (
+              <button
+                key={antType}
+                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                  selectedAnt === antType
+                    ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen'
+                    : 'text-ddblue dark:text-neutral-100'
+                }`}
+                onClick={() => onSelectAnt(antType)}
+              >
+                {antType}
+              </button>
+            ))}
+          </div>
 
-          <button
-            key={antType} // <-- Corrected the placement of the key prop
-            className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto   ${
-              selectedAnt === antType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100 '
+          {isLoading && (
+            <div className="flex items-center justify-center h-[450px] mb-4">
+              <div className="loader"></div> {/* Replace with your loader component or animation */}
+            </div>
+          )}
+
+          <Image
+            src={antData[selectedAnt].imageUrl}
+            alt={selectedAnt}
+            width={450}
+            height={450}
+            className={`rounded-lg mb-4 mx-auto transition-opacity duration-300 ${
+              isLoading ? 'opacity-0' : 'opacity-100'
             }`}
-            onClick={() => onSelectAnt(antType)}
-          >
-            {antType}
-          </button>
-      ))}
-    </div>
+            onLoadingComplete={() => setIsLoading(false)}
+          />
 
-    <Image 
-      src={antData[selectedAnt].imageUrl} 
-      alt={selectedAnt} 
-      width={450}
-      height={450}
-      className=" rounded-lg mb-4 mx-auto"
-    />
-    <h2 className="text-xl font-bold mb-2">{selectedAnt}</h2>
-    <p className=' text-start'>{antData[selectedAnt].desc}</p>
-    </div>
-
-    </BackgroundGradient>
-    // </motion.div> 
-);
+          <h2 className="text-xl font-bold mb-2">{selectedAnt}</h2>
+          <p className="text-start">{antData[selectedAnt].desc}</p>
+        </div>
+      </BackgroundGradient>
+    </motion.div>
+  );
+};
 
 export default AntInfoComponent;
