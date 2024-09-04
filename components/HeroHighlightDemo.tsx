@@ -21,7 +21,7 @@ export function HeroHighlightDemo() {
         }}
         className="text-2xl px-96 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white w-full leading-relaxed lg:leading-snug text-center mx-auto "
       >
-        Вашият доверен партньор за професионална{" "}
+        Вашият доверен партньор <br />за професионална{" "}<br />
         <Highlight className="text-black dark:text-white">
         Дезинфекция, Дезинсекция и Дератизация
         </Highlight>

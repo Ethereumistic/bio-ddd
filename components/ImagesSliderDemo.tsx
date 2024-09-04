@@ -6,12 +6,12 @@ import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 
 export function ImagesSliderDemo() {
   const images = [
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/21r.png",
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/14r.png",
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/15r.png",
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/16r.png",
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/22r.png",
-    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/5r.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/21.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/14.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/15.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/16.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/22.png",
+    "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/5.png",
 
   ];
   return (

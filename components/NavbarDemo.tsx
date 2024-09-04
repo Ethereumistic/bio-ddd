@@ -6,6 +6,7 @@ import ThemeSwitch from "./themeSwitch";
 import Image from "next/image";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import Link from "next/link";
+import { FlipWordsNav } from "./FlipWordsNav";
 export function NavbarDemo() {
   return (
     <div className="relative w-full flex items-center justify-center">
@@ -19,7 +20,7 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 w-full mx-auto z-50  ", className)}
+      className={cn("fixed top-10 inset-x-0 w-[40%] mx-auto z-50  ", className)}
     >
 
       <Menu setActive={setActive}>
@@ -35,7 +36,7 @@ function Navbar({ className }: { className?: string }) {
       </div>
 
         <div className="flex mt-2 space-x-16 text-xl font-bold">
-        <MenuItem setActive={setActive} active={active} item="Услуги">
+        {/* <MenuItem setActive={setActive} active={active} item="Услуги">
           <div className="grid grid-cols-3 space-y-8 space-x-4 text-sm">
             <div className="translate-x-4 translate-y-8 hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">
             <HoveredLink href="/web-dev">Контрол на Хлебарки</HoveredLink>
@@ -85,10 +86,11 @@ function Navbar({ className }: { className?: string }) {
             </div>
 
           </div>
-        </MenuItem>
-        <Link href="/pests"
-              >
-        <MenuItem setActive={setActive} active={active} item="Вредители">
+        </MenuItem> */}
+        <Link href="/pests">
+        <MenuItem setActive={setActive} active={active} item="Услуги">
+        <div className="flex justify-center items-center my-4"><FlipWordsNav /></div>
+
           <div className="  text-sm grid grid-cols-4 gap-10 p-4 ">
             <ProductItem
               title="Хлебарки"
@@ -192,14 +194,14 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem>
         </Link>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        {/* <MenuItem setActive={setActive} active={active} item="Pricing">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/hobby">Hobby</HoveredLink>
             <HoveredLink href="/individual">Individual</HoveredLink>
             <HoveredLink href="/team">Team</HoveredLink>
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
-        </MenuItem>
+        </MenuItem> */}
         </div>
         <Link href="/contact">
         <HoverBorderGradientDemo />
