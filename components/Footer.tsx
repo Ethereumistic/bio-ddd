@@ -145,7 +145,7 @@ export default function Footer() {
                 <IconMapPin />
 
               <address className="-mt-0.5 flex-1 not-italic text-gray-700 dark:text-gray-200">
-                гр. Габрово, ул. "Цар Борис" 12
+                гр. Габрово, ул. &quot;Цар Борис&quot; 12
               </address>
             </li>
           </ul>

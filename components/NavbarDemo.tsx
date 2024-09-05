@@ -46,19 +46,18 @@ export function NavbarDemo({ className }: { className?: string }) {
       <motion.div
         initial={{
           opacity: 1,
-          y: -20,
+          y: -100,
         }}
         animate={{
-          y: visible ? 0 : -20,
+          y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
-          scale: visible ? 1 : 0.5,
 
         }}
         transition={{
-          duration: 0.1,
+          duration: 0.3,
         }}
         className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto rounded-full  bg-transparent  z-[5000]   items-center justify-center space-x-32",
+          "flex  fixed top-0 inset-x-0 mx-auto rounded-full  bg-transparent  z-[5000]   items-center justify-center space-x-32",
           className
         )}
       >
