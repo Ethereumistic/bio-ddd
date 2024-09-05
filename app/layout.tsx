@@ -5,7 +5,7 @@ import { NavbarDemo } from "@/components/NavbarDemo";
 import { Providers } from "./providers";
 import localfont from "next/font/local";
 import { cx } from "@/utils/all";
-
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 const russo = localfont(
@@ -63,6 +63,7 @@ export default function RootLayout({
       <Providers>
       <NavbarDemo />
       <body className={russo.className}>{children}</body>
+      <Footer />
       </Providers>
       </div>
     </html>

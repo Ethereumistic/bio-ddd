@@ -7,11 +7,67 @@ import Image from "next/image";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
 import Link from "next/link";
 import { FlipWordsNav } from "./FlipWordsNav";
-export function NavbarDemo() {
+import MobileNavbar from "./MobileNavbar";
+import { FloatingNavDemo } from "./FloatingNavDemo";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+
+export function NavbarDemo({ className }: { className?: string }) {
+
+  const { scrollYProgress } = useScroll();
+
+  const [visible, setVisible] = useState(true);
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+
+      if (scrollYProgress.get() < 0.05) {
+        setVisible(true);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
+
   return (
     <div className="relative w-full flex items-center justify-center">
+
+<AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: -20,
+        }}
+        animate={{
+          y: visible ? 0 : -20,
+          opacity: visible ? 1 : 0,
+          scale: visible ? 1 : 0.5,
+
+        }}
+        transition={{
+          duration: 0.1,
+        }}
+        className={cn(
+          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto rounded-full  bg-transparent  z-[5000]   items-center justify-center space-x-32",
+          className
+        )}
+      >
+
       <Navbar className="top-0" />
 
+      </motion.div>
+      </AnimatePresence>
+        
     </div>
   );
 }
@@ -19,12 +75,16 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
+    <div>
+      <div className="sm:hidden">
+      <FloatingNavDemo />
+      </div>
     <div
-      className={cn("fixed top-10 inset-x-0 w-[40%] mx-auto z-50  ", className)}
+      className={cn("fixed top-10 inset-x-0  w-full px-4 md:px-0 md:w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] sm:block hidden mx-auto z-50  ", className)}
     >
 
       <Menu setActive={setActive}>
-    <div className="flex flex-col space-x-4 -translate-y-[22px] hover:scale-105 transition duration-700">
+    <div className="flex flex-col space-x-0 md:space-x-4 -translate-y-[22px] hover:scale-105 transition duration-700">
       <LogoImage
               title="Bio DDD"
               href="/"
@@ -91,7 +151,7 @@ function Navbar({ className }: { className?: string }) {
         <MenuItem setActive={setActive} active={active} item="Услуги">
         <div className="flex justify-center items-center my-4"><FlipWordsNav /></div>
 
-          <div className="  text-sm grid grid-cols-4 gap-10 p-4 ">
+          <div className=" text-sm grid grid-cols-4 gap-10 p-4 ">
             <ProductItem
               title="Хлебарки"
               href="/pests/cockroach"
@@ -203,12 +263,14 @@ function Navbar({ className }: { className?: string }) {
           </div>
         </MenuItem> */}
         </div>
-        <Link href="/contact">
+        <Link href="/contact"
+              className="">
         <HoverBorderGradientDemo />
         </Link>
         <ThemeSwitch />
 
       </Menu>
+    </div>
     </div>
   );
 }

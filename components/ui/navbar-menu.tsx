@@ -1,7 +1,11 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import React, { useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";import Link from "next/link";
 import Image from "next/image";
 
 const transition = {
@@ -24,6 +28,8 @@ export const MenuItem = ({
   item: string;
   children?: React.ReactNode;
 }) => {
+
+
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
@@ -100,15 +106,18 @@ export const Menu = ({
   children: React.ReactNode;
 }) => {
   return (
-
+    <div className="boder border-transparent 
+      dark:bg-gray-800/50 dark:border-white/[0.2] bg-slate-200/50 rounded-full">
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative h-[90px] rounded-full boder border-transparent dark:bg-gray-800/50 dark:border-white/[0.2] bg-slate-200/50 shadow-input flex justify-center space-x-16 px-8 py-6 "
+      className="relative h-[90px] rounded-full 
+      shadow-input flex justify-center  space-x-16 px-8 py-6 "
     >
 
 
       {children}
     </nav>
+    </div>
   );
 };
 

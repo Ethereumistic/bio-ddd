@@ -10,7 +10,7 @@ import Link from "next/link";
 export function CanvasRevealEffectDemo() {
   return (
     <>
-      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-dblue w-full gap-4 mx-auto px-8 space-x-32">
+      <div className="pt-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-dblue w-full gap-4 mx-auto px-8 space-x-32">
       <Link href="/disinfection">
         <Card title="Дезинфекция" icon={<FaViruses className="text-emerald-500" size={120}/>}>
           <CanvasRevealEffect
