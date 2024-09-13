@@ -20,14 +20,13 @@ export default function Footer() {
   <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
-        <div className="flex flex-col justify-center text-teal-600 sm:justify-start">
+        <div className="flex text-teal-600 sm:justify-start">
         <LogoImage
               title="Bio DDD"
               href="/"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-light.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-dark.png"
             />
-            <span className=" -translate-y-1 text-ddblue dark:text-white font-russo">Bio <span className="text-lgreen">DDD</span></span>        
         </div>
 
         <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">

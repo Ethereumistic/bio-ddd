@@ -78,21 +78,29 @@ export const LogoImage = ({
   darkSrc: string;
 }) => {
   return (
-    <Link href={href} className=" ">
-      <Image
-        src={src}
-        width={68}
-        height={68}
-        alt={title}
-        className="dark:hidden block rounded-md hover:rotate-[360deg] transition duration-700"
-      />
-      <Image
-        src={darkSrc}
-        width={68}
-        height={68}
-        alt={title}
-        className="dark:block hidden rounded-md hover:rotate-[360deg] transition duration-700"
-      />
+    <Link href={href} className="block text-center ml-1 xs:ml-2 sm:ml-3 md:ml-4 lg:ml-8">
+      <div className="relative inline-block translate-y-1">
+        <Image
+          src={src}
+          width={68}
+          height={68}
+          alt={title}
+          className="dark:hidden block rounded-md hover:rotate-[360deg] transition-all duration-700
+                     w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[65px] lg:h-[65px]"
+        />
+        <Image
+          src={darkSrc}
+          width={68}
+          height={68}
+          alt={title}
+          className="dark:block hidden rounded-md hover:rotate-[360deg] transition-all duration-700
+                     w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[65px] lg:h-[65px]"
+        />
+      </div>
+      <h1 className="block text-ddblue dark:text-white font-russo -translate-y-1
+                       text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl">
+        Bio <span className="text-lgreen">DDD</span>
+      </h1>  
     </Link>
   );
 };

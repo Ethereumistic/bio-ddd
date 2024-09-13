@@ -6,25 +6,11 @@ import { FaViruses } from "react-icons/fa";
 import { HiBugAnt } from "react-icons/hi2";
 import Link from "next/link";
 
-export function CanvasRevealEffectDemo() {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.8 });
-  const [showAnimation, setShowAnimation] = React.useState(false);
-
-  React.useEffect(() => {
-    if (isInView) {
-      const timer = setTimeout(() => setShowAnimation(true), 1000); // 1 second delay
-      return () => clearTimeout(timer);
-    } else {
-      setShowAnimation(false);
-    }
-  }, [isInView]);
-
+export function MobileCanvasRevealEffectDemo() {
   return (
     <div className="pt-20 bg-white dark:bg-dblue w-full mx-auto px-4 sm:px-8">
       <div className="flex flex-col gap-8 max-w-sm mx-auto">
-        <div className="flex flex-row">
-        <Card
+        <MobileCard
           href="/disinfection"
           title="Дезинфекция"
           icon={<FaViruses className="text-emerald-500" size={120} />}
@@ -33,21 +19,8 @@ export function CanvasRevealEffectDemo() {
             containerClassName: "bg-emerald-900",
           }}
         />
-    <motion.div
-      ref={ref}
-      className="text-white text-4xl font-bold text-center justify-center items-center m-auto"
-      initial={{ opacity: 0, y: 0, x: 2000 }} // Initial state
-      animate={isInView
-        ? { opacity: 1, y: 0, x: showAnimation ? '' : 0 }
-        : { opacity: 0, y: 5, x: 0 }        // Animation logic
-      }
-      transition={{ duration: 0.5, x: { delay: 2.5, duration: 1 } }} // Transition with delay
-    >
-      Кажете чао на невидимите микроби и бактерии!
-    </motion.div>
-      </div>
-      
-        <Card
+
+        <MobileCard
           href="/disinsection"
           title="Дезинсекция"
           icon={<HiBugAnt className="text-red-700" size={120} />}
@@ -62,7 +35,7 @@ export function CanvasRevealEffectDemo() {
           }}
         />
 
-        <Card
+        <MobileCard
           href="/deratization"
           title="Дератизация"
           icon={<RatIcon />}
@@ -77,42 +50,39 @@ export function CanvasRevealEffectDemo() {
   );
 }
 
-const Card = ({
-    href,
-    title,
-    icon,
-    canvasProps,
-  }: {
-    href: string;
-    title: string;
-    icon: React.ReactNode;
-    canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
-  }) => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref, { once: false, amount: 0.8 });
-    const [showAnimation, setShowAnimation] = React.useState(false);
-  
-    React.useEffect(() => {
-      if (isInView) {
-        const timer = setTimeout(() => setShowAnimation(true), 1000); // 1 second delay
-        return () => clearTimeout(timer);
-      } else {
-        setShowAnimation(false);
-      }
-    }, [isInView]);
-  
-    return (
-      <Link href={href}>
-        <motion.div
-          ref={ref}
-          className="border border-black/[0.2] dark:border-white/[0.2] w-full p-4 h-[30rem] relative overflow-hidden"
-          initial={{ opacity: 0, y: 50, x: 0 }}
-          animate={isInView 
-            ? { opacity: 1, y: 0, x: showAnimation ? "-20rem" : 0 }
-            : { opacity: 0, y: 50, x: 0 }
-          }
-          transition={{ duration: 0.5, x: { delay: 0.5, duration: 1 } }}
-        >
+const MobileCard = ({
+  href,
+  title,
+  icon,
+  canvasProps,
+}: {
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+  canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
+}) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.8 });
+  const [showAnimation, setShowAnimation] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => setShowAnimation(true), 1000); // 1 second delay
+      return () => clearTimeout(timer);
+    } else {
+      setShowAnimation(false);
+    }
+  }, [isInView]);
+
+  return (
+    <Link href={href}>
+      <motion.div
+        ref={ref}
+        className="border border-black/[0.2] dark:border-white/[0.2] w-full p-4 h-[30rem] relative overflow-hidden"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
+      >
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
@@ -152,9 +122,6 @@ const Card = ({
           </motion.h2>
           </div>
         </div>
-
-         {/* New animated text */}
-
       </motion.div>
     </Link>
   );

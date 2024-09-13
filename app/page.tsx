@@ -2,6 +2,7 @@ import { CanvasRevealEffectDemo } from "@/components/CanvasRevealEffectDemo";
 import { HeroHighlightDemo } from "@/components/HeroHighlightDemo";
 import { ImagesSliderDemo } from "@/components/ImagesSliderDemo";
 import { LampDemo } from "@/components/LampDemo";
+import { MobileCanvasRevealEffectDemo } from "@/components/MobileCanvasRevealEffectDemo";
 import { TextGenerateEffectDemo } from "@/components/TextGenerateEffect";
 import Image from "next/image";
 
@@ -21,7 +22,14 @@ export default function Home() {
         </div>
 
       <div className=" ">
+      <div className="hidden lg:flex lg:flex-row">
       <CanvasRevealEffectDemo />
+     
+      </div>
+
+      <div className="lg:hidden block">
+      <MobileCanvasRevealEffectDemo />
+      </div>
       </div>
 
     </main>
