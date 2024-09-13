@@ -58,15 +58,16 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cx(russo.variable, osw.variable)}
-    > 
-    <div className="bg-white dark:bg-dblue">
-    
-      <Providers>
-      <NavbarDemo />
-      <body className={russo.className}>{children}</body>
-      <Footer />
-      </Providers>
-      </div>
+    >
+      <body className={russo.className}>
+        <Providers>
+          <div className="bg-white dark:bg-dblue">
+            <NavbarDemo />
+            {children}
+            <Footer />
+          </div>
+        </Providers>
+      </body>
     </html>
   );
 }

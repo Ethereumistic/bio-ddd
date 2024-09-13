@@ -1,10 +1,24 @@
 import { HoverEffect } from "./ui/card-hover-effect";
+import { motion } from "framer-motion";
 
 export function CardHoverEffectDemo() {
   return (
-    <div className="max-w-[100rem] mx-auto px-8 ">
+    <motion.div
+      className="max-w-[100rem] mx-auto px-8"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
+    >
       <HoverEffect items={projects} />
-    </div>
+    </motion.div>
   );
 }
 export const projects = [

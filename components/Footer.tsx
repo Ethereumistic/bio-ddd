@@ -29,12 +29,12 @@ export default function Footer() {
             />
         </div>
 
-        <p className="mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
+        <p className="mt-6 max-w-md text-center justify-center items-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left">
         Ние сме водеща компания, специализирана в професионални ДДД услуги. Ние предлагаме надеждни решения за контрол на вредители, 
         дезинфекция на помещения и ефективна защита срещу гризачи, насекоми, влечуги и птици.
         </p>
 
-        <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+        <ul className="mt-8  justify-center gap-6 sm:justify-start md:gap-8 hidden md:flex">
                 <FloatingDockDemo />
         </ul>
       </div>
@@ -112,9 +112,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="text-center sm:text-left ">
+        <div className="text-center sm:text-left flex flex-col items-center">
+        <div className='flex flex-row items-center'>
+          <div className='-translate-y-20 mr-20 -translate-x-20  md:hidden block'>
+        <FloatingDockDemo />
+        </div>
         <HoverBorderGradientDemo />
-
+        </div>
           <ul className="mt-8 space-y-4 text-sm">
             <li>
               <Link

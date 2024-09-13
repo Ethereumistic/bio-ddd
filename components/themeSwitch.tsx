@@ -1,10 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 
 const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -20,7 +30,6 @@ const ThemeSwitch = () => {
       ) : (
         <IconSun className="w-8 h-8 mr-2 " />
       )}
-      
     </button>
   );
 };
