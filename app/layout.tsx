@@ -8,6 +8,7 @@ import { cx } from "@/utils/all";
 import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
+
 const russo = localfont(
   {
     src: [

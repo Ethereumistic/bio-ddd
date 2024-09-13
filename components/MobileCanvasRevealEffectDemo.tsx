@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function MobileCanvasRevealEffectDemo() {
   return (
-    <div className="pt-20 bg-white dark:bg-dblue w-full mx-auto px-4 sm:px-8">
+    <div className="pt-20 bg-white dark:bg-dblue w-full mx-auto px-0 sm:px-8">
       <div className="flex flex-col gap-8 max-w-sm mx-auto">
         <MobileCard
           href="/disinfection"

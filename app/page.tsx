@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-18 ">
+    <main className="flex flex-col items-center justify-between p-18 sm:overflow-x-hidden overflow-x-visible">
       <LampDemo />
       <div className="-translate-y-32 ">
       <HeroHighlightDemo />

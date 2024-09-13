@@ -1,8 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { FaSun } from "react-icons/fa";
-import { FaMoon } from "react-icons/fa6";
+import { IconSun, IconMoon } from "@tabler/icons-react";
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
@@ -13,13 +12,13 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="inline-flex items-center focus:outline-none text-dgreen dark:text-white"
+      className="inline-flex items-center focus:outline-none text-black dark:text-white"
       onClick={toggleTheme}
     >
       {theme === "light" ? (
-        <FaMoon className="w-6 h-6 mr-2 mt-2 " />
+        <IconMoon className="w-8 h-8 mr-2 " />
       ) : (
-        <FaSun className="w-6 h-6 mr-2 mt-2" />
+        <IconSun className="w-8 h-8 mr-2 " />
       )}
       
     </button>
