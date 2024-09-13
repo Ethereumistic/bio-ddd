@@ -119,13 +119,7 @@ const SpiderInfoComponent: React.FC = () => {
   const currentSpider = spiderData[selectedSpider];
 
   return (
-  //   <AnimatePresence>
-  //   <motion.div
-  //   initial={{ opacity: 0 }}
-  //   animate={{ opacity: 1 }}
-  //   transition={{ duration: 0.5 }}
-  // >
-    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
+    <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentSpider.latinName} />
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
@@ -187,38 +181,25 @@ const SpiderInfoComponent: React.FC = () => {
         />
       </div>
     </div>
-
-    // {/* </motion.div> */}
-    // {/* </AnimatePresence> */}
-
-
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
-  
-  // <motion.div
-  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
-  //   initial={{ opacity: 1, y: 20 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300'>
-    <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
-      {typeof content === 'string' ? (
-        <p>{content}</p>
-      ) : (
-        React.isValidElement(content) && 
-        React.Children.map(content.props.children, (child, index) => 
-          React.cloneElement(child, { key: index })
-        )
-      )}
+  <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
+    <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
+    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
+      <div className='text-sm sm:text-base md:text-base lg:text-lg items-center justify-center mx-auto'>
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : (
+          React.isValidElement(content) && 
+          React.Children.map(content.props.children, (child, index) => 
+            React.cloneElement(child, { key: index })
+          )
+        )}
+      </div>
     </div>
-
-    </div>
-   // </motion.div>
-
+  </div>
 );
 
 
@@ -242,13 +223,13 @@ const SpiderCard: React.FC<{
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
-        <div className='p-4 rounded-lg'>
-          <div className="flex gap-2 mb-4">
+      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900">
+        <div className='rounded-lg'>
+          <div className="flex flex-col sm:flex-row gap-2 mb-4 items-center justify-center">
             {(Object.keys(spiderData) as SpiderType[]).map((spiderType) => (
               <button
                 key={spiderType}
-                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                className={`px-3 py-2 rounded-xl border border-ddblue dark:border-lgreen text-sm sm:text-base ${
                   selectedSpider === spiderType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
                 }`}
                 onClick={() => onSelectSpider(spiderType)}
@@ -258,7 +239,7 @@ const SpiderCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[450px]"
+            className="relative h-[250px] sm:h-[350px] md:h-[450px]"
             initial={{ opacity: 1, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1.1 }}
             transition={{ duration: 0.4 }}
@@ -274,24 +255,23 @@ const SpiderCard: React.FC<{
                   <Loading />
                 </motion.div>
               )}
-             </AnimatePresence>
-
-             <AnimatePresence>
-            <Image 
-              key={imageKey}
-              src={spiderData[selectedSpider].imageUrl} 
-              alt={selectedSpider} 
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              onLoadingComplete={() => setIsLoading(false)}
-            />
             </AnimatePresence>
 
+            <AnimatePresence>
+              <Image 
+                key={imageKey}
+                src={spiderData[selectedSpider].imageUrl} 
+                alt={selectedSpider} 
+                layout="fill"
+                objectFit="contain"
+                className="rounded-lg"
+                onLoadingComplete={() => setIsLoading(false)}
+              />
+            </AnimatePresence>
           </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedSpider}</h2>
-          <p className='text-start'>{spiderData[selectedSpider].desc}</p>
+          <p className='text-start text-sm sm:text-base'>{spiderData[selectedSpider].desc}</p>
         </div>
       </BackgroundGradient>
     </motion.div> 

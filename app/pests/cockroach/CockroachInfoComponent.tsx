@@ -77,16 +77,55 @@ const CockroachInfoComponent: React.FC = () => {
 
   const currentCockroach = cockroachData[selectedCockroach];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2, // Start slightly before the grid items
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-  //   <AnimatePresence>
-  //   <motion.div
-  //   initial={{ opacity: 0 }}
-  //   animate={{ opacity: 1 }}
-  //   transition={{ duration: 0.5 }}
-  // >
-    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
+            <motion.div 
+        className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+      {/* <div className="flex-1 grid grid-cols-1 sm:grid-cols-2  gap-4"> */}
+      <motion.div variants={itemVariants}>
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentCockroach.latinName} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
@@ -109,6 +148,8 @@ const CockroachInfoComponent: React.FC = () => {
       </ul>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ВРЕДИ" content={
           <ul>
             {currentCockroach.dangers.map((danger, index) => (
@@ -117,6 +158,8 @@ const CockroachInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
             {currentCockroach.behavior.map((behavior, index) => (
@@ -125,12 +168,16 @@ const CockroachInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
             <p>{currentCockroach.reproduction.offspring}</p>
             <p>{currentCockroach.reproduction.gestation}</p>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
             {currentCockroach.signs.map((sign, index) => (
@@ -138,47 +185,41 @@ const CockroachInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
-      </div>
-      <div className="flex-1">
-        <CockroachCard
+        </motion.div>
+      {/* </div> */}
+            </motion.div>
+
+      <motion.div 
+        className="flex-1"
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+      >        <CockroachCard
           selectedCockroach={selectedCockroach}
           onSelectCockroach={handleCockroachSelect}
         />
-      </div>
+      </motion.div>
 
     </div>
-
-    // {/* </motion.div> */}
-    // {/* </AnimatePresence> */}
-
-
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
-  
-  // <motion.div
-  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
-  //   initial={{ opacity: 1, y: 20 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300'>
-    <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
-      {typeof content === 'string' ? (
-        <p>{content}</p>
-      ) : (
-        React.isValidElement(content) && 
-        React.Children.map(content.props.children, (child, index) => 
-          React.cloneElement(child, { key: index })
-        )
-      )}
+  <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
+    <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
+    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
+      <div className='text-xs sm:text-sm md:text-base lg:text-lg items-center justify-center mx-auto'>
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : (
+          React.isValidElement(content) && 
+          React.Children.map(content.props.children, (child, index) => 
+            React.cloneElement(child, { key: index })
+          )
+        )}
+      </div>
     </div>
-
-    </div>
-   // </motion.div>
-
+  </div>
 );
 
 
@@ -202,13 +243,13 @@ const CockroachCard: React.FC<{
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
-        <div className='p-4 rounded-lg'>
-          <div className="flex gap-2 mb-4">
+      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900">
+        <div className='rounded-lg'>
+          <div className="flex flex-col sm:flex-row gap-2 mb-4 items-center justify-center">
             {(Object.keys(cockroachData) as CockroachType[]).map((cockroachType) => (
               <button
                 key={cockroachType}
-                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                className={`px-3 py-2 rounded-xl border border-ddblue dark:border-lgreen text-sm sm:text-base ${
                   selectedCockroach === cockroachType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
                 }`}
                 onClick={() => onSelectCockroach(cockroachType)}
@@ -218,7 +259,7 @@ const CockroachCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[450px]"
+            className="relative h-[250px] sm:h-[350px] md:h-[450px]"
             initial={{ opacity: 1, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1.1 }}
             transition={{ duration: 0.4 }}
@@ -234,24 +275,23 @@ const CockroachCard: React.FC<{
                   <Loading />
                 </motion.div>
               )}
-             </AnimatePresence>
-
-             <AnimatePresence>
-            <Image 
-              key={imageKey}
-              src={cockroachData[selectedCockroach].imageUrl} 
-              alt={selectedCockroach} 
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              onLoadingComplete={() => setIsLoading(false)}
-            />
             </AnimatePresence>
 
+            <AnimatePresence>
+              <Image 
+                key={imageKey}
+                src={cockroachData[selectedCockroach].imageUrl} 
+                alt={selectedCockroach} 
+                layout="fill"
+                objectFit="contain"
+                className="rounded-lg"
+                onLoadingComplete={() => setIsLoading(false)}
+              />
+            </AnimatePresence>
           </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedCockroach}</h2>
-          <p className='text-start'>{cockroachData[selectedCockroach].desc}</p>
+          <p className='text-start text-sm sm:text-base'>{cockroachData[selectedCockroach].desc}</p>
         </div>
       </BackgroundGradient>
     </motion.div> 

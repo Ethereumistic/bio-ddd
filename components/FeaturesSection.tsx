@@ -1,4 +1,7 @@
+"use client"
 import { cn } from "@/utils/cn";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 
 interface Feature {
@@ -32,8 +35,28 @@ const Feature = ({
   icon: React.ReactNode;
   index: number;
 }) => {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.5, 
+        delay: index * 0.2 
+      }
+    }
+  };
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
       className={cn(
         "flex flex-col lg:border-r py-6 relative group/feature dark:border-neutral-800 ",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
@@ -58,6 +81,6 @@ const Feature = ({
       <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };

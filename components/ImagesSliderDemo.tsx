@@ -15,7 +15,7 @@ export function ImagesSliderDemo() {
 
   ];
   return (
-    <ImagesSlider className="h-[1080px]" images={images}>
+    <ImagesSlider className="h-screen" images={images}>
       <motion.div
         initial={{
           opacity: 0,

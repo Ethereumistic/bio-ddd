@@ -11,7 +11,7 @@ export function AboutUs() {
             С помоща и услугите на 
         </div>
 
-            <div className="flex flex-col ml-6 -mt-10">
+            {/* <div className="flex flex-col ml-6 -mt-10">
                 <div className="ml-7  z-50">
                 <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-light.png" 
                     alt="logo"
@@ -24,8 +24,8 @@ export function AboutUs() {
                     width={80} 
                     height={80}
                     className="dark:block hidden" />
-                </div>
-      <div className="dark:text-white text-ddblue  text-4xl flex ">Bio <div className="text-lgreen">DDD</div></div>
+                </div> */}
+      {/* <div className="dark:text-white text-ddblue  text-4xl flex ">Bio <div className="text-lgreen">DDD</div></div>
     </div>
     </div>
 
@@ -33,7 +33,7 @@ export function AboutUs() {
         Забравете за
         <div className="ml-8">
         <FlipWords words={words} />
-        </div>
+        </div> */}
         </div>
 </div>
   );
