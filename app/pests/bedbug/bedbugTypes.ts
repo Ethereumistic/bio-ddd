@@ -18,4 +18,4 @@ export interface BedbugInfo {
       desc: string;
     };
     
-    export type BedbugType = 'КРЕВАТНА' | 'ПРИЛЕПНА' | 'ЛЯСТОВИЧА' | 'ЗЕЛЕНА';
+    export type BedbugType = 'КРЕВАТНА' | 'ПРИЛЕПНА' | 'ЛЯСТОВИЧА' | 'ТРОПИЧЕСКА';

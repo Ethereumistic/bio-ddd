@@ -11,7 +11,6 @@ import {
     IconAlertSquareRounded,
   } from "@tabler/icons-react";
 import { SignupFormDemo } from '@/components/SignupFormDemo';
-import { AboutUs } from '@/components/AboutUs';
 import { HeroCard } from '@/components/HeroCard';
 export default function Cockroach() {
 
@@ -68,7 +67,6 @@ export default function Cockroach() {
 
             <div className='flex flex-col-reverse xl:flex-row'>
               <SignupFormDemo />
-              {/* <AboutUs /> */}
               <div className='flex justify-center items-center  -translate-x-0 xl:-translate-x-12 2xl:-translate-x-32'>
               <HeroCard />
               </div>

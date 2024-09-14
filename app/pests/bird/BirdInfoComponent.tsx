@@ -14,80 +14,77 @@ import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const birdData: Record<BirdType, BirdInfo> = {
   'ГЪЛЪБ': {
-    latinName: 'Mus musculus',
+    latinName: 'Columba livia',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/pidgeon.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '29 - 37 см',
+      height: '20 - 25 см',
+      weight: '300 - 500 г',
+      color: 'Сиво-син с бели и черни петна'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['преносител на заболявания', 'замърсяване с изпражнения', 'замърсяване на сгради'],
+    behavior: ['живее на големи ята', 'активен през деня', 'адаптивен към градска среда'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '1 - 2 яйца на люпило',
+      gestation: '17 - 19 дни'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Струпване на птици', 'Бели изпражнения по сгради', 'Шум от гукане'],
+    desc: 'Градският гълъб е често срещан в градовете по целия свят. Той е известен с адаптивността си към градската среда и способността да се размножава бързо. Гълъбите могат да причинят значителни щети на сгради чрез техните изпражнения и да пренасят различни заболявания. Контролът на популацията им е важен за поддържането на чистота и хигиена в градските райони.',
   },
   'ГАРВАН': {
-      latinName: 'Rattus rattus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/raven.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Corvus corax',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/raven.png',
+    appearance: {
+      length: '54 - 67 см',
+      height: '30 - 40 см',
+      weight: '800 - 1600 г',
+      color: 'Черен с лилав или син блясък'
     },
+    dangers: ['може да атакува малки животни', 'разпространява боклук', 'силен шум'],
+    behavior: ['интелигентен', 'социален', 'всеяден'],
+    reproduction: {
+      offspring: '3 - 7 яйца',
+      gestation: '20 - 25 дни'
+    },
+    signs: ['Силно грачене', 'Големи черни птици', 'Разпръснат боклук'],
+    desc: 'Гарванът е една от най-интелигентните птици, известна със способността си да решава проблеми и да използва инструменти. Въпреки че не са типични вредители, в градски условия могат да причинят неудобства чрез шума си и навика да разпръскват боклук. Гарваните са всеядни и могат да се адаптират към различни хранителни източници, което ги прави успешни в различни среди.',
+  },
   'ЧАЙКА': {
-      latinName: 'Rattus norvegicus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/seagull.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Larus argentatus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/seagull.png',
+    appearance: {
+      length: '55 - 67 см',
+      height: '30 - 35 см',
+      weight: '800 - 1250 г',
+      color: 'Бяло тяло със сиви криле'
     },
-  'ГЛАРУС': {
-      latinName: 'Microtus arvalis',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/geagull.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    dangers: ['агресивно поведение през размножителния период', 'замърсяване с изпражнения', 'разпространение на боклук'],
+    behavior: ['живее на големи ята', 'активна през деня', 'адаптивно и всеядно хранене'],
+    reproduction: {
+      offspring: '2 - 3 яйца',
+      gestation: '27 - 31 дни'
     },
+    signs: ['Силни писъци', 'Струпване на птици край водоеми', 'Нападения над хора за храна'],
+    desc: 'Чайката е морска птица, която често се среща в крайбрежни градове. Те са известни с агресивното си поведение, особено когато защитават гнездата си или търсят храна. Чайките могат да бъдат проблем в градските райони поради навика им да ровят в боклука и да замърсяват с изпражненията си. Контролът на популацията им може да бъде предизвикателство поради защитения им статус в много страни.',
+  },
+'ГЛАРУС': {
+    latinName: 'Larus michahellis',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/geagull.png',
+    appearance: {
+      length: '52 - 58 см',
+      height: '30 - 35 см',
+      weight: '800 - 1200 г',
+      color: 'Бяло тяло със сребристо-сиви криле и жълт клюн'
+    },
+    dangers: ['агресивно поведение през размножителния период', 'замърсяване с изпражнения', 'разпространение на боклук'],
+    behavior: ['живее на големи ята', 'активен през деня', 'адаптивно и всеядно хранене'],
+    reproduction: {
+      offspring: '2 - 3 яйца',
+      gestation: '27 - 31 дни'
+    },
+    signs: ['Силни крясъци', 'Струпване на птици край водоеми и сметища', 'Нападения над хора за храна'],
+    desc: 'Гларусът (жълтокрак) е голяма морска птица, често срещана по Черноморието и вътрешните водоеми на България. Известен е с агресивното си поведение, особено когато защитава територията си или търси храна. Гларусите могат да бъдат проблем в крайбрежните градове и курорти поради навика им да ровят в боклука, да крадат храна от хората и да замърсяват с изпражненията си. Те са изключително адаптивни и са се научили да оцеляват в градска среда, което понякога води до конфликти с хората. Въпреки това, гларусите играят важна роля в екосистемата и са защитени от закона, което прави контрола на популацията им предизвикателство.',
+  },
 };
 const BirdInfoComponent: React.FC = () => {
   const [selectedBird, setSelectedBird] = useState<BirdType>('ГЪЛЪБ');
@@ -99,16 +96,55 @@ const BirdInfoComponent: React.FC = () => {
 
   const currentBird = birdData[selectedBird];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2, // Start slightly before the grid items
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-  //   <AnimatePresence>
-  //   <motion.div
-  //   initial={{ opacity: 0 }}
-  //   animate={{ opacity: 1 }}
-  //   transition={{ duration: 0.5 }}
-  // >
-    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
+            <motion.div 
+        className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+      {/* <div className="flex-1 grid grid-cols-1 sm:grid-cols-2  gap-4"> */}
+      <motion.div variants={itemVariants}>
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentBird.latinName} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
@@ -131,6 +167,8 @@ const BirdInfoComponent: React.FC = () => {
       </ul>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ВРЕДИ" content={
           <ul>
             {currentBird.dangers.map((danger, index) => (
@@ -139,6 +177,8 @@ const BirdInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
             {currentBird.behavior.map((behavior, index) => (
@@ -147,12 +187,16 @@ const BirdInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
             <p>{currentBird.reproduction.offspring}</p>
             <p>{currentBird.reproduction.gestation}</p>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
             {currentBird.signs.map((sign, index) => (
@@ -160,46 +204,41 @@ const BirdInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
-      </div>
-      <div className="flex-1">
-        <BirdCard
+        </motion.div>
+      {/* </div> */}
+            </motion.div>
+
+      <motion.div 
+        className="flex-1"
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+      >        <BirdCard
           selectedBird={selectedBird}
           onSelectBird={handleBirdSelect}
         />
-      </div>
+      </motion.div>
+
     </div>
-
-    // {/* </motion.div> */}
-    // {/* </AnimatePresence> */}
-
-
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
-  
-  // <motion.div
-  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
-  //   initial={{ opacity: 1, y: 20 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300'>
-    <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
-      {typeof content === 'string' ? (
-        <p>{content}</p>
-      ) : (
-        React.isValidElement(content) && 
-        React.Children.map(content.props.children, (child, index) => 
-          React.cloneElement(child, { key: index })
-        )
-      )}
+  <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
+    <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
+    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
+      <div className='text-xs sm:text-sm md:text-base lg:text-lg items-center justify-center mx-auto'>
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : (
+          React.isValidElement(content) && 
+          React.Children.map(content.props.children, (child, index) => 
+            React.cloneElement(child, { key: index })
+          )
+        )}
+      </div>
     </div>
-
-    </div>
-   // </motion.div>
-
+  </div>
 );
 
 
@@ -223,13 +262,13 @@ const BirdCard: React.FC<{
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
-        <div className='p-4 rounded-lg'>
-          <div className="flex gap-2 mb-4">
+      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900">
+        <div className='rounded-lg'>
+          <div className="flex flex-col sm:flex-row gap-2 mb-4 items-center justify-center">
             {(Object.keys(birdData) as BirdType[]).map((birdType) => (
               <button
                 key={birdType}
-                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                className={`px-3 py-2 rounded-xl border border-ddblue dark:border-lgreen text-sm sm:text-base ${
                   selectedBird === birdType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
                 }`}
                 onClick={() => onSelectBird(birdType)}
@@ -239,43 +278,43 @@ const BirdCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[450px]"
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+      className="relative h-[250px] sm:h-[350px] md:h-[450px]"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1.1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <AnimatePresence>
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Loading />
-                </motion.div>
-              )}
-             </AnimatePresence>
+            <Loading />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-             <AnimatePresence>
-            <Image 
-              key={imageKey}
-              src={birdData[selectedBird].imageUrl} 
-              alt={selectedBird} 
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              onLoadingComplete={() => setIsLoading(false)}
-            />
-            </AnimatePresence>
-
-          </motion.div> 
+      <AnimatePresence>
+        <Image 
+          key={imageKey}
+          src={birdData[selectedBird].imageUrl} 
+          alt={selectedBird} 
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-lg"
+          onLoad={() => setIsLoading(false)}
+        />
+      </AnimatePresence>
+    </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedBird}</h2>
-          <p className='text-start'>{birdData[selectedBird].desc}</p>
+          <p className='text-start text-sm sm:text-base'>{birdData[selectedBird].desc}</p>
         </div>
       </BackgroundGradient>
     </motion.div> 
   );
 };
+
 export default BirdInfoComponent;

@@ -15,100 +15,97 @@ import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const mosquitoData: Record<MosquitoType, MosquitoInfo> = {
   'ТИГРОВ КОМАР': {
-    latinName: 'Аedes albopictus',
+    latinName: 'Aedes albopictus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/tigermosq.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '4 - 10 мм',
+      height: '2 - 4 мм',
+      weight: '0.5 - 1 мг',
+      color: 'Черно с бели и сребристи ивици'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['Преносител на заболявания като денга и зика', 'Може да причини дискомфорт и сърбеж', 'Може да разпространява вируси'],
+    behavior: ['Активен през деня и вечерта', 'Предпочита влажни места', 'Размножава се в малки водни басейни'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '50 - 100 яйца на снасяне',
+      gestation: '2 - 3 дни от снасяне'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Наличие на комари в близост до водоеми', 'Сърбящи ухапвания'],
+    desc: 'Тигровият комар е известен със своите бели и сребристи ивици по краката и тялото. Той е преносител на редица вирусни заболявания и е активен през деня. Предпочита да се размножава в малки водни басейни.',
   },
   'КОМАР': {
-      latinName: 'Culex pipiens',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/komar.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Culex pipiens',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/komar.png',
+    appearance: {
+      length: '4 - 7 мм',
+      height: '2 - 3 мм',
+      weight: '0.2 - 0.5 мг',
+      color: 'Сивкаво / Кафяво'
     },
+    dangers: ['Преносител на заболявания като западнонилска треска', 'Може да предизвика алергични реакции', 'Може да причинява сърбеж'],
+    behavior: ['Активен през нощта', 'Предпочита влажни и тъмни места', 'Размножава се в стояща вода'],
+    reproduction: {
+      offspring: '100 - 300 яйца на снасяне',
+      gestation: '2 - 3 дни от снасяне'
+    },
+    signs: ['Сърбящи ухапвания', 'Наличие на комари в близост до стояща вода'],
+    desc: 'Обикновеният комар е разпространен в градски и селски райони и е известен със своето активност през нощта. Той е преносител на различни заболявания и се размножава в стояща вода.',
+  },
   'ТРЕСКОВ КОМАР': {
-      latinName: 'Aedes aegypti',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/treskmosq.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Aedes aegypti',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/treskmosq.png',
+    appearance: {
+      length: '4 - 7 мм',
+      height: '2 - 4 мм',
+      weight: '0.5 - 1 мг',
+      color: 'Черно с бели ивици и жълти петна'
     },
+    dangers: ['Преносител на заболявания като денга и зика', 'Може да предизвика дискомфорт и сърбеж', 'Може да разпространява вируси'],
+    behavior: ['Активен през деня', 'Предпочита влажни и топли места', 'Размножава се в малки водни басейни'],
+    reproduction: {
+      offspring: '100 - 200 яйца на снасяне',
+      gestation: '1 - 3 дни от снасяне'
+    },
+    signs: ['Наличие на комари в близост до водоеми', 'Сърбящи ухапвания'],
+    desc: 'Тресковият комар е известен със своите жълти петна и бели ивици. Той е активен през деня и е преносител на сериозни заболявания като денга и зика. Размножава се в малки водни басейни и може да бъде опасен за здравето.',
+  },
   'АНОФЕЛЕС': {
-      latinName: 'Anopheles maculipennis',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/makuli.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Anopheles maculipennis',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/makuli.png',
+    appearance: {
+      length: '4 - 7 мм',
+      height: '2 - 4 мм',
+      weight: '0.2 - 0.5 мг',
+      color: 'Сивкаво / Кафяво'
     },
-    'СИВ КОМАР': {
-        latinName: 'Aedes cinereus',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/graymosq.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
+    dangers: ['Преносител на малария', 'Може да предизвика алергични реакции', 'Може да разпространява паразити'],
+    behavior: ['Активен през нощта', 'Предпочита влажни и застояли води', 'Размножава се в различни водоеми'],
+    reproduction: {
+      offspring: '100 - 200 яйца на снасяне',
+      gestation: '2 - 3 дни от снасяне'
+    },
+    signs: ['Сърбящи ухапвания', 'Наличие на комари в близост до застояла вода'],
+    desc: 'Антифелесът е известен основно с това, че пренася малария. Активен е през нощта и предпочита влажни, стоящи води за размножаване. Може да бъде опасен за здравето поради предаването на паразити, причиняващи малария.',
+  },
+  'СИВ КОМАР': {
+    latinName: 'Aedes cinereus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/graymosq.png',
+    appearance: {
+      length: '6 - 8 мм',
+      height: '2 - 4 мм',
+      weight: '0.3 - 0.5 мг',
+      color: 'Сив / Сивкаво'
+    },
+    dangers: ['Преносител на заболявания', 'Може да причини дискомфорт', 'Може да разпространява вируси'],
+    behavior: ['Активен през деня и вечерта', 'Предпочита влажни и топли места', 'Размножава се в малки водоеми и мокри повърхности'],
+    reproduction: {
+      offspring: '100 - 200 яйца на снасяне',
+      gestation: '2 - 3 дни от снасяне'
+    },
+    signs: ['Наличие на комари около водоеми', 'Сърбящи ухапвания'],
+    desc: 'Сивият комар е известен със своето разпространение в топли и влажни райони. Той може да бъде носител на различни вируси и да причини дискомфорт чрез сърбящи ухапвания. Размножава се в малки водоеми и влажни повърхности.',
+  },
 };
+
 const MosquitoInfoComponent: React.FC = () => {
   const [selectedMosquito, setSelectedMosquito] = useState<MosquitoType>('ТИГРОВ КОМАР');
 
@@ -119,16 +116,55 @@ const MosquitoInfoComponent: React.FC = () => {
 
   const currentMosquito = mosquitoData[selectedMosquito];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2, // Start slightly before the grid items
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-  //   <AnimatePresence>
-  //   <motion.div
-  //   initial={{ opacity: 0 }}
-  //   animate={{ opacity: 1 }}
-  //   transition={{ dumosquitoion: 0.5 }}
-  // >
-    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
+            <motion.div 
+        className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+      {/* <div className="flex-1 grid grid-cols-1 sm:grid-cols-2  gap-4"> */}
+      <motion.div variants={itemVariants}>
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentMosquito.latinName} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
@@ -151,6 +187,8 @@ const MosquitoInfoComponent: React.FC = () => {
       </ul>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ВРЕДИ" content={
           <ul>
             {currentMosquito.dangers.map((danger, index) => (
@@ -159,6 +197,8 @@ const MosquitoInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
             {currentMosquito.behavior.map((behavior, index) => (
@@ -167,12 +207,16 @@ const MosquitoInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
             <p>{currentMosquito.reproduction.offspring}</p>
             <p>{currentMosquito.reproduction.gestation}</p>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
             {currentMosquito.signs.map((sign, index) => (
@@ -180,46 +224,41 @@ const MosquitoInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
-      </div>
-      <div className="flex-1">
-        <MosquitoCard
+        </motion.div>
+      {/* </div> */}
+            </motion.div>
+
+      <motion.div 
+        className="flex-1"
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+      >        <MosquitoCard
           selectedMosquito={selectedMosquito}
           onSelectMosquito={handleMosquitoSelect}
         />
-      </div>
+      </motion.div>
+
     </div>
-
-    // {/* </motion.div> */}
-    // {/* </AnimatePresence> */}
-
-
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
-  
-  // <motion.div
-  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition dumosquitoion-300 "
-  //   initial={{ opacity: 1, y: 20 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ dumosquitoion: 0.3 }}
-  // >
-    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition dumosquitoion-300'>
-    <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
-      {typeof content === 'string' ? (
-        <p>{content}</p>
-      ) : (
-        React.isValidElement(content) && 
-        React.Children.map(content.props.children, (child, index) => 
-          React.cloneElement(child, { key: index })
-        )
-      )}
+  <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
+    <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
+    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
+      <div className='text-xs sm:text-sm md:text-base lg:text-lg items-center justify-center mx-auto'>
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : (
+          React.isValidElement(content) && 
+          React.Children.map(content.props.children, (child, index) => 
+            React.cloneElement(child, { key: index })
+          )
+        )}
+      </div>
     </div>
-
-    </div>
-   // </motion.div>
-
+  </div>
 );
 
 
@@ -243,13 +282,13 @@ const MosquitoCard: React.FC<{
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
-        <div className='p-4 rounded-lg'>
-          <div className="flex gap-2 mb-4">
+      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900">
+        <div className='rounded-lg'>
+          <div className="flex flex-col sm:flex-row gap-2 mb-4 items-center justify-center">
             {(Object.keys(mosquitoData) as MosquitoType[]).map((mosquitoType) => (
               <button
                 key={mosquitoType}
-                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                className={`px-3 py-2 rounded-xl border border-ddblue dark:border-lgreen text-sm sm:text-base ${
                   selectedMosquito === mosquitoType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
                 }`}
                 onClick={() => onSelectMosquito(mosquitoType)}
@@ -259,40 +298,39 @@ const MosquitoCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[450px]"
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+      className="relative h-[250px] sm:h-[350px] md:h-[450px]"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1.1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <AnimatePresence>
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Loading />
-                </motion.div>
-              )}
-             </AnimatePresence>
+            <Loading />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-             <AnimatePresence>
-            <Image 
-              key={imageKey}
-              src={mosquitoData[selectedMosquito].imageUrl} 
-              alt={selectedMosquito} 
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              onLoadingComplete={() => setIsLoading(false)}
-            />
-            </AnimatePresence>
-
-          </motion.div> 
+      <AnimatePresence>
+        <Image 
+          key={imageKey}
+          src={mosquitoData[selectedMosquito].imageUrl} 
+          alt={selectedMosquito} 
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-lg"
+          onLoad={() => setIsLoading(false)}
+        />
+      </AnimatePresence>
+    </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedMosquito}</h2>
-          <p className='text-start'>{mosquitoData[selectedMosquito].desc}</p>
+          <p className='text-start text-sm sm:text-base'>{mosquitoData[selectedMosquito].desc}</p>
         </div>
       </BackgroundGradient>
     </motion.div> 

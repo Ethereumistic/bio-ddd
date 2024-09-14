@@ -24,8 +24,8 @@ const cockroachData: Record<CockroachType, CockroachInfo> = {
     dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
     behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '5 - 10',
+      gestation: '19 - 21 days'
     },
     signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
     desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
@@ -259,36 +259,36 @@ const CockroachCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[250px] sm:h-[350px] md:h-[450px]"
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+      className="relative h-[250px] sm:h-[350px] md:h-[450px]"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1.1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <AnimatePresence>
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Loading />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <Loading />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-            <AnimatePresence>
-              <Image 
-                key={imageKey}
-                src={cockroachData[selectedCockroach].imageUrl} 
-                alt={selectedCockroach} 
-                layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
-                onLoadingComplete={() => setIsLoading(false)}
-              />
-            </AnimatePresence>
-          </motion.div> 
+      <AnimatePresence>
+        <Image 
+          key={imageKey}
+          src={cockroachData[selectedCockroach].imageUrl} 
+          alt={selectedCockroach} 
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-lg"
+          onLoad={() => setIsLoading(false)}
+        />
+      </AnimatePresence>
+    </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedCockroach}</h2>
           <p className='text-start text-sm sm:text-base'>{cockroachData[selectedCockroach].desc}</p>

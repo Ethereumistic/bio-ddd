@@ -18,78 +18,76 @@ const ratData: Record<RatType, RatInfo> = {
     latinName: 'Mus musculus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Mus-musculus.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '7-10 cm',
+      height: '2-4 cm',
+      weight: '12-30 g',
+      color: 'Кафяв или сив'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['Преносител на заболявания', 'Може да пренася паразити', 'Може да замърси хранителни запаси'],
+    behavior: ['Социално животно', 'Нощен начин на живот', 'Добър катерач'],
     reproduction: {
       offspring: '5-10',
-      gestation: '19-21 days'
+      gestation: '19-21 дни'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Изпражнения', 'Следи от гризане по мебели и опаковки'],
+    desc: 'Домашната мишка е малък гризач, често срещан в домове и сгради. Известна е с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Контролът и превенцията на мишките са важни за поддържане на здравословна среда в дома.',
   },
   'ЧЕРЕН ПЛЪХ': {
-      latinName: 'Rattus rattus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-rattus.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Rattus rattus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-rattus.png',
+    appearance: {
+      length: '16-24 cm',
+      height: '4-6 cm',
+      weight: '150-250 g',
+      color: 'Черно или тъмнокафяво'
     },
+    dangers: ['Преносител на заболявания', 'Може да пренася паразити', 'Може да повреди електрически проводници'],
+    behavior: ['Нощен', 'Добър катерач', 'Предпочита високи места'],
+    reproduction: {
+      offspring: '5-8',
+      gestation: '21-23 дни'
+    },
+    signs: ['Изпражнения', 'Следи от гризане', 'Мазни следи по стени от козината'],
+    desc: 'Черният плъх, известен още като корабен плъх, е разпространен в тропическите и субтропическите райони. По-малък и по-гъвкав от сивия плъх, той често живее в тавани и дървета. Черните плъхове могат да причинят щети на строителни материали и електрически проводници, както и да разпространяват заболявания и паразити.',
+  },
   'СИВ ПЛЪХ': {
-      latinName: 'Rattus norvegicus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-norvegicus.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Rattus norvegicus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-norvegicus.png',
+    appearance: {
+      length: '20-25 cm',
+      height: '5-7 cm',
+      weight: '200-500 g',
+      color: 'Сив или кафяв'
     },
+    dangers: ['Преносител на заболявания', 'Може да причини структурни щети с гризане'],
+    behavior: ['Нощен', 'Добър плувец', 'Предпочита ниски и влажни места'],
+    reproduction: {
+      offspring: '6-12',
+      gestation: '21-23 дни'
+    },
+    signs: ['Изпражнения', 'Следи от гризане по структури и контейнери', 'Тунели и дупки близо до сгради'],
+    desc: 'Сивият плъх, известен също като норвежки плъх или канален плъх, е по-голям и по-масивен от черния плъх. Живее основно в подземни тунели и канализации, но може да се срещне и в сгради. Сивите плъхове са известни със своите разрушителни навици и пренасят опасни патогени.',
+  },
   'ПОЛЕВКА': {
-      latinName: 'Microtus arvalis',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Microtus-arvalis.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Microtus arvalis',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Microtus-arvalis.png',
+    appearance: {
+      length: '8-12 cm',
+      height: '2-3 cm',
+      weight: '20-50 g',
+      color: 'Кафяв или сив'
     },
+    dangers: ['Може да причини щети на култури', 'Може да пренася заболявания'],
+    behavior: ['Тревопасен', 'Активен през деня и нощта', 'Предпочита тревисти поля'],
+    reproduction: {
+      offspring: '3-7',
+      gestation: '19-21 дни'
+    },
+    signs: ['Следи в тревата', 'Следи от гризане на растения и култури'],
+    desc: 'Полевката е малък гризач, предпочитащ открити полета и земеделски райони. Известна е с вредителската си дейност върху култури и градини, като унищожава корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
+  },
 };
+
 const RatInfoComponent: React.FC = () => {
   const [selectedRat, setSelectedRat] = useState<RatType>('ДОМАШНА МИШКА');
 
@@ -100,16 +98,55 @@ const RatInfoComponent: React.FC = () => {
 
   const currentRat = ratData[selectedRat];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2, // Start slightly before the grid items
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-  //   <AnimatePresence>
-  //   <motion.div
-  //   initial={{ opacity: 0 }}
-  //   animate={{ opacity: 1 }}
-  //   transition={{ duration: 0.5 }}
-  // >
-    <div className="flex flex-col lg:flex-row gap-8 p-4 mx-16">
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
+            <motion.div 
+        className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+      {/* <div className="flex-1 grid grid-cols-1 sm:grid-cols-2  gap-4"> */}
+      <motion.div variants={itemVariants}>
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentRat.latinName} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
@@ -132,6 +169,8 @@ const RatInfoComponent: React.FC = () => {
       </ul>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ВРЕДИ" content={
           <ul>
             {currentRat.dangers.map((danger, index) => (
@@ -140,6 +179,8 @@ const RatInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
             {currentRat.behavior.map((behavior, index) => (
@@ -148,12 +189,16 @@ const RatInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
             <p>{currentRat.reproduction.offspring}</p>
             <p>{currentRat.reproduction.gestation}</p>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
             {currentRat.signs.map((sign, index) => (
@@ -161,46 +206,41 @@ const RatInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
-      </div>
-      <div className="flex-1">
-        <RatCard
+        </motion.div>
+      {/* </div> */}
+            </motion.div>
+
+      <motion.div 
+        className="flex-1"
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+      >        <RatCard
           selectedRat={selectedRat}
           onSelectRat={handleRatSelect}
         />
-      </div>
+      </motion.div>
+
     </div>
-
-    // {/* </motion.div> */}
-    // {/* </AnimatePresence> */}
-
-
   );
 };
 
 const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title, content }) => (
-  
-  // <motion.div
-  //   className=" border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 "
-  //   initial={{ opacity: 1, y: 20 }}
-  //   animate={{ opacity: 1, y: 0 }}
-  //   transition={{ duration: 0.3 }}
-  // >
-    <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300'>
-    <h3 className="text-2xl mb-2">{title}</h3>
-    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-8 justify-center items-center text-center my-auto h-32 flex flex-col text-xl'>
-      {typeof content === 'string' ? (
-        <p>{content}</p>
-      ) : (
-        React.isValidElement(content) && 
-        React.Children.map(content.props.children, (child, index) => 
-          React.cloneElement(child, { key: index })
-        )
-      )}
+  <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
+    <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
+    <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
+      <div className='text-xs sm:text-sm md:text-base lg:text-lg items-center justify-center mx-auto'>
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : (
+          React.isValidElement(content) && 
+          React.Children.map(content.props.children, (child, index) => 
+            React.cloneElement(child, { key: index })
+          )
+        )}
+      </div>
     </div>
-
-    </div>
-   // </motion.div>
-
+  </div>
 );
 
 
@@ -224,13 +264,13 @@ const RatCard: React.FC<{
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <BackgroundGradient className="rounded-[22px] p-4 sm:px-10 bg-white dark:bg-zinc-900">
-        <div className='p-4 rounded-lg'>
-          <div className="flex gap-2 mb-4">
+      <BackgroundGradient className="rounded-[22px] p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900">
+        <div className='rounded-lg'>
+          <div className="flex flex-col sm:flex-row gap-2 mb-4 items-center justify-center">
             {(Object.keys(ratData) as RatType[]).map((ratType) => (
               <button
                 key={ratType}
-                className={`px-3 py-1 rounded-xl border border-ddblue dark:border-lgreen mx-auto ${
+                className={`px-3 py-2 rounded-xl border border-ddblue dark:border-lgreen text-sm sm:text-base ${
                   selectedRat === ratType ? 'dark:text-white text-white bg-ddblue dark:bg-lgreen' : 'text-ddblue dark:text-neutral-100'
                 }`}
                 onClick={() => onSelectRat(ratType)}
@@ -240,40 +280,39 @@ const RatCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[450px]"
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+      className="relative h-[250px] sm:h-[350px] md:h-[450px]"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1.1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <AnimatePresence>
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Loading />
-                </motion.div>
-              )}
-             </AnimatePresence>
+            <Loading />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-             <AnimatePresence>
-            <Image 
-              key={imageKey}
-              src={ratData[selectedRat].imageUrl} 
-              alt={selectedRat} 
-              layout="fill"
-              objectFit="contain"
-              className="rounded-lg"
-              onLoadingComplete={() => setIsLoading(false)}
-            />
-            </AnimatePresence>
-
-          </motion.div> 
+      <AnimatePresence>
+        <Image 
+          key={imageKey}
+          src={ratData[selectedRat].imageUrl} 
+          alt={selectedRat} 
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-lg"
+          onLoad={() => setIsLoading(false)}
+        />
+      </AnimatePresence>
+    </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedRat}</h2>
-          <p className='text-start'>{ratData[selectedRat].desc}</p>
+          <p className='text-start text-sm sm:text-base'>{ratData[selectedRat].desc}</p>
         </div>
       </BackgroundGradient>
     </motion.div> 

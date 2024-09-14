@@ -118,10 +118,55 @@ const SpiderInfoComponent: React.FC = () => {
 
   const currentSpider = spiderData[selectedSpider];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.2, // Start slightly before the grid items
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
+
     <div className="flex flex-col xl:flex-row gap-8 p-4 mx-4">
-      <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <motion.div 
+        className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+      {/* <div className="flex-1 grid grid-cols-1 sm:grid-cols-2  gap-4"> */}
+      <motion.div variants={itemVariants}>
         <InfoBox title="ЛАТИНСКО НАИМЕНОВАНИЕ" content={currentSpider.latinName} />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="КАК ИЗГЛЕЖДА" content={
           <>
           <ul>
@@ -144,6 +189,8 @@ const SpiderInfoComponent: React.FC = () => {
       </ul>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ВРЕДИ" content={
           <ul>
             {currentSpider.dangers.map((danger, index) => (
@@ -152,6 +199,8 @@ const SpiderInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
             {currentSpider.behavior.map((behavior, index) => (
@@ -160,12 +209,16 @@ const SpiderInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
             <p>{currentSpider.reproduction.offspring}</p>
             <p>{currentSpider.reproduction.gestation}</p>
           </>
         } />
+        </motion.div>
+        <motion.div variants={itemVariants}>
         <InfoBox title="ПРИЗНАЦИ ЗА НАПАДЕНИЕ" content={
           <ul>
             {currentSpider.signs.map((sign, index) => (
@@ -173,13 +226,21 @@ const SpiderInfoComponent: React.FC = () => {
             ))}
           </ul>
         } />
-      </div>
-      <div className="flex-1">
-        <SpiderCard
+        </motion.div>
+      {/* </div> */}
+            </motion.div>
+
+      <motion.div 
+        className="flex-1"
+        variants={cardVariants}
+        initial="hidden"
+        animate="visible"
+      >        <SpiderCard
           selectedSpider={selectedSpider}
           onSelectSpider={handleSpiderSelect}
         />
-      </div>
+      </motion.div>
+
     </div>
   );
 };
@@ -188,7 +249,7 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
   <div className='border border-gray-200 p-4 rounded-xl hover:shadow-md transition duration-300 flex flex-col h-full'>
     <h3 className="text-lg sm:text-xl md:text-2xl mb-2">{title}</h3>
     <div className='bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 rounded-xl p-3 sm:p-4 md:p-5 flex-grow overflow-auto flex items-center justify-center'>
-      <div className='text-sm sm:text-base md:text-base lg:text-lg items-center justify-center mx-auto'>
+      <div className='text-xs sm:text-sm md:text-base lg:text-lg items-center justify-center mx-auto'>
         {typeof content === 'string' ? (
           <p>{content}</p>
         ) : (
@@ -239,36 +300,36 @@ const SpiderCard: React.FC<{
             ))}
           </div>
           <motion.div  
-            className="relative h-[250px] sm:h-[350px] md:h-[450px]"
-            initial={{ opacity: 1, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1.1 }}
-            transition={{ duration: 0.4 }}
+      className="relative h-[250px] sm:h-[350px] md:h-[450px]"
+      initial={{ opacity: 1, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1.1 }}
+      transition={{ duration: 0.4 }}
+    >
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <AnimatePresence>
-              {isLoading && (
-                <motion.div
-                  initial={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Loading />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <Loading />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-            <AnimatePresence>
-              <Image 
-                key={imageKey}
-                src={spiderData[selectedSpider].imageUrl} 
-                alt={selectedSpider} 
-                layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
-                onLoadingComplete={() => setIsLoading(false)}
-              />
-            </AnimatePresence>
-          </motion.div> 
+      <AnimatePresence>
+        <Image 
+          key={imageKey}
+          src={spiderData[selectedSpider].imageUrl} 
+          alt={selectedSpider} 
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-lg"
+          onLoad={() => setIsLoading(false)}
+        />
+      </AnimatePresence>
+    </motion.div> 
 
           <h2 className="text-xl font-bold mb-2 mt-4">{selectedSpider}</h2>
           <p className='text-start text-sm sm:text-base'>{spiderData[selectedSpider].desc}</p>
