@@ -272,12 +272,12 @@ function Navbar({
                     <div className="flex flex-col text-lg px-8 my-10">
                       <div className="flex flex-row  pb-10  justify-center hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(94,187,70,1)]">
                       <IconTie width={30} height={30} className="mr-2" />
-                      <HoveredLink href="/web-dev">Бизнес Услуги</HoveredLink>
+                      <HoveredLink href="/business">Бизнес Услуги</HoveredLink>
                       </div>
                       <hr></hr>
                       <div className="flex flex-row pt-10  hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(94,187,70,1)]">
                       <IconContract width={30} height={30} className="mr-2" />
-                      <HoveredLink href="/interface-design">ДДД Договор</HoveredLink>
+                      <HoveredLink href="/business/contract">ДДД Договор</HoveredLink>
                       </div>
 
                       {/* <div className=" hover:scale-105 transition duration-300 hover:drop-shadow-[0_1.5px_1.5px_rgba(255,22,22,1)]">

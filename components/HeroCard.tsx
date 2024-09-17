@@ -37,20 +37,15 @@ export function HeroCard() {
               ease: [0.4, 0.0, 0.2, 1],
             }}
           >
-            <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-light.png" 
-                   alt="logo"
-                   width={150} 
-                   height={150}
-                   className="block dark:hidden w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mx-auto mb-4" />
 
             <Image src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/logo/logo-dark.png" 
                    alt="logo"
                    width={150} 
                    height={150}
-                   className="dark:block hidden w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mx-auto mb-4" />
+                   className=" w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mx-auto mb-4" />
           </motion.div>
-          С <span className="text-ddblue dark:text-white">Bio</span> <span className="text-lgreen">DDD</span> всичко е {" "}
-          <Highlight className="text-black dark:text-white">
+          <span className="text-white">С Bio</span> <span className="text-lgreen">DDD</span> <span className="text-white">всичко е</span> {" "}
+          <Highlight className="text-white">
             ефективно, последователно и на високо ниво!
           </Highlight>
         </motion.h1>

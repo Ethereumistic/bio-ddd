@@ -69,7 +69,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                    text-sm sm:text-sm md:text-base lg:text-lg transition-all duration-300"
                   >
                   <IconPhone className="text-lg dark:text-lgreen text-ddblue mx-2"/>
-                <Link href="/business" className="text-lg font-russo px-4" onClick={onClose}>Контакти</Link>
+                <Link href="/contact" className="text-lg font-russo px-4" onClick={onClose}>Контакти</Link>
                 </HoverBorderGradient>
                 </div>
               </nav>

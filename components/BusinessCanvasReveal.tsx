@@ -61,7 +61,7 @@ export function BusinessCanvasReveal() {
       },
     },
     {
-      href: "/business/ddd-contract",
+      href: "/business/contract",
       title: "ДДД Договор",
       icon: <IconScript className="text-cyan-300" size={120} />,
       canvasProps: {

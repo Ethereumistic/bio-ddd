@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
 import { HoverBorderGradientDemo } from "./HoverBorderGradientDemo";
-import Link from "next/link";
+import { HeroCard } from "./HeroCard";
 
-export function ImagesSliderDemo() {
+export function ImagesSliderForm() {
   const images = [
     "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/21.png",
     "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/images/14.png",
@@ -32,18 +32,9 @@ export function ImagesSliderDemo() {
         className="z-50 flex flex-col justify-center items-center"
       >
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-          Доверете се на <br /> експертите
+          <HeroCard />
         </motion.p>
-        {/* <button className="px-4 py-2 backdrop-blur-sm border bg-red-300/10 border-red-500/20 text-white mx-auto text-center rounded-full relative mt-4">
-          <span>Свържете се с нас →</span>
-          <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-red-500 to-transparent" />
-        </button> */}
-        <Link href="/contact" className="">
-        <HoverBorderGradientDemo />
-        </Link>
       </motion.div>
     </ImagesSlider>
   );
 }
-
-

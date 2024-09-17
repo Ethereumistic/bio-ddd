@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/utils/cn";
+import { ImagesSliderForm } from "./ImagesSliderForm";
 
 export function SignupFormDemo() {
   const [activeTab, setActiveTab] = useState<"home" | "business">("home");
@@ -79,8 +80,10 @@ export function SignupFormDemo() {
   };
 
   return (
-    <div className="max-w-3xl w-full mx-auto  p-4 md:p-8 shadow-input bg-white dark:bg-dblue border-none">
-      <div className="flex justify-around mb-4">
+    <div className="flex max-w-7xl w-full mx-auto shadow-input bg-white dark:bg-dblue border-none">
+      {/* Form Section */}
+      <div className="flex-1 p-4 md:p-8">
+        <div className="flex justify-around mb-4">
         <button
           className={cn(
             "px-4 py-2",
@@ -314,6 +317,12 @@ export function SignupFormDemo() {
         С натискането на бутона <span className="underline">&quot;Изпрати Заявка&quot;</span> Вие автоматично се съгласявате Вашите данни да бъдат обработени за целите на сайта.
       </h2>
       </form>
+    </div>
+    <div className="flex-1 relative hidden md:block">
+
+        <ImagesSliderForm />
+        {/* You can add an overlay and text here later */}
+      </div>
     </div>
   );
 }
