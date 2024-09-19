@@ -4,7 +4,7 @@ import Image from "next/image";
 import { LogoImage } from "./ui/navbar-menu";
 
 export function FlipWordsDemo() {
-  const words = ["хлебарки", "гризачи", "дървеници", "бълхи", "мухи", "оси", "комари", "кърлежи", "мравки"];
+  const words = ["хлебарки", "гризачи", "дървеници", "бълхи", "мухи", "оси", "стършели", "комари", "кърлежи", "мравки", "змии", "паяци", "птици"];
 
   return (
     <div className="min-h-[38rem] flex flex-col justify-center items-center px-4 mt-8 sm:mt-12 md:mt-16">
@@ -31,7 +31,7 @@ export function FlipWordsDemo() {
            alt="logo"
            width={150} 
            height={150}
-           className="dark:block hidden w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mb-2" />
+           className="dark:block hidden w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-24 xl:h-24 mb-2" />
     <span className="text-ddblue dark:text-white mb-4 md:mb-7 ">Bio<span className="text-lgreen">DDD</span></span>
   </div>
 </div>

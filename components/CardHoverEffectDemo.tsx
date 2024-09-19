@@ -25,7 +25,7 @@ export const projects = [
   {
     title: "Хлебарки",
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "Сбогом на мръсните хлебарки, които разпространяват болести!",
     link: "/pests/cockroach",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/cockroach.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/cockroach.png",
@@ -33,7 +33,7 @@ export const projects = [
   {
     title: "Гризачи",
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+      "Чао на досадните гризачи, които унищожават вашата храна и имущество!",
     link: "/pests/rat",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/rat.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/rat.png",
@@ -41,7 +41,7 @@ export const projects = [
   {
     title: "Дървеници",
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+      "Прогонете досадните дървеници, които ви пречат да спите спокойно!",
     link: "/pests/bedbug",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bedbug.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bedbug.png",
@@ -49,7 +49,7 @@ export const projects = [
   {
     title: "Бълхи",
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
+      "Без бълхи и сърбежи за Вас и Вашите домашни любимци!",
     link: "/pests/flea",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/flea2.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/flea.png",
@@ -57,15 +57,15 @@ export const projects = [
   {
     title: "Мухи",
     description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+      "Сложете край на досадните мухи, които пренасят зарази!",
     link: "/pests/fly",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/fly.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/fly.png",
   },
   {
-    title: "Оси",
+    title: "Оси / Стършели",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Защитете се от оси и стършели, които могат да бъдат опасни!",
     link: "/pests/wasp",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/wasp.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/wasp.png",
@@ -73,7 +73,7 @@ export const projects = [
   {
     title: "Комари",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Насладете се на летните вечери без досадните комари!",
     link: "/pests/mosquito",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/mosquito.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/mosquito.png",
@@ -81,7 +81,7 @@ export const projects = [
   {
     title: "Кърлежи",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Предпазете се от опасните кърлежи, преносители на сериозни заболявания!",
     link: "/pests/tick",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/tick.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/tick.png",
@@ -89,7 +89,7 @@ export const projects = [
   {
     title: "Мравки",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Сложете край на пътеките от мравки, които нахлуват в дома Ви!",
     link: "/pests/ant",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/ant.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/ant.png",
@@ -97,7 +97,7 @@ export const projects = [
   {
     title: "Змии",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Освободете дома си от змиите, които могат да бъдат опасни!",
     link: "/pests/snake",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/snake.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/snake.png",
@@ -105,7 +105,7 @@ export const projects = [
   {
     title: "Паяци",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Кажете сбогом на паяжините, които ви карат да се чувствате некомфортно!",
     link: "/pests/spider",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/spider.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/spider.png",
@@ -113,7 +113,7 @@ export const projects = [
   {
     title: "Птици",
     description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
+      "Прогонете птиците, които замърсяват вашия двор!",
     link: "/pests/bird",
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bird.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bird.png",

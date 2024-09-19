@@ -221,7 +221,7 @@ function Navbar({
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/ant.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/ant.png"
 
-              description="Сложете край на пътеките от мравки, които нахлуват в дома ви!"
+              description="Сложете край на пътеките от мравки, които нахлуват в дома Ви!"
             />
             <ProductItem
               title="Змии"
@@ -247,12 +247,6 @@ function Navbar({
 
               description="Прогонете птиците, които замърсяват вашия двор!"
             />
-            {/* <ProductItem
-              title="Мухи"
-              href="https://userogue.com"
-              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/cockroach.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            /> */}
                       </div>
                   </MenuItem>
                   </HoverBorderGradient>
