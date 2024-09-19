@@ -17,97 +17,94 @@ const waspData: Record<WaspType, WaspInfo> = {
     latinName: 'Vespula vulgaris',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/obikosa.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '12 - 17 mm',
+      height: '5 - 7 mm',
+      weight: '0.1 - 0.2 g',
+      color: 'Жълт с черни ивици'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['Може да ужили и причинява алергични реакции', 'Може да бъде агресивен при защита на гнездото'],
+    behavior: ['Социални насекоми', 'Активни през деня', 'Строят гнезда от хартия'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '2000 - 5000 яйца',
+      gestation: '3 - 4 седмици'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Гнезда във външни пространства', 'Чести ухапвания и ужилвания'],
+    desc: 'Обикновената оса е социално насекомо, което живее в големи колонии. Те могат да бъдат агресивни и да ужилят, когато се чувстват застрашени. Осите са известни с тяхната способност да строят гнезда от хартия, които могат да се намират в различни външни места.',
   },
   'ГЕРМАНСКА': {
-      latinName: 'Vespula germanica',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/germanosa.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Vespula germanica',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/germanosa.png',
+    appearance: {
+      length: '10 - 15 mm',
+      height: '4 - 6 mm',
+      weight: '0.1 - 0.2 g',
+      color: 'Жълт с черни ивици'
     },
+    dangers: ['Може да ужили и да предизвика алергични реакции', 'Може да бъде агресивна при защита на гнездото'],
+    behavior: ['Социални насекоми', 'Активни през деня', 'Строят гнезда от хартия'],
+    reproduction: {
+      offspring: '3000 - 5000 яйца',
+      gestation: '3 - 4 седмици'
+    },
+    signs: ['Гнезда в труднодостъпни места', 'Чести ухапвания и ужилвания'],
+    desc: 'Германската оса е социално насекомо, което изгражда гнезда от хартия и обитава основно външни пространства. Те могат да бъдат агресивни, особено когато гнездото им е застрашено, и могат да причинят болезнени ужилвания.',
+  },
   'ХАРТИЕНА': {
-      latinName: 'Polistes dominula',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/hartienaosa.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Polistes dominula',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/hartienaosa.png',
+    appearance: {
+      length: '8 - 15 mm',
+      height: '4 - 7 mm',
+      weight: '0.1 - 0.2 g',
+      color: 'Кафяв до жълт'
     },
+    dangers: ['Може да ужили, причинявайки болезнени реакции', 'Може да бъде агресивна при защита на гнездото'],
+    behavior: ['Социални насекоми', 'Активни през деня', 'Строят гнезда под навеси или в труднодостъпни места'],
+    reproduction: {
+      offspring: '1000 - 3000 яйца',
+      gestation: '4 - 5 седмици'
+    },
+    signs: ['Гнезда под навеси и в скритите места', 'Чести ухапвания и ужилвания'],
+    desc: 'Хартиената оса е социално насекомо, известно с изграждането на гнезда от хартия, които се намират в скрити и труднодостъпни места. Те могат да бъдат агресивни при защита на гнездото си и могат да предизвикат болезнени ужилвания.',
+  },
   'ЕВРОПЕЙСКИ СТЪРШЕЛ': {
-      latinName: 'Vespa crabro',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/euroosa.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Vespa crabro',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/euroosa.png',
+    appearance: {
+      length: '18 - 25 mm',
+      height: '6 - 9 mm',
+      weight: '0.2 - 0.4 g',
+      color: 'Жълт с кафяви и черни ивици'
     },
-    'МУТИЛКА': {
-        latinName: 'Mutillidae',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/mutilka.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
+    dangers: ['Може да ужили и да предизвика алергични реакции', 'Може да бъде много агресивен при защита на гнездото'],
+    behavior: ['Социални насекоми', 'Активни през деня', 'Строят гнезда в дървета или в земята'],
+    reproduction: {
+      offspring: '1000 - 2000 яйца',
+      gestation: '4 - 5 седмици'
+    },
+    signs: ['Гнезда в дървета или в земята', 'Чести ухапвания и ужилвания'],
+    desc: 'Европейският стършел е голямо социално насекомо, което изгражда гнезда в дървета или в земята. Те могат да бъдат много агресивни и да предизвикат болезнени ужилвания, особено когато гнездото им е заплашено.',
+  },
+  'МУТИЛКА': {
+    latinName: 'Mutillidae',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/mutilka.png',
+    appearance: {
+      length: '6 - 12 mm',
+      height: '3 - 6 mm',
+      weight: '0.05 - 0.2 g',
+      color: 'Червен, черен или жълт'
+    },
+    dangers: ['Може да ужили и да предизвика болезнени реакции'],
+    behavior: ['Насекомо с агресивно поведение', 'Активни през деня', 'Предпочита сухи и топли местообитания'],
+    reproduction: {
+      offspring: '10 - 100 яйца',
+      gestation: '2 - 3 седмици'
+    },
+    signs: ['Прикрепени към растения или почва', 'Чести ухапвания и ужилвания'],
+    desc: 'Мутилките са насекоми, известни със своето агресивно поведение и болезнени ужилвания. Те обитават основно сухи и топли местообитания и са активни през деня.',
+  },
 };
+
 const WaspInfoComponent: React.FC = () => {
   const [selectedWasp, setSelectedWasp] = useState<WaspType>('ОБИКНОВЕНА');
 

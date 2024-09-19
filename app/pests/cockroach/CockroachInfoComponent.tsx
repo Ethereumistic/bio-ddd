@@ -2,66 +2,80 @@
 import React, { useState, useEffect } from 'react';
 import { CockroachInfo, CockroachType } from './cockroachTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
-import { GiWeight } from 'react-icons/gi';
-import { IoColorPaletteOutline } from 'react-icons/io5';
+import { GiEggClutch, GiWeight } from 'react-icons/gi';
+import { IoColorPaletteOutline, IoShareSocialOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle, FaFly, FaMoon, FaTemperatureHigh } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 import Loading from '@/app/loading';
+import { BiHide } from 'react-icons/bi';
+import { FaBugs } from 'react-icons/fa6';
+import { IconCalendarMonth } from '@tabler/icons-react';
+
+const getBehaviorIcon = (behavior: string) => {
+  if (behavior.includes('Нощна активност')) return FaMoon;
+  if (behavior.includes('Добър камуфлаж')) return BiHide;
+  if (behavior.includes('Социално животно')) return IoShareSocialOutline;
+  if (behavior.includes('Топли и влажни среди')) return FaTemperatureHigh;
+  if (behavior.includes('Лети на къси разстояния')) return FaFly;
+  if (behavior.includes('Бързо се размножава')) return FaBugs;
+  // Add more conditions for other behaviors
+  return GoDotFill; // Default icon
+};
 
 const cockroachData: Record<CockroachType, CockroachInfo> = {
   'ОРИЕНТАЛСКА': {
-    latinName: 'Mus musculus',
+    latinName: 'Blatta orientalis',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/o-cockroach.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
+      length: '10 - 15 cm',
+      height: '3 - 5 cm',
+      weight: '15 - 40 g',
       color: 'Кафяв / Сив'
     },
     dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    behavior: ['Нощна активност','Социално животно', 'Добър камуфлаж'],
     reproduction: {
-      offspring: '5 - 10',
-      gestation: '19 - 21 days'
+      offspring: '16 - 18 яйца в оотека',
+      gestation: '60 - 80 дни след снасяне'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
+    signs: ['Изпражнения като малки черни зърна', 'Следи от гризане върху мебели и опаковки на храни'],
     desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
   },
 'АМЕРИКАНСКА': {
     latinName: 'Periplaneta americana',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/a-cockroach.png',
     appearance: {
-        length: '3.4-5.3 см',
+        length: '3.4 - 5.3 см',
         height: 'N/A',
-        weight: '0.8-1.4 г',
+        weight: '0.8 - 1.4 г',
         color: 'Жълтеникаво кафяво'
     },
     dangers: ['Пренася болести', 'Замърсява храната', 'Предизвиква алергии и астма'],
     behavior: ['Нощна активност', 'Лети на къси разстояния', 'Топли и влажни среди'],
     reproduction: {
-        offspring: '14-16 на яйчна капсула (оотека)',
-        gestation: '29-58 дни'
+        offspring: '14 - 16 яйца в оотека',
+        gestation: '24 - 38 дни след снасяне'
     },
-    signs: ['Изпражнения, наподобяващи черен пипер', 'Яйчни капсули (оотеки)', 'Миризма на плесен'],
+    signs: ['Изпражнения като малки черни зърна', 'Яйчни капсули (оотеки)', 'Миризма на плесен'],
     desc: 'Американската хлебарка е един от най-разпространените видове хлебарки в световен мащаб. Тя предпочита топли и влажни среди като канализация и мазета. Този вид е известен с бързото си размножаване и способността да разпространява патогени чрез контакт с храни и повърхности.'
 },
 'ГЕРМАНСКА': {
     latinName: 'Blattella germanica',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/g-cockroach.png',
     appearance: {
-        length: '1.1-1.6 см',
+        length: '1.1 - 1.6 см',
         height: 'N/A',
-        weight: '0.2-0.4 г',
+        weight: '0.2 - 0.4 г',
         color: 'Светлокафяв'
     },
     dangers: ['Пренася болести', 'Замърсява храната', 'Предизвиква алергии'],
-    behavior: ['Нощна активност', 'Бързо се размножава', 'Предпочита топли и влажни места'],
+    behavior: ['Нощна активност', 'Бързо се размножава', 'Топли и влажни среди'],
     reproduction: {
-        offspring: '30-40 на яйчна капсула (оотека)',
-        gestation: '20-30 дни'
+        offspring: '30 - 40 яйца на оотека',
+        gestation: '14 - 28 дни след снасяне'
     },
     signs: ['Изпражнения като малки черни зърна', 'Яйчни капсули (оотеки)', 'Миризма на мухъл'],
     desc: 'Германската хлебарка е един от най-честите видове в домове и заведения. Тя предпочита топли и влажни условия, като често се среща в кухнята и други влажни помещения. Известна е със способността си да се размножава бързо и да разпространява патогени, което я прави проблем за хигиената.'
@@ -162,18 +176,25 @@ const CockroachInfoComponent: React.FC = () => {
         <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentCockroach.behavior.map((behavior, index) => (
-              <li key={index}
-              className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
-            ))}
+            {currentCockroach.behavior.map((behavior, index) => {
+              const IconComponent = getBehaviorIcon(behavior);
+              return (
+                <li key={index} className='flex items-center'>
+                  <IconComponent className='mt-1 mr-3 text-neutral-500' />
+                  {behavior}
+                </li>
+              );
+            })}
           </ul>
         } />
-        </motion.div>
+      </motion.div>
         <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
-            <p>{currentCockroach.reproduction.offspring}</p>
-            <p>{currentCockroach.reproduction.gestation}</p>
+          <div className=" justify-center items-center">
+            <p className='flex'><GiEggClutch className='mt-1  mr-2'/>{currentCockroach.reproduction.offspring}</p>
+            <p className='flex'><IconCalendarMonth className='mt-1  mr-2'/>{currentCockroach.reproduction.gestation}</p>
+            </div>
           </>
         } />
         </motion.div>

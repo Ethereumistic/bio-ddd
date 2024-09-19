@@ -14,100 +14,97 @@ import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const snakeData: Record<SnakeType, SnakeInfo> = {
   'ВОДЕН СМОК': {
-    latinName: 'Mus musculus',
+    latinName: 'Natrix natrix',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/natrix.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '80 - 150 см',
+      height: '3 - 5 см',
+      weight: '100 - 300 г',
+      color: 'Кафяв / Сив със светли петна'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['Няма сериозни опасности за хората'],
+    behavior: ['Полуводен начин на живот', 'Активен през деня', 'Плува много добре'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '10 - 30',
+      gestation: '30 - 45 дни'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Следи от люспи в близост до водни източници', 'Люспи, открити в тревата'],
+    desc: 'Водният смок е неотровна змия, която се среща в близост до водоеми. Той е отличен плувец и се храни с малки земноводни и риби. Често бъркан с опасни видове, но е напълно безвреден за хората.',
   },
   'МЕДЯНКА': {
-      latinName: 'Rattus rattus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/coronella.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Coronella austriaca',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/coronella.png',
+    appearance: {
+      length: '60 - 80 см',
+      height: '3 - 4 см',
+      weight: '100 - 200 г',
+      color: 'Кафяво с меден отенък'
     },
+    dangers: ['Неотровна, няма сериозни опасности за хората'],
+    behavior: ['Скрит начин на живот', 'Активна през деня', 'Предпочита сухи места'],
+    reproduction: {
+      offspring: '4 - 10',
+      gestation: '60 - 80 дни'
+    },
+    signs: ['Люспи в тревата', 'Следи от змии в сухи места'],
+    desc: 'Медянката е неотровна змия, която обитава сухи, скалисти терени. Тя е срамежлива и рядко се среща от хората. Медянката се храни с малки гризачи и гущери.',
+  },
   'ПЕПЕЛЯНКА': {
-      latinName: 'Rattus norvegicus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/pepelqnka.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Vipera ammodytes',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/pepelqnka.png',
+    appearance: {
+      length: '60 - 90 см',
+      height: '5 - 7 см',
+      weight: '100 - 300 г',
+      color: 'Сиво-кафяво с тъмен зигзаг на гърба'
     },
+    dangers: ['Отровна, опасна за хора и домашни любимци'],
+    behavior: ['Нощна и дневна активност', 'Предпочита скалисти терени'],
+    reproduction: {
+      offspring: '5 - 10',
+      gestation: '90 - 100 дни'
+    },
+    signs: ['Следи от змии в сухи и скалисти терени', 'Следи от ухапвания на жертвите'],
+    desc: 'Пепелянката е най-опасната змия в България. Тя е отровна и ухапванията ѝ могат да бъдат опасни за хора и животни. Обитава предимно скалисти терени и се храни с малки гризачи и птици.',
+  },
   'ЖЪЛТОКАФЯВ СМОК': {
-      latinName: 'Microtus arvalis',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultsmok.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Elaphe quatuorlineata',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultsmok.png',
+    appearance: {
+      length: '120 - 200 см',
+      height: '5 - 7 см',
+      weight: '500 - 1500 г',
+      color: 'Жълто-кафяво с четири дълги ивици'
     },
-    'УСОЙНИЦА': {
-        latinName: 'Microtus arvalis',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/usoinica.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
+    dangers: ['Няма сериозни опасности за хората'],
+    behavior: ['Наземен ловец', 'Активен през деня', 'Предпочита открити терени'],
+    reproduction: {
+      offspring: '10 - 16',
+      gestation: '50 - 60 дни'
+    },
+    signs: ['Люспи и следи от змии в открити терени'],
+    desc: 'Жълтокафявият смок е голяма неотровна змия, която често се среща в България. Тя е безвредна за хората и се храни предимно с гризачи, които ловува на земята.',
+  },
+  'УСОЙНИЦА': {
+    latinName: 'Vipera berus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/usoinica.png',
+    appearance: {
+      length: '50 - 80 см',
+      height: '4 - 6 см',
+      weight: '50 - 200 г',
+      color: 'Сиво-черно със зигзаг шарка'
+    },
+    dangers: ['Отровна, ухапванията могат да бъдат опасни'],
+    behavior: ['Активна през деня', 'Предпочита влажни и сенчести места'],
+    reproduction: {
+      offspring: '6 - 12',
+      gestation: '90 - 110 дни'
+    },
+    signs: ['Следи от змии във влажни места', 'Следи от ухапвания на жертвите'],
+    desc: 'Усойницата е отровна змия, която обитава предимно влажни и сенчести места. Ухапванията ѝ могат да бъдат опасни, особено за деца и домашни любимци. Тя е защитен вид в България.',
+  },
 };
+
 const SnakeInfoComponent: React.FC = () => {
   const [selectedSnake, setSelectedSnake] = useState<SnakeType>('ВОДЕН СМОК');
 

@@ -17,116 +17,112 @@ const tickData: Record<TickType, TickInfo> = {
     latinName: 'Ixodes ricinus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/dogtick.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
-      color: 'Кафяв / Сив'
+      length: '3 - 5 mm',
+      height: '2 - 3 mm',
+      weight: '0.1 - 0.3 g',
+      color: 'Черен или тъмнокафяв'
     },
-    dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
-    behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
+    dangers: ['Може да пренася заболявания като лаймска болест и анapлазмоза'],
+    behavior: ['Паразитира основно на бозайници', 'Активен през пролетта и лятото', 'Предпочита влажни и гористи места'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '3000 - 6000 яйца',
+      gestation: '1 - 2 седмици'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Прикрепени към домашни любимци, хора', 'Малки подутини на кожата от ухапване'],
+    desc: 'Кучешкият кърлеж е често срещан паразит, който може да предава сериозни заболявания на хора и животни. Те се срещат основно в гористи и влажни области, където активно се хранят с кръв на техните хостове.',
   },
   'КАФЯВ КУЧЕШКИ': {
-      latinName: 'Rhipicephalus sanguineus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/bogtick.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Rhipicephalus sanguineus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/bogtick.png',
+    appearance: {
+      length: '3 - 5 mm',
+      height: '2 - 3 mm',
+      weight: '0.1 - 0.3 g',
+      color: 'Кафяв'
     },
+    dangers: ['Може да пренася заболявания като бабезия и ерлихиоза'],
+    behavior: ['Активен през топлите месеци', 'Предпочита обитаеми райони', 'Често се среща на домашни любимци'],
+    reproduction: {
+      offspring: '2000 - 5000 яйца',
+      gestation: '2 - 4 седмици'
+    },
+    signs: ['Прикрепени към домашни любимци', 'Малки червени подутини от ухапване'],
+    desc: 'Кафявият кучешки кърлеж е основен паразит на кучета и може да предава различни заболявания. Често се среща в райони, обитавани от хора и животни, и е активен основно през топлите месеци.',
+  },
   'ЛИВАДЕН': {
-      latinName: 'Dermacentor reticulatus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/livtick.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Dermacentor reticulatus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/livtick.png',
+    appearance: {
+      length: '4 - 6 mm',
+      height: '2 - 3 mm',
+      weight: '0.1 - 0.2 g',
+      color: 'Кафяв с мрежести маркировки'
     },
+    dangers: ['Може да пренася заболявания като ерлихиоза и бабезия'],
+    behavior: ['Активен през пролетта и лятото', 'Често се среща на ливади и в полета', 'Паразитира на различни животни'],
+    reproduction: {
+      offspring: '1000 - 3000 яйца',
+      gestation: '2 - 3 седмици'
+    },
+    signs: ['Прикрепени към животни или хора', 'Малки подутини от ухапване'],
+    desc: 'Ливадният кърлеж е основен паразит на различни животни и понякога на хора. Те са активни през топлите месеци и могат да пренасят сериозни заболявания.',
+  },
   'ХИАЛОМА': {
-      latinName: 'Hyalomma marginatum',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/hyalomma.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Hyalomma marginatum',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/hyalomma.png',
+    appearance: {
+      length: '8 - 12 mm',
+      height: '5 - 7 mm',
+      weight: '0.2 - 0.5 g',
+      color: 'Кафяв с бели и червени маркировки'
     },
-    'ГЪЛЪБОВ': {
-        latinName: 'Argas reflexus',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/gulubtick.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
-      'КРИМСКИ': {
-        latinName: 'Haemaphysalis punctata',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/krimtick.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plants and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
+    dangers: ['Може да пренася заболявания като Кримска хеморагична треска'],
+    behavior: ['Активен през топлите месеци', 'Предпочита сухи и гористи места', 'Паразитира на големи бозайници'],
+    reproduction: {
+      offspring: '1000 - 2000 яйца',
+      gestation: '2 - 4 седмици'
+    },
+    signs: ['Прикрепени към хостове', 'Подутини на кожата от ухапване'],
+    desc: 'Хиаломма е кърлеж, който може да предава сериозни заболявания и е активен основно през топлите месеци. Те предпочитат сухи и гористи райони, където паразитират на големи животни.',
+  },
+  'ГЪЛЪБОВ': {
+    latinName: 'Argas reflexus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/gulubtick.png',
+    appearance: {
+      length: '5 - 8 mm',
+      height: '3 - 5 mm',
+      weight: '0.1 - 0.3 g',
+      color: 'Кафяв до червеникав'
+    },
+    dangers: ['Може да пренася заболявания като Птичи лаймска болест'],
+    behavior: ['Активен през нощта', 'Предпочита гнезда на птици', 'Може да нахапе хора и животни'],
+    reproduction: {
+      offspring: '1000 - 2000 яйца',
+      gestation: '1 - 2 седмици'
+    },
+    signs: ['Прикрепени към гнезда на птици', 'Подутини от ухапвания'],
+    desc: 'Гълъбовият кърлеж е основен паразит на гнезда на птици, но може да нахапе и хора и животни. Те могат да пренасят заболявания и обикновено са активни през нощта.',
+  },
+  'КРИМСКИ': {
+    latinName: 'Haemaphysalis punctata',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/krimtick.png',
+    appearance: {
+      length: '3 - 4 mm',
+      height: '2 - 3 mm',
+      weight: '0.1 - 0.2 g',
+      color: 'Кафяв с бели маркировки'
+    },
+    dangers: ['Може да пренася заболявания като Кримска хеморагична треска'],
+    behavior: ['Активен през топлите месеци', 'Предпочита гористи и полеви райони', 'Паразитира на различни животни'],
+    reproduction: {
+      offspring: '1000 - 2000 яйца',
+      gestation: '1 - 2 седмици'
+    },
+    signs: ['Прикрепени към домашни любимци, хора', 'Подутини от ухапване'],
+    desc: 'Кримският кърлеж е известен със способността си да предава сериозни заболявания. Той се среща основно в гористи и полеви райони и паразитира на различни животни.',
+  },
 };
+
 const TickInfoComponent: React.FC = () => {
   const [selectedTick, setSelectedTick] = useState<TickType>('КУЧЕШКИ');
 

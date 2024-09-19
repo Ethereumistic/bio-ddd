@@ -6,45 +6,13 @@ import { FaViruses } from "react-icons/fa";
 import { HiBugAnt } from "react-icons/hi2";
 import Link from "next/link";
 
-export function MobileCanvasRevealEffectDemo() {
+export function MobileCanvasRevealEffectDemo({ cards }: { cards: CardProps[] }) {
   return (
     <div className="pt-20 bg-white dark:bg-dblue w-full mx-auto px-0 sm:px-8">
       <div className="flex flex-col gap-8 max-w-sm mx-auto">
-        <MobileCard
-          href="/disinfection"
-          title="Дезинфекция"
-          icon={<FaViruses className="text-emerald-500" size={120} />}
-          canvasProps={{
-            animationSpeed: 5.1,
-            containerClassName: "bg-emerald-900",
-          }}
-        />
-
-        <MobileCard
-          href="/disinsection"
-          title="Дезинсекция"
-          icon={<HiBugAnt className="text-red-700" size={120} />}
-          canvasProps={{
-            animationSpeed: 3,
-            containerClassName: "bg-red-900",
-            colors: [
-              [255, 22, 22],
-              [255, 26, 26],
-            ],
-            dotSize: 2,
-          }}
-        />
-
-        <MobileCard
-          href="/deratization"
-          title="Дератизация"
-          icon={<RatIcon />}
-          canvasProps={{
-            animationSpeed: 3,
-            containerClassName: "bg-slate-400",
-            colors: [[125, 211, 252]],
-          }}
-        />
+        {cards.map((card, index) => (
+          <MobileCard key={index} {...card} />
+        ))}
       </div>
     </div>
   );
@@ -55,12 +23,7 @@ const MobileCard = ({
   title,
   icon,
   canvasProps,
-}: {
-  href: string;
-  title: string;
-  icon: React.ReactNode;
-  canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
-}) => {
+}: CardProps) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.8 });
   const [showAnimation, setShowAnimation] = React.useState(false);
@@ -126,6 +89,8 @@ const MobileCard = ({
     </Link>
   );
 };
+
+
 const RatIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" viewBox="0 0 512 512">
@@ -149,3 +114,10 @@ export const Icon = ({ className, ...rest }: any) => {
     </svg>
   );
 };
+
+interface CardProps {
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+  canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
+}

@@ -1,61 +1,58 @@
 import SnakeInfoComponent from './SnakeInfoComponent'
 import { 
-    IconSearch,
-    IconSpray,
-    IconScript,
-    IconRosetteDiscountCheck,
-    IconHome,
-    IconApps,
-    IconLungs,
-    IconAlertSquareRounded,
-  } from "@tabler/icons-react";
+  IconSearch,
+  IconFence,
+  IconScript,
+  IconRosetteDiscountCheck,
+  IconHome,
+} from "@tabler/icons-react";
 import { SignupFormDemo } from '@/components/SignupFormDemo';
-import { HeroCard } from '@/components/HeroCard';
 import { FeaturesSection } from '@/components/FeaturesSection';
+import { GiHighGrass, GiPoisonBottle, GiSnakeBite } from 'react-icons/gi';
 export default function Snake() {
 
-    const snakeSet = [
-        {
-          title: "Достъп на хлебарките",
-          description: "Хлебарките проникват в дома през пукнатини, вентилация и канали, или се внасят с кашони, кутии и обувки.",
-          icon: <IconHome size={50}/>,
-        },
-        {
-          title: "Идеална среда за размножаване",
-          description: "Домът ви осигурява идеални условия за размножаване на хлебарките – храна, топлина, вода и скрити места.",
-          icon: <IconApps size={50} />,
-        },
-        {
-          title: "Алергии и астма",
-          description: "Oтпадъците, формирани от хитиновата им обвивка, мъртви хлебарки и изпражнения могат да развият алергии, особено при децата и при по-чувствителните възрастни.",
-          icon: <IconLungs size={50} />,
-        },
-        {
-          title: "Трудността да се справим сами",
-          description: "Третирането на хлебарките препаратите за масова употреба ,които се продават на свободен принцип, крият риска от развиване на резистентност и тогава борбата с хлебарките ще е трудна и в дългосрочен план. ",
-          icon: <IconAlertSquareRounded size={50} />,
-        },
-        {
-            title: "Оглед на обекта",
-            description: "Сертифициран ДДД експерт прави оглед на обекта за установяване наличието и числеността на хлебарките",
-            icon: <IconSearch size={50}/>,
-          },
-          {
-            title: "Третиране на обекта",
-            description: "Нашите ДДД изпълнители извършват обработка на обекта съгласно най-високите професионални стандарти само с одобрени за употреба биоциди и специализирани средства",
-            icon: <IconSpray size={50} />,
-          },
-          {
-            title: "Издаване на протокол",
-            description: "След извършване на обработката задължително издаваме протокол по образец на Министерство на здравеопазването, където са описани подробно мерките и средствата за борба с хлебарки, които сме приложили",
-            icon: <IconScript size={50} />,
-          },
-          {
-            title: "Проследяване на ефективността",
-            description: "По желание на клиента можем да проследим ефективността на проведените ДДД мероприятия с цел гарантиране успешната борба с хлебарките",
-            icon: <IconRosetteDiscountCheck size={50} />,
-          },
-      ];
+  const snakeSet = [
+    {
+      title: "Привличане към градини и дворове",
+      description: "Змиите са привлечени от места, които предлагат укритие и храна, като гъста растителност, купчини дърва или камъни, и области с гризачи.",
+      icon: <GiHighGrass size={50}/>,
+    },
+    {
+      title: "Потенциална опасност",
+      description: "Някои видове змии са отровни и представляват сериозна заплаха за хора и домашни любимци. Дори неотровните змии могат да ухапят, ако се чувстват застрашени.",
+      icon: <GiSnakeBite size={50} />,
+    },
+    {
+      title: "Здравни рискове",
+      description: "Змийските ухапвания могат да причинят сериозни здравословни проблеми, от алергични реакции до тежки отравяния, изискващи спешна медицинска помощ.",
+      icon: <GiPoisonBottle size={50} />,
+    },
+    {
+      title: "Проникване в сгради",
+      description: "Змиите могат да влязат в домове и други сгради през малки отвори, търсейки топлина или преследвайки плячка, което създава дискомфорт и страх сред обитателите.",
+      icon: <IconHome size={50} />,
+    },
+    {
+        title: "Оглед на обекта",
+        description: "Нашите експерти извършват подробен оглед на терена, идентифицирайки потенциални места за укритие на змии и фактори, които ги привличат.",
+        icon: <IconSearch size={50}/>,
+      },
+      {
+        title: "Превантивни мерки",
+        description: "Прилагаме комплексни мерки за контрол на змии, включително инсталиране на бариери, премахване на укрития и контрол на гризачите, които са храна за змиите.",
+        icon: <IconFence size={50} />,
+      },
+      {
+        title: "Издаване на протокол",
+        description: "След извършване на превантивните мерки, издаваме подробен протокол, описващ приложените методи за контрол и превенция на змии в района.",
+        icon: <IconScript size={50} />,
+      },
+      {
+        title: "Проследяване и поддръжка",
+        description: "Предлагаме услуги за редовно проследяване и поддръжка, за да гарантираме дългосрочна ефективност на приложените мерки за контрол на змии.",
+        icon: <IconRosetteDiscountCheck size={50} />,
+      },
+  ];
     
 
     return (
@@ -67,9 +64,6 @@ export default function Snake() {
 
             <div className='flex flex-col-reverse xl:flex-row'>
               <SignupFormDemo />
-              <div className='flex justify-center items-center  -translate-x-0 xl:-translate-x-12 2xl:-translate-x-32'>
-              <HeroCard />
-              </div>
             </div>
 
         </div>

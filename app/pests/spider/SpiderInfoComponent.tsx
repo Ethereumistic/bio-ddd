@@ -17,97 +17,95 @@ const spiderData: Record<SpiderType, SpiderInfo> = {
     latinName: 'Tegenaria domestica',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/dompaqk.png',
     appearance: {
-      length: '10-15 cm',
-      height: '3-5 cm',
-      weight: '15-40 g',
+      length: '15 - 20 mm',
+      height: '10 - 15 mm',
+      weight: '2 - 4 g',
       color: 'Кафяв / Сив'
     },
     dangers: ['преносител на заболявания', 'пренасят други вредители', 'замърсяват'],
     behavior: ['социално животно', 'нощен начин на живот', 'добър катерач'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 days'
+      offspring: '30 - 50',
+      gestation: '30 - 40 дни'
     },
-    signs: ['Droppings', 'Gnaw marks on furniture and food packaging'],
-    desc: 'Mалък гризач, често срещан в домовете. Тя е известна с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Превенцията и контрола на мишките са от съществено значение за здравословната среда в дома.',
+    signs: ['Паяжини в ъглите на стаите', 'Паяжини в ъглите на мебелите'],
+    desc: 'Къщният паяк е често срещан в домовете и е известен със способността си да изгражда паяжини в ъглите на стаите. Той може да бъде носител на патогени и да предизвика алергични реакции.',
   },
   'КРЪСТОНОСЕН': {
-      latinName: 'Araneus diadematus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/crosspaqk.png',
-      appearance: {
-        length: '16-24 cm',
-        height: '4-5 cm',
-        weight: '150-250 g',
-        color: 'Black or dark brown'
-      },
-      dangers: ['Can carry diseases', 'Can carry parasites', 'Can damage electrical wiring'],
-      behavior: ['Nocturnal', 'Good climber', 'Prefers high places'],
-      reproduction: {
-        offspring: '5-8',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks', 'Grease marks on walls from fur'],
-      desc: 'Известен като корабен плъх, е разпространен в тропическите и субтропическите райони. Той е по-дребен и по-подвижен от сивия плъх и често живее в тавани и дървета. Черните плъхове могат да повредят строителни материали и електрически кабели, както и да разпространяват болести и паразити.',
-
+    latinName: 'Araneus diadematus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/crosspaqk.png',
+    appearance: {
+      length: '10 - 20 mm',
+      height: '8 - 18 mm',
+      weight: '1 - 2 g',
+      color: 'Черен или тъмен кафяв'
     },
+    dangers: ['Може да ухапе при провокация'],
+    behavior: ['Нощен', 'Тъче големи кръгли паяжини', 'Предпочита храсталаци и градини'],
+    reproduction: {
+      offspring: '200 - 500',
+      gestation: '30 - 50 дни'
+    },
+    signs: ['Кръгли паяжини на храсти и дървета', 'Малки паяци в паяжините'],
+    desc: 'Кръстоносеца е известен със своите големи кръгли паяжини, които тъче в храсти и дървета. Той е важен за контрола на насекомите, въпреки че ухапванията му могат да бъдат болезнени.',
+  },
   'ЧЕРНА ВДОВИЦА': {
-      latinName: 'Latrodectus tredecimguttatus',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/blackwidow.png',
-      appearance: {
-        length: '20-25 cm',
-        height: '5-7 cm',
-        weight: '200-500 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can carry diseases', 'Can cause structural damage by gnawing'],
-      behavior: ['Nocturnal', 'Good swimmer', 'Prefers low and damp places'],
-      reproduction: {
-        offspring: '6-12',
-        gestation: '21-23 days'
-      },
-      signs: ['Droppings', 'Gnaw marks on structures and food containers', 'Burrows near buildings'],
-      desc: 'Известен още като норвежки плъх или канален плъх, е по-голям и масивен от черния плъх. Той обикновено живее в подземни тунели и канализации, но може да се намери и в сгради. Сивите плъхове са известни със своята разрушителна дейност и с това, че пренасят опасни патогени.',
-
+    latinName: 'Latrodectus mactans',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/blackwidow.png',
+    appearance: {
+      length: '8 - 15 mm',
+      height: '6 - 10 mm',
+      weight: '0.5 - 1 g',
+      color: 'Черен с червени точки на гърба'
     },
+    dangers: ['Смъртоносна отрова', 'Може да предизвика сериозни здравословни проблеми'],
+    behavior: ['Нощен', 'Изгражда гъсти паяжини', 'Предпочита скрити места'],
+    reproduction: {
+      offspring: '100 - 500',
+      gestation: '30 - 45 дни'
+    },
+    signs: ['Гъсти паяжини в скрити места', 'Чести срещи с паяка'],
+    desc: 'Черната вдовица е известна със своята смъртоносна отрова, която може да бъде опасна за хората. Паяците от този вид изграждат гъсти паяжини на скрити места, като например под мебели или в ъгли.',
+  },
   'ЖЪЛТ ПАЯК': {
-      latinName: 'Cheiracanthium punctorium',
-      imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultpaqk.png',
-      appearance: {
-        length: '8-12 cm',
-        height: '2-3 cm',
-        weight: '20-50 g',
-        color: 'Brown or gray'
-      },
-      dangers: ['Can damage crops', 'Can carry diseases'],
-      behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-      reproduction: {
-        offspring: '3-7',
-        gestation: '19-21 days'
-      },
-      signs: ['Runways in grass', 'Gnaw marks on plspiders and crops'],
-      desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-
+    latinName: 'Cheiracanthium punctorium',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/jultpaqk.png',
+    appearance: {
+      length: '6 - 10 mm',
+      height: '4 - 7 mm',
+      weight: '0.3 - 0.8 g',
+      color: 'Жълт'
     },
-    'КАМЕНЕН': {
-        latinName: 'Eresus sandaliatus',
-        imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/kamenenpaqk.png',
-        appearance: {
-          length: '8-12 cm',
-          height: '2-3 cm',
-          weight: '20-50 g',
-          color: 'Brown or gray'
-        },
-        dangers: ['Can damage crops', 'Can carry diseases'],
-        behavior: ['Herbivorous', 'Active during day and night', 'Prefers grassy fields'],
-        reproduction: {
-          offspring: '3-7',
-          gestation: '19-21 days'
-        },
-        signs: ['Runways in grass', 'Gnaw marks on plspiders and crops'],
-        desc: 'Малък гризач, който предпочита открити полета и земеделски райони. Полевките са известни с вредителската си дейност върху култури и градини, като унищожават корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
-  
-      },
+    dangers: ['Може да ухапе', 'Лека болка и дискомфорт при ухапване'],
+    behavior: ['Дневен', 'Тъче малки паяжини', 'Предпочита растителност'],
+    reproduction: {
+      offspring: '20 - 50',
+      gestation: '30 - 45 дни'
+    },
+    signs: ['Малки паяжини в растителността', 'Намира се в близост до растения'],
+    desc: 'Жълтият паяк е често срещан в градини и полета. Неговите ухапвания могат да предизвикат леко раздразнение и болка, но обикновено не са опасни.',
+  },
+  'КАМЕНЕН': {
+    latinName: 'Eresus sandaliatus',
+    imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/kamenenpaqk.png',
+    appearance: {
+      length: '8 - 12 mm',
+      height: '6 - 10 mm',
+      weight: '0.5 - 1 g',
+      color: 'Червен с черни отбелязвания'
+    },
+    dangers: ['Може да ухапе', 'Лека болка при ухапване'],
+    behavior: ['Дневен', 'Тъче малки мрежи', 'Предпочита каменисти и скалисти места'],
+    reproduction: {
+      offspring: '20 - 30',
+      gestation: '30 - 45 дни'
+    },
+    signs: ['Малки паяжини между камъни', 'Паяци в близост до скали'],
+    desc: 'Каменният паяк е известен със своето червено и черно оцветяване. Често се среща в каменисти или скалисти райони, където тъче малки мрежи.',
+  },
 };
+
+
 const SpiderInfoComponent: React.FC = () => {
   const [selectedSpider, setSelectedSpider] = useState<SpiderType>('КЪЩЕН ПАЯК');
 

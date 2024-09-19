@@ -2,6 +2,7 @@
 import React from 'react'
 import { FlipWordsDemo } from '@/components/FlipWordsDemo'
 import { CardHoverEffectDemo } from '@/components/CardHoverEffectDemo'
+import { SignupFormDemo } from '@/components/SignupFormDemo';
 
 
 export default function PestsPage() {
@@ -10,6 +11,11 @@ export default function PestsPage() {
             
             <FlipWordsDemo />
             <CardHoverEffectDemo />
+
+            
+            <div className=' flex flex-col-reverse xl:flex-row'>
+              <SignupFormDemo />
+            </div>
         </div>
     )
 }

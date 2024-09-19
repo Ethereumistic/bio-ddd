@@ -2,14 +2,18 @@
 import React, { useState, useEffect } from 'react';
 import { BedbugInfo, BedbugType } from './bedbugTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
-import { GiWeight } from 'react-icons/gi';
+import { GiBatwingEmblem, GiEggClutch, GiMeshBall, GiWeight } from 'react-icons/gi';
 import { IoColorPaletteOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaDog, FaEgg, FaExclamationTriangle, FaMoon, FaSeedling, FaTemperatureHigh } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 import Loading from '@/app/loading';
+import { IconCalendarMonth } from '@tabler/icons-react';
+import { MdOutlineHideSource } from 'react-icons/md';
+import { FaBugs, FaHouse } from 'react-icons/fa6';
+import { PiBird } from 'react-icons/pi';
 
 const bedbugData: Record<BedbugType, BedbugInfo> = {
   'КРЕВАТНА': {
@@ -79,12 +83,28 @@ const bedbugData: Record<BedbugType, BedbugInfo> = {
     behavior: ['Нощна активност', 'Предпочита топъл и влажен климат', 'Бързо се разпространява'],
     reproduction: {
       offspring: '300 - 600 яйца за живота си',
-      gestation: '5 - 8 дни'
+      gestation: '5 - 8 дни след снасяне'
     },
     signs: ['Тъмни петна по чаршафите и мебелите', 'Специфична миризма', 'Живи насекоми нощем'],
     desc: 'Тропическата дървеница е вид, разпространен предимно в топлите региони. Тя е подобна на креватната дървеница, но е по-устойчива на високи температури и влажност. Този вид е известен с бързото си размножаване и способността си да развива резистентност към инсектициди. Тропическите дървеници могат да бъдат сериозен проблем в хотели и жилищни сгради, изискващ професионална намеса за контрол.',
   },
 };
+
+const getBehaviorIcon = (behavior: string) => {
+  if (behavior.includes('Нощна активност')) return FaMoon;
+  if (behavior.includes('Крие се')) return MdOutlineHideSource;
+  if (behavior.includes('Привлича се от телесната топлина')) return FaTemperatureHigh;
+  if (behavior.includes('Предпочита топъл и влажен климат')) return FaTemperatureHigh;
+  if (behavior.includes('Живее в колонии')) return GiBatwingEmblem;
+  if (behavior.includes('Предпочита да напада')) return FaDog;
+  if (behavior.includes('Сезонна активност')) return FaSeedling;
+  if (behavior.includes('в домове')) return FaHouse;
+  if (behavior.includes('гнездата на лястовици')) return PiBird;
+  if (behavior.includes('Бързо се разпространява')) return FaBugs;
+  // Add more conditions for other behaviors
+  return GoDotFill; // Default icon
+};
+
 const BedbugInfoComponent: React.FC = () => {
   const [selectedBedbug, setSelectedBedbug] = useState<BedbugType>('КРЕВАТНА');
 
@@ -180,18 +200,25 @@ const BedbugInfoComponent: React.FC = () => {
         <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentBedbug.behavior.map((behavior, index) => (
-              <li key={index}
-              className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
-            ))}
+            {currentBedbug.behavior.map((behavior, index) => {
+              const IconComponent = getBehaviorIcon(behavior);
+              return (
+                <li key={index} className='flex items-center'>
+                  <IconComponent className='mt-1 mr-3 text-neutral-500' />
+                  {behavior}
+                </li>
+              );
+            })}
           </ul>
         } />
         </motion.div>
         <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
-            <p>{currentBedbug.reproduction.offspring}</p>
-            <p>{currentBedbug.reproduction.gestation}</p>
+          <div className=" justify-center items-center">
+            <p className='flex'><FaEgg className='mt-1  mr-2'/>{currentBedbug.reproduction.offspring}</p>
+            <p className='flex'><IconCalendarMonth className='mt-1  mr-2'/>{currentBedbug.reproduction.gestation}</p>
+            </div>
           </>
         } />
         </motion.div>

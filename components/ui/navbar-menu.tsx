@@ -145,7 +145,7 @@ export const ProductItem = ({
 
 
   return (
-    <Link href={href} className="flex space-x-2   hover:scale-105 transition duration-300 hover:text-lred">
+    <Link href={href} className="flex space-x-2   hover:scale-105 transition duration-300 hover:text-lred z-[5000]">
               <Image
           src={src}
           width={100}

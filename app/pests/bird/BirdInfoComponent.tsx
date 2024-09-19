@@ -2,16 +2,29 @@
 import React, { useState, useEffect } from 'react';
 import { BirdInfo, BirdType } from './birdTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
-import { GiWeight } from 'react-icons/gi';
-import { IoColorPaletteOutline } from 'react-icons/io5';
+import { GiMeat, GiNestBirds, GiScalpelStrike, GiWeight } from 'react-icons/gi';
+import { IoColorPaletteOutline, IoShareSocialOutline } from 'react-icons/io5';
 import { GoDotFill } from "react-icons/go";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaBrain, FaBuilding, FaEgg, FaExclamationTriangle, FaPoo, FaSun, FaTrash } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 import Loading from '@/app/loading';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
+import { IconCalendarMonth } from '@tabler/icons-react';
 
-
+const getBehaviorIcon = (behavior: string) => {
+  if (behavior.includes('Живее на големи ята')) return GiNestBirds;
+  if (behavior.includes('Активен през деня')) return FaSun;
+  if (behavior.includes('Адаптивен към градска среда')) return FaBuilding;
+  if (behavior.includes('Интелигентен')) return FaBrain ;
+  if (behavior.includes('Социален')) return IoShareSocialOutline ;
+  if (behavior.includes('Всеяден')) return GiMeat;
+  if (behavior.includes('Агресивно поведение през размножителния период')) return GiScalpelStrike;
+  if (behavior.includes('Замърсяване с изпражнения')) return FaPoo;
+  if (behavior.includes('Разпространение на боклук')) return FaTrash;
+  // Add more conditions for other behaviors
+  return GoDotFill; // Default icon
+};
 const birdData: Record<BirdType, BirdInfo> = {
   'ГЪЛЪБ': {
     latinName: 'Columba livia',
@@ -23,10 +36,10 @@ const birdData: Record<BirdType, BirdInfo> = {
       color: 'Сиво-син с бели и черни петна'
     },
     dangers: ['преносител на заболявания', 'замърсяване с изпражнения', 'замърсяване на сгради'],
-    behavior: ['живее на големи ята', 'активен през деня', 'адаптивен към градска среда'],
+    behavior: ['Живее на големи ята', 'Активен през деня', 'Адаптивен към градска среда'],
     reproduction: {
       offspring: '1 - 2 яйца на люпило',
-      gestation: '17 - 19 дни'
+      gestation: '17 - 19 дни след снасяне'
     },
     signs: ['Струпване на птици', 'Бели изпражнения по сгради', 'Шум от гукане'],
     desc: 'Градският гълъб е често срещан в градовете по целия свят. Той е известен с адаптивността си към градската среда и способността да се размножава бързо. Гълъбите могат да причинят значителни щети на сгради чрез техните изпражнения и да пренасят различни заболявания. Контролът на популацията им е важен за поддържането на чистота и хигиена в градските райони.',
@@ -41,10 +54,10 @@ const birdData: Record<BirdType, BirdInfo> = {
       color: 'Черен с лилав или син блясък'
     },
     dangers: ['може да атакува малки животни', 'разпространява боклук', 'силен шум'],
-    behavior: ['интелигентен', 'социален', 'всеяден'],
+    behavior: ['Интелигентен', 'Социален', 'Всеяден'],
     reproduction: {
-      offspring: '3 - 7 яйца',
-      gestation: '20 - 25 дни'
+      offspring: '3 - 7 яйца на люпило',
+      gestation: '20 - 25 дни след снасяне'
     },
     signs: ['Силно грачене', 'Големи черни птици', 'Разпръснат боклук'],
     desc: 'Гарванът е една от най-интелигентните птици, известна със способността си да решава проблеми и да използва инструменти. Въпреки че не са типични вредители, в градски условия могат да причинят неудобства чрез шума си и навика да разпръскват боклук. Гарваните са всеядни и могат да се адаптират към различни хранителни източници, което ги прави успешни в различни среди.',
@@ -58,13 +71,13 @@ const birdData: Record<BirdType, BirdInfo> = {
       weight: '800 - 1250 г',
       color: 'Бяло тяло със сиви криле'
     },
-    dangers: ['агресивно поведение през размножителния период', 'замърсяване с изпражнения', 'разпространение на боклук'],
-    behavior: ['живее на големи ята', 'активна през деня', 'адаптивно и всеядно хранене'],
+    dangers: ['Агресивно поведение през размножителния период', 'Замърсяване с изпражнения', 'Разпространение на боклук'],
+    behavior: ['Живее на големи ята', 'Активен през деня', 'Всеяден'],
     reproduction: {
-      offspring: '2 - 3 яйца',
-      gestation: '27 - 31 дни'
+      offspring: '2 - 3 яйца на люпило',
+      gestation: '27 - 31 дни след снасяне'
     },
-    signs: ['Силни писъци', 'Струпване на птици край водоеми', 'Нападения над хора за храна'],
+    signs: ['Силни писъци', 'Струпване край водоеми и сметища', 'Нападения над хора за храна'],
     desc: 'Чайката е морска птица, която често се среща в крайбрежни градове. Те са известни с агресивното си поведение, особено когато защитават гнездата си или търсят храна. Чайките могат да бъдат проблем в градските райони поради навика им да ровят в боклука и да замърсяват с изпражненията си. Контролът на популацията им може да бъде предизвикателство поради защитения им статус в много страни.',
   },
 'ГЛАРУС': {
@@ -76,13 +89,13 @@ const birdData: Record<BirdType, BirdInfo> = {
       weight: '800 - 1200 г',
       color: 'Бяло тяло със сребристо-сиви криле и жълт клюн'
     },
-    dangers: ['агресивно поведение през размножителния период', 'замърсяване с изпражнения', 'разпространение на боклук'],
-    behavior: ['живее на големи ята', 'активен през деня', 'адаптивно и всеядно хранене'],
+    dangers: ['Агресивно поведение през размножителния период', 'Замърсяване с изпражнения', 'Разпространение на боклук'],
+    behavior: ['Живее на големи ята', 'Активен през деня', 'Всеяден'],
     reproduction: {
-      offspring: '2 - 3 яйца',
-      gestation: '27 - 31 дни'
+      offspring: '2 - 3 яйца на люпило',
+      gestation: '27 - 31 дни след снасяне'
     },
-    signs: ['Силни крясъци', 'Струпване на птици край водоеми и сметища', 'Нападения над хора за храна'],
+    signs: ['Силни крясъци', 'Струпване край водоеми и сметища', 'Нападения над хора за храна'],
     desc: 'Гларусът (жълтокрак) е голяма морска птица, често срещана по Черноморието и вътрешните водоеми на България. Известен е с агресивното си поведение, особено когато защитава територията си или търси храна. Гларусите могат да бъдат проблем в крайбрежните градове и курорти поради навика им да ровят в боклука, да крадат храна от хората и да замърсяват с изпражненията си. Те са изключително адаптивни и са се научили да оцеляват в градска среда, което понякога води до конфликти с хората. Въпреки това, гларусите играят важна роля в екосистемата и са защитени от закона, което прави контрола на популацията им предизвикателство.',
   },
 };
@@ -181,18 +194,25 @@ const BirdInfoComponent: React.FC = () => {
         <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentBird.behavior.map((behavior, index) => (
-              <li key={index}
-              className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
-            ))}
+            {currentBird.behavior.map((behavior, index) => {
+              const IconComponent = getBehaviorIcon(behavior);
+              return (
+                <li key={index} className='flex items-center'>
+                  <IconComponent className='mt-1 mr-3 text-neutral-500' />
+                  {behavior}
+                </li>
+              );
+            })}
           </ul>
         } />
-        </motion.div>
+      </motion.div>
         <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>
-            <p>{currentBird.reproduction.offspring}</p>
-            <p>{currentBird.reproduction.gestation}</p>
+          <div className=" justify-center items-center">
+            <p className='flex'><FaEgg className='mt-1  mr-2'/>{currentBird.reproduction.offspring}</p>
+            <p className='flex'><IconCalendarMonth className='mt-1  mr-2'/>{currentBird.reproduction.gestation}</p>
+            </div>
           </>
         } />
         </motion.div>

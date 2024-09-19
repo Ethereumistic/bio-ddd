@@ -2,91 +2,106 @@
 import React, { useState, useEffect } from 'react';
 import { RatInfo, RatType } from './ratTypes'
 import { RxHeight, RxWidth } from 'react-icons/rx';
-import { GiWeight } from 'react-icons/gi';
-import { IoColorPaletteOutline } from 'react-icons/io5';
+import { GiHighGrass, GiWeight } from 'react-icons/gi';
+import { IoColorPaletteOutline, IoShareSocialOutline } from 'react-icons/io5';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { GoDotFill } from "react-icons/go";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle, FaLeaf, FaMoon, FaTemperatureHigh, FaTree, FaWater } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from '@/app/loading';
 import Image from 'next/image';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
+import { BsLadder } from 'react-icons/bs';
+import { IoMdCloudyNight } from 'react-icons/io';
 
-
+const getBehaviorIcon = (behavior: string) => {
+  if (behavior.includes('Социално животно')) return IoShareSocialOutline;
+  if (behavior.includes('Нощна активност')) return FaMoon;
+  if (behavior.includes('Добър катерач')) return BsLadder ;
+  if (behavior.includes('Високи места')) return FaTree  ;
+  if (behavior.includes('Добър плувец')) return FaWater ;
+  if (behavior.includes('Ниски и влажни места')) return FaTemperatureHigh;
+  if (behavior.includes('Тревопасен')) return FaLeaf ;
+  if (behavior.includes('Нощна и дневна активност')) return IoMdCloudyNight ;
+  if (behavior.includes('Предпочита тревисти поля')) return GiHighGrass;
+  // Add more conditions for other behaviors
+  return GoDotFill; // Default icon
+};
 const ratData: Record<RatType, RatInfo> = {
   'ДОМАШНА МИШКА': {
     latinName: 'Mus musculus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Mus-musculus.png',
     appearance: {
-      length: '7-10 cm',
-      height: '2-4 cm',
-      weight: '12-30 g',
+      length: '7 - 10 см',
+      height: '2 - 4 см',
+      weight: '12 - 30 г',
       color: 'Кафяв или сив'
     },
-    dangers: ['Преносител на заболявания', 'Може да пренася паразити', 'Може да замърси хранителни запаси'],
-    behavior: ['Социално животно', 'Нощен начин на живот', 'Добър катерач'],
+    dangers: ['Преносител на заболявания', 'Пренася паразити', 'Замърсява хранителни запаси'],
+    behavior: ['Социално животно', 'Нощна активност', 'Добър катерач'],
     reproduction: {
-      offspring: '5-10',
-      gestation: '19-21 дни'
+      offspring: '5 - 10 на бременност',
+      gestation: '19 - 21 дни бременност'
     },
     signs: ['Изпражнения', 'Следи от гризане по мебели и опаковки'],
-    desc: 'Домашната мишка е малък гризач, често срещан в домове и сгради. Известна е с бързото си размножаване и адаптивност. Мишките могат да причинят сериозни щети на имущество и храна, а също така са носители на различни заболявания. Контролът и превенцията на мишките са важни за поддържане на здравословна среда в дома.',
+    desc: 'Домашната мишка е дребен гризач, често срещан в жилища и складове. Бързо се размножава и лесно се приспособява към различни среди. Може да причини значителни щети на хранителни запаси и имущество, а също така е известна с разпространението на болести.',
   },
   'ЧЕРЕН ПЛЪХ': {
     latinName: 'Rattus rattus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-rattus.png',
     appearance: {
-      length: '16-24 cm',
-      height: '4-6 cm',
-      weight: '150-250 g',
+      length: '16 - 24 см',
+      height: '4 - 6 см',
+      weight: '150 - 250 г',
       color: 'Черно или тъмнокафяво'
     },
-    dangers: ['Преносител на заболявания', 'Може да пренася паразити', 'Може да повреди електрически проводници'],
-    behavior: ['Нощен', 'Добър катерач', 'Предпочита високи места'],
+    dangers: ['Преносител на заболявания', 'Пренася паразити', 'Повреди над електрически системи'],
+    behavior: ['Нощна активност', 'Добър катерач', 'Високи места'],
     reproduction: {
-      offspring: '5-8',
-      gestation: '21-23 дни'
+      offspring: '5 - 8 на бременност',
+      gestation: '21 - 23 дни бременност'
     },
     signs: ['Изпражнения', 'Следи от гризане', 'Мазни следи по стени от козината'],
-    desc: 'Черният плъх, известен още като корабен плъх, е разпространен в тропическите и субтропическите райони. По-малък и по-гъвкав от сивия плъх, той често живее в тавани и дървета. Черните плъхове могат да причинят щети на строителни материали и електрически проводници, както и да разпространяват заболявания и паразити.',
+    desc: 'Черният плъх, наричан още корабен плъх, живее в по-топлите райони. По-малък е от сивия плъх и обикновено се среща в тавани и дървета. Известен е с разрушителното си поведение спрямо електрически инсталации и строителни материали.',
   },
   'СИВ ПЛЪХ': {
     latinName: 'Rattus norvegicus',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Rattus-norvegicus.png',
     appearance: {
-      length: '20-25 cm',
-      height: '5-7 cm',
-      weight: '200-500 g',
+      length: '20 - 25 см',
+      height: '5 - 7 см',
+      weight: '200 - 500 г',
       color: 'Сив или кафяв'
     },
-    dangers: ['Преносител на заболявания', 'Може да причини структурни щети с гризане'],
-    behavior: ['Нощен', 'Добър плувец', 'Предпочита ниски и влажни места'],
+    dangers: ['Преносител на заболявания', 'Причинява структурни щети с гризане'],
+    behavior: ['Нощна активност', 'Добър плувец', 'Ниски и влажни места'],
     reproduction: {
-      offspring: '6-12',
-      gestation: '21-23 дни'
+      offspring: '6 - 12 на бременност',
+      gestation: '21 - 23 дни бременност'
     },
-    signs: ['Изпражнения', 'Следи от гризане по структури и контейнери', 'Тунели и дупки близо до сгради'],
-    desc: 'Сивият плъх, известен също като норвежки плъх или канален плъх, е по-голям и по-масивен от черния плъх. Живее основно в подземни тунели и канализации, но може да се срещне и в сгради. Сивите плъхове са известни със своите разрушителни навици и пренасят опасни патогени.',
+    signs: ['Изпражнения', 'Следи от гризане', 'Тунели и дупки близо до сгради'],
+    desc: 'Сивият плъх, известен също като норвежки плъх, е по-голям и по-силен от черния плъх. Живее предимно в канализации и подземни системи. Неговото агресивно поведение и способността му да разрушава структури го правят сериозен вредител.',
   },
   'ПОЛЕВКА': {
     latinName: 'Microtus arvalis',
     imageUrl: 'https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/real/Microtus-arvalis.png',
     appearance: {
-      length: '8-12 cm',
-      height: '2-3 cm',
-      weight: '20-50 g',
+      length: '8 - 12 см',
+      height: '2 - 3 см',
+      weight: '20 - 50 г',
       color: 'Кафяв или сив'
     },
     dangers: ['Може да причини щети на култури', 'Може да пренася заболявания'],
-    behavior: ['Тревопасен', 'Активен през деня и нощта', 'Предпочита тревисти поля'],
+    behavior: ['Тревопасен', 'Нощна и дневна активност', 'Предпочита тревисти поля'],
     reproduction: {
-      offspring: '3-7',
-      gestation: '19-21 дни'
+      offspring: '3 - 7 на бременност',
+      gestation: '19 - 21 дни бременност'
     },
     signs: ['Следи в тревата', 'Следи от гризане на растения и култури'],
-    desc: 'Полевката е малък гризач, предпочитащ открити полета и земеделски райони. Известна е с вредителската си дейност върху култури и градини, като унищожава корени и стъбла на растения. Те могат да причинят значителни икономически щети, особено в земеделието.',
+    desc: 'Полевката е дребен гризач, който обитава полета и земеделски райони. Известна е със способността си да унищожава култури и градини, причинявайки значителни икономически загуби. Полевките могат да бъдат трудни за контролиране в земеделските зони.',
   },
 };
+
 
 const RatInfoComponent: React.FC = () => {
   const [selectedRat, setSelectedRat] = useState<RatType>('ДОМАШНА МИШКА');
@@ -183,13 +198,18 @@ const RatInfoComponent: React.FC = () => {
         <motion.div variants={itemVariants}>
         <InfoBox title="ПОВЕДЕНИЕ, ХРАНЕНЕ И НАВИЦИ" content={
           <ul>
-            {currentRat.behavior.map((behavior, index) => (
-              <li key={index}
-              className='flex'><GoDotFill className='mt-1 scale-90'/>{behavior}</li>
-            ))}
+            {currentRat.behavior.map((behavior, index) => {
+              const IconComponent = getBehaviorIcon(behavior);
+              return (
+                <li key={index} className='flex items-center'>
+                  <IconComponent className='mt-1 mr-3 text-neutral-500' />
+                  {behavior}
+                </li>
+              );
+            })}
           </ul>
         } />
-        </motion.div>
+      </motion.div>
         <motion.div variants={itemVariants}>
         <InfoBox title="РАЗМНОЖАВАНЕ" content={
           <>

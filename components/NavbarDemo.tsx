@@ -192,7 +192,7 @@ function Navbar({
               description="Сложете край на досадните мухи, които пренасят зарази!"
             />
             <ProductItem
-              title="Оси"
+              title="Оси / Стършели"
               href="/pests/wasp"
               src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/wasp.png"
               darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/wasp.png"

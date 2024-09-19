@@ -1,61 +1,59 @@
 import SpiderInfoComponent from './SpiderInfoComponent'
 import { 
-    IconSearch,
-    IconSpray,
-    IconScript,
-    IconRosetteDiscountCheck,
-    IconHome,
-    IconApps,
-    IconLungs,
-    IconAlertSquareRounded,
-  } from "@tabler/icons-react";
+  IconSearch,
+  IconSpray,
+  IconScript,
+  IconRosetteDiscountCheck,
+  IconHome,
+} from "@tabler/icons-react";
 import { SignupFormDemo } from '@/components/SignupFormDemo';
-import { HeroCard } from '@/components/HeroCard';
 import { FeaturesSection } from '@/components/FeaturesSection';
+import { GiSpiderFace, GiSpiderWeb } from 'react-icons/gi';
+import { FaBugs } from 'react-icons/fa6';
 export default function Spider() {
 
-    const spiderSet = [
-        {
-          title: "Достъп на хлебарките",
-          description: "Хлебарките проникват в дома през пукнатини, вентилация и канали, или се внасят с кашони, кутии и обувки.",
-          icon: <IconHome size={50}/>,
-        },
-        {
-          title: "Идеална среда за размножаване",
-          description: "Домът ви осигурява идеални условия за размножаване на хлебарките – храна, топлина, вода и скрити места.",
-          icon: <IconApps size={50} />,
-        },
-        {
-          title: "Алергии и астма",
-          description: "Oтпадъците, формирани от хитиновата им обвивка, мъртви хлебарки и изпражнения могат да развият алергии, особено при децата и при по-чувствителните възрастни.",
-          icon: <IconLungs size={50} />,
-        },
-        {
-          title: "Трудността да се справим сами",
-          description: "Третирането на хлебарките препаратите за масова употреба ,които се продават на свободен принцип, крият риска от развиване на резистентност и тогава борбата с хлебарките ще е трудна и в дългосрочен план. ",
-          icon: <IconAlertSquareRounded size={50} />,
-        },
-        {
-            title: "Оглед на обекта",
-            description: "Сертифициран ДДД експерт прави оглед на обекта за установяване наличието и числеността на хлебарките",
-            icon: <IconSearch size={50}/>,
-          },
-          {
-            title: "Третиране на обекта",
-            description: "Нашите ДДД изпълнители извършват обработка на обекта съгласно най-високите професионални стандарти само с одобрени за употреба биоциди и специализирани средства",
-            icon: <IconSpray size={50} />,
-          },
-          {
-            title: "Издаване на протокол",
-            description: "След извършване на обработката задължително издаваме протокол по образец на Министерство на здравеопазването, където са описани подробно мерките и средствата за борба с хлебарки, които сме приложили",
-            icon: <IconScript size={50} />,
-          },
-          {
-            title: "Проследяване на ефективността",
-            description: "По желание на клиента можем да проследим ефективността на проведените ДДД мероприятия с цел гарантиране успешната борба с хлебарките",
-            icon: <IconRosetteDiscountCheck size={50} />,
-          },
-      ];
+  const spiderSet = [
+    {
+      title: "Паяжини в дома",
+      description: "Паяците създават паяжини в ъглите, по таваните и в тихи места на дома, което води до неприятен вид и необходимост от често почистване.",
+      icon: <GiSpiderWeb size={50}/>,
+    },
+    {
+      title: "Привличане на други насекоми",
+      description: "Присъствието на паяци често е индикатор за наличието на други насекоми в дома, тъй като паяците се хранят с тях.",
+      icon: <FaBugs size={50} />,
+    },
+    {
+      title: "Потенциални ухапвания",
+      description: "Въпреки че повечето паяци са безобидни, някои видове могат да ухапят, причинявайки болка, подуване или алергични реакции при някои хора. Черната вдовица е паяк, който е отровен и ухапването може да доведе до летален изход.",
+      icon: <GiSpiderFace size={50} />,
+    },
+    {
+      title: "Проникване в сгради",
+      description: "Паяците могат да влязат в домовете през малки пукнатини и отвори, търсейки топлина, влага или храна, което води до нежелано съжителство.",
+      icon: <IconHome size={50} />,
+    },
+    {
+        title: "Оглед на обекта",
+        description: "Нашите експерти извършват подробен оглед на помещенията, идентифицирайки видовете паяци, техните укрития и входни точки.",
+        icon: <IconSearch size={50}/>,
+      },
+      {
+        title: "Третиране на обекта",
+        description: "Прилагаме специализирани методи за контрол на паяци, включително използване на безопасни за хората и домашните любимци препарати и запечатване на входни точки.",
+        icon: <IconSpray size={50} />,
+      },
+      {
+        title: "Издаване на протокол",
+        description: "След извършване на обработката, издаваме подробен протокол, описващ приложените методи за контрол и превенция на паяци в обекта.",
+        icon: <IconScript size={50} />,
+      },
+      {
+        title: "Проследяване и поддръжка",
+        description: "Предлагаме услуги за редовно проследяване и поддръжка, за да осигурим дългосрочен контрол над популацията на паяци и предотвратим повторно заселване.",
+        icon: <IconRosetteDiscountCheck size={50} />,
+      },
+  ];
     
 
     return (
@@ -67,9 +65,6 @@ export default function Spider() {
 
             <div className='flex flex-col-reverse xl:flex-row'>
               <SignupFormDemo />
-              <div className='flex justify-center items-center  -translate-x-0 xl:-translate-x-12 2xl:-translate-x-32'>
-              <HeroCard />
-              </div>
             </div>
 
         </div>

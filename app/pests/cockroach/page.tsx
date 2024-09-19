@@ -66,7 +66,6 @@ export default function Cockroach() {
 
             <div className='flex flex-col-reverse xl:flex-row'>
               <SignupFormDemo />
-
             </div>
 
         </div>

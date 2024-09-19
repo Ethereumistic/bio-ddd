@@ -6,56 +6,17 @@ import { FaViruses } from "react-icons/fa";
 import { HiBugAnt } from "react-icons/hi2";
 import Link from "next/link";
 
-export function CanvasRevealEffectDemo() {
+export function CanvasRevealEffectDemo({ cards }: { cards: CardProps[] }) {
   return (
-    <div className="py-20 bg-white dark:bg-dblue w-full mx-auto px-4 sm:px-8">
+    <div className="py-20 bg-white dark:bg-dblue w-full mx-auto px-4 sm:px-8 z-10">
       <div className="flex flex-col gap-8 max-w-sm mx-auto">
-        <Card
-          href="/disinfection"
-          title="Дезинфекция"
-          icon={<FaViruses className="text-emerald-500" size={120} />}
-          canvasProps={{
-            animationSpeed: 5.1,
-            containerClassName: "bg-emerald-900",
-          }}
-        >
-          Кажете чао на невидимите микроби и бактерии!
-        </Card>
-      
-        <Card
-          href="/disinsection"
-          title="Дезинсекция"
-          icon={<HiBugAnt className="text-red-700" size={120} />}
-          canvasProps={{
-            animationSpeed: 3,
-            containerClassName: "bg-red-900",
-            colors: [
-              [255, 22, 22],
-              [255, 26, 26],
-            ],
-            dotSize: 2,
-          }}
-        >
-          Оттървете се от досадните и гнусни насекоми!
-        </Card>
-
-        <Card
-          href="/deratization"
-          title="Дератизация"
-          icon={<RatIcon />}
-          canvasProps={{
-            animationSpeed: 3,
-            containerClassName: "bg-slate-400",
-            colors: [[125, 211, 252]],
-          }}
-        >
-          Забравете за неприятните мишки и гризачи!
-        </Card>
+        {cards.map((card, index) => (
+          <Card key={index} {...card} />
+        ))}
       </div>
     </div>
   );
 }
-
 
 const AnimatedText = ({ children, isInView, showAnimation }: { children: React.ReactNode; isInView: boolean; showAnimation: boolean }) => {
   return (
@@ -82,13 +43,7 @@ const Card = ({
   icon,
   canvasProps,
   children,
-}: {
-  href: string;
-  title: string;
-  icon: React.ReactNode;
-  canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
-  children: React.ReactNode;
-}) => {
+}: CardProps) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.8 });
   const [showAnimation, setShowAnimation] = React.useState(false);
@@ -167,6 +122,8 @@ const Card = ({
     </div>
   );
 };
+
+
 const RatIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" viewBox="0 0 512 512">
@@ -190,3 +147,11 @@ export const Icon = ({ className, ...rest }: any) => {
     </svg>
   );
 };
+
+interface CardProps {
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+  canvasProps: React.ComponentProps<typeof CanvasRevealEffect>;
+  children: React.ReactNode;
+}
