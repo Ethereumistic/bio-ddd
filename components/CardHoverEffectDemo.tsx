@@ -118,4 +118,36 @@ export const projects = [
     src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/bird.png",
     darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/bird.png",
   },
+  {
+    title: "Къртици",
+    description:
+      "Спрете къртиците, които унищожават реколтата и Вашият двор!",
+    link: "/pests/mole",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/mole.png",
+    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/mole.png",
+  },
+  {
+    title: "Охлюви / Стоножки",
+    description:
+      "Мястото на охлювите и стоножките не е във Вашият двор, не позволявайте да ядат от растенията!",
+    link: "/pests/snail",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/snail.png",
+    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/snail.png",
+  },
+  {
+    title: "Молци",
+    description:
+      "Изгонете молците от Вашите гардероби, за да спрете да виждате поразени дрехи!",
+    link: "/pests/moth",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/moth.png",
+    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/moth.png",
+  },
+  {
+    title: "Дървояди",
+    description:
+      "Престанете да страдаете от дървоядите, които унищожават дърветата и растенията във Вашият двор!",
+    link: "/pests/woodworm",
+    src: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/woodworm1.png",
+    darkSrc: "https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/woodworm1.png",
+  },
 ];

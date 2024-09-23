@@ -247,6 +247,38 @@ function Navbar({
 
               description="Прогонете птиците, които замърсяват вашия двор!"
             />
+            <ProductItem
+              title="Къртици"
+              href="/pests/mole"
+              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/mole.png"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/mole.png"
+
+              description="Спрете къртиците, които унищожават реколтата и Вашият двор!"
+            />
+            <ProductItem
+              title="Охлюви / Стоножки"
+              href="/pests/snail"
+              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/snail.png"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/snail.png"
+
+              description="Мястото на охлювите и стоножките не е във Вашият двор!"
+            />
+            <ProductItem
+              title="Молци"
+              href="/pests/moth"
+              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/moth.png"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/moth.png"
+
+              description="Изгонете молците от Вашите гардероби, за да спрете да виждате поразени дрехи!"
+            />
+            <ProductItem
+              title="Дървоядци"
+              href="/pests/woodworm"
+              src="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/woodworm1.png"
+              darkSrc="https://cdn.jsdelivr.net/gh/Ethereumistic/bio-ddd-assets/entity-assets/dark/woodworm1.png"
+
+              description="Престанете да страдаете от дървоядите!"
+            />
                       </div>
                   </MenuItem>
                   </HoverBorderGradient>
