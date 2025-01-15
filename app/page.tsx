@@ -34,7 +34,7 @@ const cards = [
       ],
       dotSize: 2,
     },
-    children: "Оттървете се от досадните и гнусни насекоми!",
+    children: "Оттървете се от насекомите още СЕГА!",
   },
   {
     href: "/deratization",
@@ -48,7 +48,7 @@ const cards = [
       ],
       dotSize: 2,
     },
-    children: "Изпратете на кино миризливите и гнусни мишки!",
+    children: "Мишкие нямат място тук. Отървете се от тях бързо и ефективно.",
   },
 ];
 
@@ -81,7 +81,6 @@ export default function Home() {
       </div>
 
       </div>
-
     </main>
   );
 }

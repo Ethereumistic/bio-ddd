@@ -122,21 +122,21 @@ export default function Footer() {
             <li>
               <Link
                 className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end "
-                href="mailto:office@bio-ddd.com"
+                href="mailto:biodddltd@gmail.com"
               >
                 <IconMail />
-                <span  className="flex-1 text-gray-700 dark:text-gray-200 hover:text-ddblue dark:hover:text-lgreen" >office@bio-ddd.com</span>
+                <span  className="flex-1 text-gray-700 dark:text-gray-200 hover:text-ddblue dark:hover:text-lgreen" >biodddltd@gmail.com</span>
               </Link>
             </li>
 
             <li>
               <Link
                 className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
-                href="tel:+1234567890"
+                href="tel:+359876676618"
               >
                 <IconPhone />
 
-                <span className="flex-1 text-gray-700 dark:text-gray-200 hover:text-ddblue dark:hover:text-lgreen">0123456789</span>
+                <span className="flex-1 text-gray-700 dark:text-gray-200 hover:text-ddblue dark:hover:text-lgreen">+359 87 667 6618</span>
               </Link>
             </li>
 
@@ -146,7 +146,7 @@ export default function Footer() {
               <Link target="_blank" className='flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end' href="https://www.google.com/maps/place/42%C2%B052'39.0%22N+25%C2%B018'60.0%22E/@42.877495,25.3140811,17z/data=!3m1!4b1!4m13!1m8!3m7!1s0x40a90fe2d6958745:0x400a01269bf5010!2sGabrovo!3b1!8m2!3d42.8742212!4d25.3186837!16zL20vMDNqZm1w!3m3!8m2!3d42.877495!4d25.316656?entry=ttu&g_ep=EgoyMDI0MDkxNi4wIKXMDSoASAFQAw%3D%3D">
                 <IconMapPin />
               <address className="-mt-0.5 flex-1 not-italic text-gray-700 dark:text-gray-200 hover:text-ddblue dark:hover:text-lgreen">
-                гр. Габрово, ул. &quot;Цар Борис&quot; 12
+                гр. Габрово, ул. &quot;Индустриална&quot; 44
               </address>
               </Link>
             </li>
@@ -158,11 +158,11 @@ export default function Footer() {
     <div className="mt-12 border-t border-gray-100 pt-6">
       <div className="text-center sm:flex sm:justify-between sm:text-left">
         <p className="text-sm text-gray-500">
-          <span className="block sm:inline">Всички права запазени.</span>
+          <span className="block sm:inline mr-4">Всички права запазени</span>
 
           <Link
-            className="inline-block text-teal-600 underline transition hover:text-teal-600/75"
-            href="#"
+            className="mr-4 inline-block text-teal-600 underline transition hover:text-teal-600/75"
+            href="/legal"
           >
             Условия за ползване
           </Link>
@@ -170,15 +170,16 @@ export default function Footer() {
           <span>&middot;</span>
 
           <Link
-            className="inline-block text-teal-600 underline transition hover:text-teal-600/75"
-            href="#"
+            className="mr-4 inline-block text-teal-600 underline transition hover:text-teal-600/75"
+            href="/legal?tab=privacy"
           >
             Политика за поверителност
           </Link>
         </p>
 
-        <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; 2024 Bio DDD</p>
+        <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">&copy; 2025 Bio DDD</p>
       </div>
+      
     </div>
   </div>
 </footer>

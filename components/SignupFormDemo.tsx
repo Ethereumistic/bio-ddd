@@ -107,7 +107,7 @@ export function SignupFormDemo() {
       Ако имате въпроси или искате да се консултирате, потърсете ни за безплатна консултация на номер
       </h2>
       <h2 className="font-bold text-2xl text-neutral-800 dark:text-neutral-200 text-center my-2">
-        +359 88 123 4567
+      +359 87 667 6618
       </h2>
       <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200 ">
       или попълнете формата и изпратете заявка за безплатен оглед в удобно за Вас време

@@ -16,7 +16,7 @@ interface FeaturesSectionProps {
 
 export function FeaturesSection({ features }: FeaturesSectionProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-[90%] mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 relative z-10 py-10 max-w-[90%] mx-auto">
       {features.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
@@ -37,7 +37,7 @@ const Feature = ({
 }) => {
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   const variants = {
     hidden: { opacity: 0, y: 50 },

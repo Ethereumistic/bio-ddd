@@ -116,7 +116,7 @@ function Navbar({
         <Menu setActive={setActive}>
           <div className="flex items-center justify-between w-full">
             {/* Logo on the left */}
-            <div className="flex  items-center hover:scale-105 transition duration-700">
+            <div className="flex  items-center transition duration-700">
               <LogoImage
                 title="Bio DDD"
                 href="/"
@@ -153,7 +153,13 @@ function Navbar({
                   <MenuItem setActive={setActive} active={active} item="Услуги">
                   
                     <div className="flex justify-center items-center my-4"><IconSpray width={50} height={50} /><FlipWordsNav /></div>
-                      <div className=" text-sm grid grid-cols-4 gap-10 p-4 ">
+                    <div className="max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar">
+
+                    <div className="text-sm grid gap-6 p-4
+                      min-[932px]:grid-cols-2 
+                      min-[1220px]:grid-cols-3
+                      min-[1524px]:grid-cols-4">
+                        
             <ProductItem
               title="Хлебарки"
               href="/pests/cockroach"
@@ -280,7 +286,9 @@ function Navbar({
               description="Престанете да страдаете от дървоядите!"
             />
                       </div>
+                      </div>
                   </MenuItem>
+                  
                   </HoverBorderGradient>
                   </div>
                 </Link>

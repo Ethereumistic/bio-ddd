@@ -53,7 +53,7 @@ export const MenuItem = ({
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
+                  className="w-max h-full p-1"
                 >
                   {children}
                 </motion.div>
@@ -85,7 +85,7 @@ export const LogoImage = ({
           width={68}
           height={68}
           alt={title}
-          className="dark:hidden block rounded-md hover:rotate-[360deg] transition-all duration-700
+          className="dark:hidden block rounded-md  transition-all duration-700
                      w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[65px] lg:h-[65px]"
         />
         <Image
@@ -93,7 +93,7 @@ export const LogoImage = ({
           width={68}
           height={68}
           alt={title}
-          className="dark:block hidden rounded-md hover:rotate-[360deg] transition-all duration-700
+          className="dark:block hidden rounded-md  transition-all duration-700
                      w-10 h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[65px] lg:h-[65px]"
         />
       </div>

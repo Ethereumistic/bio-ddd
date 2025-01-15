@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import localfont from "next/font/local";
 import { cx } from "@/utils/all";
 import Footer from "@/components/Footer";
+import WindowDimensions from "./WindowDimentions";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -67,6 +68,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </Providers>
+        <WindowDimensions />
+
       </body>
     </html>
   );

@@ -12,7 +12,7 @@ const AccordionItem = ({ question, answer }: { question: string, answer: string 
       <div className="   border-gray-300">
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer flex justify-between items-center rounded-xl mb-1  p-4 bg-ddblue dark:bg-lgreen"
+          className="cursor-pointer flex justify-between items-center rounded-xl mb-1  p-4 bg-ddblue/[0.9] dark:bg-lgreen/[0.9]"
         >
           <span className="text-xl font-medium text-white dark:text-dblue p-2 rounded-lg">{question}</span>
           {isOpen ? <IconChevronUp className='text-white dark:text-dblue' /> : <IconChevronDown className='text-white dark:text-dblue' />}

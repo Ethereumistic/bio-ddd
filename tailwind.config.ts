@@ -12,6 +12,28 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      'xxs': '350px',
+      'xs': '480px',
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'gg': '1080px',
+      // => @media (min-width: 1080px) { ... }
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      '3xl': '1780px',
+      // => @media (min-width: 1536px) { ... }
+      'cst': '932px',
+    },
     extend: {
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
