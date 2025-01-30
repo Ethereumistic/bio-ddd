@@ -16,7 +16,7 @@ export function FloatingDockDemo() {
       icon: (
         <IconBrandFacebook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.facebook.com/profile.php?id=61572588328432",
     },
 
     {
@@ -24,28 +24,22 @@ export function FloatingDockDemo() {
       icon: (
         <FaInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.instagram.com/bio_ddd_com/",
     },
     {
       title: "TikTok",
       icon: (
         <IconBrandTiktok className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.tiktok.com/@bioddd.com",
     },
-    {
-      title: "X",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
+
     {
       title: "E-Mail",
       icon: (
         <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "mailto:biodddltd@gmail.com",
     },
   ];
   return (

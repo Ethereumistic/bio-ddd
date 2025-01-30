@@ -135,31 +135,38 @@ export const ProductItem = ({
   href,
   src,
   darkSrc,
+  setActive
 }: {
   title: string;
   description: string;
   href: string;
   src: string;
   darkSrc: string;
+  setActive?: (item: string | null) => void; // Accept setActive
 }) => {
 
+  const handleClick = () => {
+    if (setActive) {
+      setActive(null); // Deactivate the menu item
+    }
+  };
 
   return (
-    <Link href={href} className="flex space-x-2   hover:scale-105 transition duration-300 hover:text-lred z-[5000]">
-              <Image
-          src={src}
-          width={100}
-          height={50}
-          alt={title}
-          className="block dark:hidden"
-        />
-        <Image
-          src={darkSrc}
-          width={100}
-          height={50}
-          alt={title}
-          className="hidden dark:block"
-        />
+    <Link href={href} className="flex space-x-2 hover:scale-105 transition duration-300 hover:text-lred z-[5000]" onClick={handleClick}>
+      <Image
+        src={src}
+        width={100}
+        height={50}
+        alt={title}
+        className="block dark:hidden"
+      />
+      <Image
+        src={darkSrc}
+        width={100}
+        height={50}
+        alt={title}
+        className="hidden dark:block"
+      />
       <div className="">
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white ">
           {title}

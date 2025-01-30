@@ -122,7 +122,7 @@ export function SignupFormDemo() {
               <Input
                 id="name"
                 name="name"
-                placeholder="Георги Иванов"
+                placeholder=""
                 type="text"
                 value={formData.name}
                 onChange={handleChange}
@@ -135,7 +135,7 @@ export function SignupFormDemo() {
               <Input
                 id="phone"
                 name="phone"
-                placeholder="+359 88 123 4567"
+                placeholder=""
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
@@ -148,7 +148,7 @@ export function SignupFormDemo() {
               <Input
                 id="email"
                 name="email"
-                placeholder="georgi.ivanov@bio-ddd.com"
+                placeholder=""
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -161,7 +161,7 @@ export function SignupFormDemo() {
               <Input
                 id="city"
                 name="city"
-                placeholder="Село / Град"
+                placeholder=""
                 type="text"
                 value={formData.city}
                 onChange={handleChange}
@@ -174,7 +174,7 @@ export function SignupFormDemo() {
               <Input
                 id="street"
                 name="street"
-                placeholder="улица Райчо Каролев 7"
+                placeholder=""
                 type="text"
                 value={formData.street}
                 onChange={handleChange}
