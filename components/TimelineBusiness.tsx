@@ -56,7 +56,7 @@ export function TimelineBusiness() {
         );
       };
 
-      const AnimatedGridList = ({ items }: { items: Array<{ icon: React.ElementType, text: string }> }) => {
+      const AnimatedGridList = ({ items }: { items: Array<{ icon: React.ComponentType<{ className?: string }>, text: string }> }) => {
         const ref = useRef(null);
         const isInView = useInView(ref, { once: false, amount: 0.1 });
         const controls = useAnimation();

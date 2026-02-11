@@ -250,8 +250,8 @@ const InfoBox: React.FC<{ title: string; content: React.ReactNode }> = ({ title,
           <p>{content}</p>
         ) : (
           React.isValidElement(content) && 
-          React.Children.map(content.props.children, (child, index) => 
-            React.cloneElement(child, { key: index })
+          React.Children.map((content.props as { children?: React.ReactNode }).children, (child, index) => 
+            React.cloneElement(child as React.ReactElement, { key: index })
           )
         )}
       </div>
